@@ -15073,7 +15073,7 @@ html:not(.layout-menu-fixed) .menu-inner-shadow {
 .menu-vertical .menu-block,
 .menu-vertical .menu-inner > .menu-item,
 .menu-vertical .menu-inner > .menu-header {
-  width: 16.25rem;
+  width: 17.25rem;
 }
 .menu-vertical .menu-inner {
   flex-direction: column;
@@ -15082,9 +15082,9 @@ html:not(.layout-menu-fixed) .menu-inner-shadow {
 .menu-vertical .menu-inner > .menu-item {
   margin: 0.0625rem 0;
 }
-.menu-vertical .menu-inner > .menu-item .menu-link {
+/* .menu-vertical .menu-inner > .menu-item .menu-link {
   margin: 0rem 1rem;
-}
+} */
 .menu-vertical .menu-item .menu-link,
 .menu-vertical .menu-block {
   padding: 0.625rem 1rem;

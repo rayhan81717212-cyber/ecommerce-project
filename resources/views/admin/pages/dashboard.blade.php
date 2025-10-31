@@ -29,6 +29,135 @@
                 </div>
             </div>
 
+            {{-- Count Today Orders --}}
+            <div class="col-md-3 col-12">
+                <div class="card text-center">
+                    <div class="card-body">
+                        <div class="card-title text-center">
+                            <div class=" m-auto">
+                                <i class="fa-solid fa-layer-group fs-2 text-primary"></i>
+                            </div>
+                        </div>
+                        <span class="fw-semibold d-block mb-1 fs-5">Today Orders</span>
+                        <h5 class="card-title mb-2">1200</h5>
+                    </div>
+                </div>
+            </div>
+
+            {{-- Count Yesterday Orders --}}
+            <div class="col-md-3 col-12">
+                <div class="card text-center">
+                    <div class="card-body">
+                        <div class="card-title text-center">
+                            <div class=" m-auto">
+                                <i class="fa-solid fa-credit-card fs-2 text-success"></i>
+                            </div>
+                        </div>
+                        <span class="fw-semibold d-block mb-1 fs-5">Yesterday Orders</span>
+                        <h5 class="card-title mb-2">500</h5>
+                    </div>
+                </div>
+            </div>
+            {{-- Count This Month Orders --}}
+            <div class="col-md-3 col-12">
+                <div class="card text-center">
+                    <div class="card-body">
+                        <div class="card-title text-center">
+                            <div class=" m-auto">
+                                <i class="fa-solid fa-chart-column fs-2 text-warning"></i>
+                            </div>
+                        </div>
+                        <span class="fw-semibold d-block mb-1 fs-5">This Month Orders</span>
+                        <h5 class="card-title mb-2">5000</h5>
+                    </div>
+                </div>
+            </div>
+            {{-- Count Last Month Orders --}}
+            <div class="col-md-3 col-12">
+                <div class="card text-center">
+                    <div class="card-body">
+                        <div class="card-title text-center">
+                            <div class=" m-auto">
+                                <i class="fa-solid  fa-cart-shopping fs-2 text-info"></i>
+                            </div>
+                        </div>
+                        <span class="fw-semibold d-block mb-1 fs-5">Last Month Orders</span>
+                        <h5 class="card-title mb-2">4500</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {{-- Order Status --}}
+        <div class="row mt-4">
+             {{--  Orders --}}
+            <div class="col-md-3 col-12">
+                <div class="card text-center">
+                    <div class="card-body">
+                        <div class="card-title text-center">
+                            <div class=" d-flex justify-content-center">
+                                <span class="bg-warning p-3 rounded-circle">
+                                    <i class="fa-solid fa-cart-shopping text-white fs-5"></i>
+                                </span>
+                            </div>
+                        </div>
+                        <span class="fw-semibold d-block mb-1 fs-6"> Orders </span>
+                        <h6 class="card-title mb-2">200</h6>
+                    </div>
+                </div>
+            </div>
+
+            {{--  Orders Pending--}}
+            <div class="col-md-3 col-12">
+                <div class="card text-center">
+                    <div class="card-body">
+                        <div class="card-title text-center">
+                            <div class=" d-flex justify-content-center">
+                                <span class="bg-info p-3 rounded-circle">
+                                    <i class="fa-solid fa-arrows-rotate text-white fs-5"></i>
+                                    
+                                </span>
+                            </div>
+                        </div>
+                        <span class="fw-semibold d-block mb-1 fs-6"> Orders Pending</span>
+                        <h6 class="card-title mb-2">120</h6>
+                    </div>
+                </div>
+            </div>
+            {{-- Order Processing --}}
+            <div class="col-md-3 col-12">
+                <div class="card text-center">
+                    <div class="card-body">
+                        <div class="card-title text-center">
+                            <div class=" d-flex justify-content-center">
+                                <span class="bg-success p-3 rounded-circle">
+                                    <i class="fa-solid fa-truck text-white fs-5"></i>
+                                    
+                                </span>
+                            </div>
+                        </div>
+                        <span class="fw-semibold d-block mb-1 fs-6"> Orders Processing</span>
+                        <h6 class="card-title mb-2">120</h6>
+                    </div>
+                </div>
+            </div>
+            {{-- Order Delivered --}}
+            <div class="col-md-3 col-12">
+                <div class="card text-center">
+                    <div class="card-body">
+                        <div class="card-title text-center">
+                            <div class=" d-flex justify-content-center">
+                                <span class="bg-primary p-3 rounded-circle">
+                                    <i class="fa-solid fa-check text-white fs-5"></i>
+                                    
+                                </span>
+                            </div>
+                        </div>
+                        <span class="fw-semibold d-block mb-1 fs-6"> Orders Delivered</span>
+                        <h6 class="card-title mb-2">120</h6>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </div>
 
