@@ -2,13 +2,12 @@
 @section('title', 'dashboard')
 @section('content')
 
-    <div class="container-xxl flex-grow-1 container-p-y">
+<div class="mx-md-4">
+    <div class="container-fluid p-md-5 flex-grow-1 container-p-y">
         <h4 class="fw-bold py-3 mb-4">
             <span class="text-muted fw-light">Product</span> 
             <span class="text-warning"> / Create</span>
         </h4>
-
-
         <div class="card p-4">
             <div class="card-body">
                 <form action="">
@@ -93,5 +92,6 @@
 
 
     </div>
+</div>
 
 @endsection

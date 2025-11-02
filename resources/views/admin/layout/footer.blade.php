@@ -8,8 +8,8 @@
           <!-- Content wrapper -->
         </div>
         <!-- / Layout page -->
-        <footer class="content-footer footer bg-footer-theme mt-auto layout-page">
-            <div class="container-xxl flex-grow-1 container-p-y ">
+        <footer class="content-footer footer bg-footer-theme mt-auto layout-page mx-md-5">
+            <div class="container-fluid  flex-grow-1 container-p-y ">
               <div class="mb-2 mb-md-0 p-4 bg-white rounded shadow">
                 © , made with ❤️ by Mohammad Rayhan
               </div>

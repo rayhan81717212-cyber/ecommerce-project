@@ -1,123 +1,109 @@
 @extends('admin.layout.master')
-@section('title', 'dashboard')
+@section('title', 'All Orders')
 @section('content')
-
-    <div class="container-xxl flex-grow-1 container-p-y">
+<div class="mx-md-4">
+    <div class="container-fluid p-md-5 flex-grow-1 container-p-y">
         <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Product /</span> Manage</h4>
         <a href="" class="btn btn-warning my-3">Add Product</a>
         <div class="row">
             <div class="col-lg-12 mb-4 order-0">
                 <div class="card">
-                    <h5 class="card-header">Product Table</h5>
+                    <h5 class="card-header">All Orders Table</h5>
                     <div class="card-body">
                         <div class="table-responsive text-nowrap">
                             <table class="table table-bordered text-center">
-                                <thead>
-                                    <tr>
-                                        <th>Id</th>
-                                        <th>User Name</th>
-                                        <th>Brand Name</th>
-                                        <th>Product Name</th>
-                                        <th>Description</th>
-                                        <th>price</th>
-                                        <th>Discount Price </th>
-                                        <th>Stock Quantity </th>
-                                        <th>Status </th>
-                                        <th>Photo </th>
-                                        <th>Action </th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>1</td>
-                                        <td>Electronics</td>
-                                        <td>Samsung</td>
-                                        <td>Galaxy S23 Ultra</td>
-                                        <td>Latest Samsung flagship phone with powerful camera.</td>
-                                        <td>125000 ৳</td>
-                                        <td>115000 ৳</td>
-                                        <td>25</td>
-                                        <td><span class="badge bg-success">Active</span></td>
-                                        <td></td>
-                                        <td>
-                                            <button class="btn btn-sm btn-primary">Edit</button>
-                                            <button class="btn btn-sm btn-danger">Delete</button>
-                                        </td>
-                                    </tr>
-
-                                    <tr>
-                                        <td>2</td>
-                                        <td>Fashion</td>
-                                        <td>Nike</td>
-                                        <td>Air Max 270</td>
-                                        <td>Comfortable and stylish sneakers for daily wear.</td>
-                                        <td>12000 ৳</td>
-                                        <td>9990 ৳</td>
-                                        <td>50</td>
-                                        <td><span class="badge bg-success">Active</span></td>
-                                        <td></td>
-                                        <td>
-                                            <button class="btn btn-sm btn-primary">Edit</button>
-                                            <button class="btn btn-sm btn-danger">Delete</button>
-                                        </td>
-                                    </tr>
-
-                                    <tr>
-                                        <td>3</td>
-                                        <td>Electronics</td>
-                                        <td>HP</td>
-                                        <td>HP Pavilion 15</td>
-                                        <td>Powerful laptop for office and multimedia use.</td>
-                                        <td>85000 ৳</td>
-                                        <td>79900 ৳</td>
-                                        <td>12</td>
-                                        <td><span class="badge bg-success">Active</span></td>
-                                        <td></td>
-                                        <td>
-                                            <button class="btn btn-sm btn-primary">Edit</button>
-                                            <button class="btn btn-sm btn-danger">Delete</button>
-                                        </td>
-                                    </tr>
-
-                                    <tr>
-                                        <td>4</td>
-                                        <td>Beauty</td>
-                                        <td>L’Oréal</td>
-                                        <td>Hydra Fresh Cream</td>
-                                        <td>Moisturizing cream for smooth and glowing skin.</td>
-                                        <td>1500 ৳</td>
-                                        <td>1200 ৳</td>
-                                        <td>80</td>
-                                        <td><span class="badge bg-success">Active</span></td>
-                                        <td></td>
-                                        <td>
-                                            <button class="btn btn-sm btn-primary">Edit</button>
-                                            <button class="btn btn-sm btn-danger">Delete</button>
-                                        </td>
-                                    </tr>
-
-                                    <tr>
-                                        <td>5</td>
-                                        <td>Home Appliance</td>
-                                        <td>Walton</td>
-                                        <td>Walton Refrigerator 250L</td>
-                                        <td>Energy-efficient refrigerator with frost control.</td>
-                                        <td>38000 ৳</td>
-                                        <td>34900 ৳</td>
-                                        <td>15</td>
-                                        <td><span class="badge bg-danger">Inactive</span></td>
-                                        <td></td>
-                                        <td>
-                                            <button class="btn btn-sm btn-primary">Edit</button>
-                                            <button class="btn btn-sm btn-danger">Delete</button>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
+                                    <caption>Orders Table</caption>
+                                    <thead>
+                                        <tr>
+                                            <th>id</th>
+                                            <th>user_id</th>
+                                            <th>order_number</th>
+                                            <th>total_amount</th>
+                                            <th>discount_amount</th>
+                                            <th>payment_status</th>
+                                            <th>order_status</th>
+                                            <th>payment_method</th>
+                                            <th>Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>101</td>
+                                            <td>ORD-1001</td>
+                                            <td>2500.00</td>
+                                            <td>200.00</td>
+                                            <td>Paid</td>
+                                            <td>Delivered</td>
+                                            <td>Credit Card</td>
+                                            <td>
+                                                <button class="btn btn-sm btn-primary">Edit</button>
+                                                <button class="btn btn-sm btn-danger">Delete</button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>2</td>
+                                            <td>102</td>
+                                            <td>ORD-1002</td>
+                                            <td>1800.00</td>
+                                            <td>0.00</td>
+                                            <td>Pending</td>
+                                            <td>Processing</td>
+                                            <td>bKash</td>
+                                            <td>
+                                                <button class="btn btn-sm btn-primary">Edit</button>
+                                                <button class="btn btn-sm btn-danger">Delete</button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>3</td>
+                                            <td>103</td>
+                                            <td>ORD-1003</td>
+                                            <td>3200.00</td>
+                                            <td>300.00</td>
+                                            <td>Paid</td>
+                                            <td>Shipped</td>
+                                            <td>Cash on Delivery</td>
+                                            <td>
+                                                <button class="btn btn-sm btn-primary">Edit</button>
+                                                <button class="btn btn-sm btn-danger">Delete</button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>4</td>
+                                            <td>104</td>
+                                            <td>ORD-1004</td>
+                                            <td>4500.00</td>
+                                            <td>500.00</td>
+                                            <td>Failed</td>
+                                            <td>Cancelled</td>
+                                            <td>Nagad</td>
+                                            <td>
+                                                <button class="btn btn-sm btn-primary">Edit</button>
+                                                <button class="btn btn-sm btn-danger">Delete</button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>5</td>
+                                            <td>105</td>
+                                            <td>ORD-1005</td>
+                                            <td>1200.00</td>
+                                            <td>100.00</td>
+                                            <td>Paid</td>
+                                            <td>Delivered</td>
+                                            <td>Rocket</td>
+                                            <td>
+                                                <button class="btn btn-sm btn-primary">Edit</button>
+                                                <button class="btn btn-sm btn-danger">Delete</button>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+</div>
 @endsection

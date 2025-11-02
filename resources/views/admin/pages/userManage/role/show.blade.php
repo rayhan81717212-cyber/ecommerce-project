@@ -1,7 +1,8 @@
 @extends('admin.layout.master')
 @section('title', 'show')
 @section('content')
-    <div class="container-xxl flex-grow-1 container-p-y">
+<div class="mx-md-4">
+    <div class="container-fluid p-md-5 flex-grow-1 m-5">
         <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Role /</span> Details</h4>
         <div class="row">
             <div class="col-lg-12 mb-4 order-0">
@@ -28,5 +29,5 @@
             </div>
         </div>
     </div>
-
+</div>
 @endsection

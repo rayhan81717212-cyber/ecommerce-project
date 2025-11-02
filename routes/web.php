@@ -31,3 +31,27 @@ Route::get('/categories', function () {
 // Categories router
 Route::get('/brand',  [BrandController::class, 'index']);
     
+
+// order Router
+Route::get('/order', function () {
+    return view('admin.pages.orderManagement.allOrder');
+});
+Route::get('/pending-order', function () {
+    return view('admin.pages.orderManagement.pendingOrder');
+});
+Route::get('/deliverd-order', function () {
+    return view('admin.pages.orderManagement.deliveredOrder');
+});
+Route::get('/cancle-order', function () {
+    return view('admin.pages.orderManagement.cancleOrder');
+});
+
+// Payment Router
+Route::get('/payment', function () {
+    return view('admin.pages.paymentMethod.index');
+});
+
+// Reviews Router
+Route::get('/review', function () {
+    return view('admin.pages.review.index');
+});

@@ -63,7 +63,7 @@
               </ul>
             </li>
             <!-- 📦 Order Management Manage -->
-            <li class="menu-item {{ request()->is('product*') || request()->is('categories*') || request()->is('brand*') ? 'active' : '' }}">
+            <li class="menu-item {{ request()->is('order*') || request()->is('pending-order*') || request()->is('deliverd-order*') || request()->is('cancle-order*') ? 'active' : '' }}">
               <a href="javascript:void(0);" class="menu-link menu-toggle">
                 {{-- <i class="menu-icon tf-icons fas fa-file-lines"></i> --}}
                 <div class="d-flex align-items-center gap-2">
@@ -73,8 +73,8 @@
               </a>
 
               <ul class="menu-sub">
-                <li class="menu-item {{ request()->is('product') ? 'active' : '' }}">
-                  <a href="{{ url('product') }}" class="menu-link">
+                <li class="menu-item {{ request()->is('order') ? 'active' : '' }}">
+                  <a href="{{ url('order') }}" class="menu-link">
                     <div class="d-flex align-items-center gap-2">
                       <h5 class="mb-0">🛍️</h5>
                       <span class="fs-6">All Orders</span>
@@ -83,24 +83,24 @@
                   </a>
                 </li>
 
-                <li class="menu-item {{ request()->is('categories') ? 'active' : '' }}">
-                  <a href="{{ url('categories') }}" class="menu-link">
+                <li class="menu-item {{ request()->is('pending-order') ? 'active' : '' }}">
+                  <a href="{{ url('pending-order') }}" class="menu-link">
                     <div class="d-flex align-items-center gap-2">
                       <h5 class="mb-0">⏳</h5>
                       <span class="fs-6">Pending Orders</span>
                     </div>
                   </a>
                 </li>
-                <li class="menu-item {{ request()->is('brand') ? 'active' : '' }}">
-                  <a href="{{ url('brand') }}" class="menu-link">
+                <li class="menu-item {{ request()->is('deliverd-order') ? 'active' : '' }}">
+                  <a href="{{ url('deliverd-order') }}" class="menu-link">
                     <div class="d-flex align-items-center gap-2">
                       <h5 class="mb-0">🚚</h5>
                       <span class="fs-6">Delivered Orders</span>
                     </div>
                   </a>
                 </li>
-                <li class="menu-item {{ request()->is('brand') ? 'active' : '' }}">
-                  <a href="{{ url('brand') }}" class="menu-link">
+                <li class="menu-item {{ request()->is('cancle-order') ? 'active' : '' }}">
+                  <a href="{{ url('cancle-order') }}" class="menu-link">
                     <div class="d-flex align-items-center gap-2">
                       <h5 class="mb-0">❌</h5>
                       <span class="fs-6">Cancelled Orders</span>
@@ -108,6 +108,28 @@
                   </a>
                 </li>
               </ul>
+            </li>
+            {{-- payment Method --}}
+             <li class="menu-item {{ request()->is('payment') ? 'active' : '' }}">
+              <a href="{{ url('payment') }}" class="menu-link">
+                {{-- <i class="menu-icon tf-icons bx bx-home-circle"></i> --}}
+                <div class="d-flex align-items-center gap-2">
+                    <h4 class="mb-0">🏦</h4>
+                    <span class="fs-6">Payment Method</span>
+                </div>
+
+              </a>
+            </li>
+            {{-- Review Method --}}
+             <li class="menu-item {{ request()->is('review') ? 'active' : '' }}">
+              <a href="{{ url('review') }}" class="menu-link">
+                {{-- <i class="menu-icon tf-icons bx bx-home-circle"></i> --}}
+                <div class="d-flex align-items-center gap-2">
+                    <h4 class="mb-0">📧</h4>
+                    <span class="fs-6">Review</span>
+                </div>
+
+              </a>
             </li>
             <!-- User Manage -->
             <li class="menu-item {{ request()->is('user*') || request()->is('role*') ? 'active' : '' }}">
@@ -130,6 +152,7 @@
                 </li>
               </ul>
             </li>
+           
           </ul>
 
         </aside>
