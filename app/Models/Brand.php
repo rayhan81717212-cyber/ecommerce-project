@@ -11,7 +11,11 @@ class Brand extends Model
 
     protected $table = "brand";
 
-    
+    protected $fillable = [
+        'name',
+        'logo',
+        'description',
+    ];
 
    
 }

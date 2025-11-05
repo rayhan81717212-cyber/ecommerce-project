@@ -1,88 +1,65 @@
 @extends('admin.layout.master')
-@section('title', 'dashboard')
+@section('title', 'Categories')
 @section('content')
 
 <div class="mx-md-4">
     <div class="container-fluid p-md-5  flex-grow-1 container-p-y">
-        <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Categories /</span> Manage</h4>
-        <a href="" class="btn btn-warning my-3">Add Categories</a>
+       <h4 class="fw-bold py-3 mb-4">
+            <span class="text-muted fw-light">Categories /</span>
+            <span class="text-warning">Manage</span>
+        </h4>
+        <a href="{{ route('categories.create') }}" class="btn btn-warning my-3">Add Categories</a>
         <div class="row">
             <div class="col-lg-12 mb-4 order-0">
+                @if (session('success') == 'Category Delete successfully!')
+                        <div class="alert alert-danger" >
+                            {{ session('success') }}
+                        </div>
+                    @elseif (session('success') == 'Category added successfully!' || session('success') == 'Category Update successfully!')
+                    <div class="alert alert-dark" >
+                            {{ session('success') }}
+                        </div>
+                    @endif
                 <div class="card">
                     <h5 class="card-header">Categories Table</h5>
                     <div class="card-body">
                         <div class="table-responsive text-nowrap">
                             <table class="table table-bordered text-center">
                                 <thead>
-                                    <tr>
-                                        <th>Id</th>
-                                        <th>Category Name</th>
-                                        <th>Status </th>
-                                        <th>Photo </th>
-                                        <th>Action </th>
+                                    <tr class="bg-warning ">
+                                        <th class="text-white align-middle">Id</th>
+                                        <th class="text-white align-middle">Category Name</th>
+                                        <th class="text-white align-middle">Status </th>
+                                        <th class="text-white align-middle">Action </th>
                                     </tr>
                                 </thead>
                                 <tbody>
+                                    @foreach ( $categories as $index=> $item)
+                                        <tr>
+                                            <td>{{$categories->firstItem() + $index}}</td>
+                                            <td class="text-start">{{ $item->name }}</td>
+                                            <td><span class="{{($item->status == 'Active') ? 'badge bg-success' : 'badge bg-danger' }}">{{$item->status}}</span></td>
+                                            <td>
+                                                <div class="d-flex justify-content-center">
+                                                    <form action="{{ route('categories.edit', $item->id) }}" method="get">
+                                                        @csrf
+                                                        <button type="submit" class="btn btn-sm btn-warning me-2">Update</button>
+                                                    </form>
+
+                                                    <form action="{{ route('categories.destroy', $item->id)}}" method="post">
+                                                        @csrf
+                                                        @method('DELETE')
+                                                        <button type="submit" class="btn btn-sm btn-danger">Delete</button>
+                                                    </form>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    @endforeach
                                     <tr>
-                                        <td>1</td>
-                                        <td>Electronics</td>
-                                        <td><span class="badge bg-success">Active</span></td>
-                                        <td><img src="uploads/categories/electronics.jpg" width="50" height="50"
-                                                class="rounded" alt="Electronics"></td>
-                                        <td>
-                                            <button class="btn btn-sm btn-primary">Edit</button>
-                                            <button class="btn btn-sm btn-danger">Delete</button>
+                                        <td colspan="4">
+                                            {{ $categories->links("vendor.pagination.bootstrap-5") }}
                                         </td>
                                     </tr>
-
-                                    <tr>
-                                        <td>2</td>
-                                        <td>Fashion</td>
-                                        <td><span class="badge bg-success">Active</span></td>
-                                        <td><img src="uploads/categories/fashion.jpg" width="50" height="50"
-                                                class="rounded" alt="Fashion"></td>
-                                        <td>
-                                            <button class="btn btn-sm btn-primary">Edit</button>
-                                            <button class="btn btn-sm btn-danger">Delete</button>
-                                        </td>
-                                    </tr>
-
-                                    <tr>
-                                        <td>3</td>
-                                        <td>Groceries</td>
-                                        <td><span class="badge bg-danger">Inactive</span></td>
-                                        <td><img src="uploads/categories/groceries.jpg" width="50" height="50"
-                                                class="rounded" alt="Groceries"></td>
-                                        <td>
-                                            <button class="btn btn-sm btn-primary">Edit</button>
-                                            <button class="btn btn-sm btn-danger">Delete</button>
-                                        </td>
-                                    </tr>
-
-                                    <tr>
-                                        <td>4</td>
-                                        <td>Home Appliances</td>
-                                        <td><span class="badge bg-success">Active</span></td>
-                                        <td><img src="uploads/categories/appliances.jpg" width="50" height="50"
-                                                class="rounded" alt="Home Appliances"></td>
-                                        <td>
-                                            <button class="btn btn-sm btn-primary">Edit</button>
-                                            <button class="btn btn-sm btn-danger">Delete</button>
-                                        </td>
-                                    </tr>
-
-                                    <tr>
-                                        <td>5</td>
-                                        <td>Sports & Fitness</td>
-                                        <td><span class="badge bg-success">Active</span></td>
-                                        <td><img src="uploads/categories/sports.jpg" width="50" height="50"
-                                                class="rounded" alt="Sports"></td>
-                                        <td>
-                                            <button class="btn btn-sm btn-primary">Edit</button>
-                                            <button class="btn btn-sm btn-danger">Delete</button>
-                                        </td>
-                                    </tr>
-
                                 </tbody>
                             </table>
                         </div>

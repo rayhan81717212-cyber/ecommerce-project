@@ -5,6 +5,9 @@
             <div class="d-flex flex-column align-items-center">
                 <img src="{{ asset('assets/img/logo/logo.jpg') }}" width="70" height="70" class="rounded-circle mb-2">
                 <span class="fw-bolder">Rayhan Enterprise</span>
+                <a href="javascript:void(0);" class="layout-menu-toggle menu-link text-large ms-auto d-xl-none">
+                  <i class="bx bx-chevron-left bx-sm align-middle"></i>
+              </a>
             </div>
           </div>
 

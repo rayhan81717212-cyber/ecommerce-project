@@ -1,77 +1,112 @@
 @extends('admin.layout.master')
-@section('title', 'dashboard')
+@section('title', 'Product')
 @section('content')
 
-<div class="mx-md-4">
-    <div class="container-fluid p-md-5 flex-grow-1 container-p-y">
-        <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Product /</span> Manage</h4>
-        <a href="{{ route('product.create') }}" class="btn btn-warning my-3">Add Product</a>
-        <div class="row">
-            <div class="col-lg-12 mb-4 order-0">
-                <div class="card p-4">
-                    <h5 class="card-header">Product Table</h5>
-                    @if (session('success'))
-                        <div class="alert alert-success" >
-                            {{ session('success') }}
-                        </div>
-                    @endif
-                    <div class="card-body">
-                        <div class="table-responsive text-nowrap">
-                            <table class="table table-bordered text-center">
-                                <thead>
-                                    <tr>
-                                        <th>Id</th>
-                                        <th>Product Name</th>
-                                        <th>Category Name</th>
-                                        <th>Brand Name</th>
-                                        <th>Description</th>
-                                        <th>price</th>
-                                        <th>Discount Price </th>
-                                        <th>Stock Quantity </th>
-                                        <th>Status </th>
-                                        <th>Photo </th>
-                                        <th>Action </th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    @foreach ($product as $index => $item )
-                                        <tr>
-                                            <td>{{$product->firstItem() + $index}}</td>
-                                            <td>{{$item->name}}</td>
-                                            <td>{{$item->category_name}}</td>
-                                            <td>{{$item->brand_name}}</td>
-                                            <td>{{$item->description}}</td>
-                                            <td>{{$item->price}}</td>
-                                            <td>{{$item->discount_price}}</td>
-                                            <td>{{$item->stock_quantity}}</td>
-                                            <td>
-                                                <span class="{{ $item->status == 'Active' ? 'badge bg-primary' : 'badge bg-danger' }}">
-                                                    {{ $item->status }}
-                                                </span>
-                                            </td>
-                                            <td>{{$item->photo}}</td>
-                                            <td>
-                                                <a href="" class="btn btn-warning btn-sm">Update</a>
-                                                <a href="" class="btn btn-primary btn-sm">Details</a>
-                                                <a href="{{ route('product.destory', $item->id) }}" class="btn btn-danger btn-sm">Delete</a>
-                                            </td>
+    <div class="mx-md-4">
+        <div class="container-fluid p-md-5 flex-grow-1 container-p-y">
+            <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Product /</span> <span
+                    class="text-warning">Manage</span></h4>
+            <a href="{{ route('product.create') }}" class="btn btn-warning my-3">Add Product</a>
+            <div class="row">
+                <div class="col-lg-12 mb-4 order-0">
+                    <div class="card p-4">
+                        <h5 class="card-header">Product Table</h5>
+                        @if (session('success') == 'Product Delete Successfully!')
+                            <div class="alert alert-danger">
+                                {{ session('success') }}
+                            </div>
+                        @elseif (session('success') == 'Product Update Successfully!' || session('success') == 'Product Add Successfully!')
+                            <div class="alert alert-dark">
+                                {{ session('success') }}
+                            </div>
+                        @endif
+                        <div class="card-body">
+                            <div class="table-responsive ">
+                                <table class="table table-bordered text-center">
+                                    <thead>
+                                        <tr class="bg-warning ">
+                                            <th class="text-white align-middle">Id</th>
+                                            <th class="text-white align-middle">Product Name</th>
+                                            <th class="text-white align-middle">Brand Name</th>
+                                            <th class="text-white align-middle">Price</th>
+                                            <th class="text-white align-middle">Discount Price</th>
+                                            <th class="text-white align-middle">Stock Quantity</th>
+                                            <th class="text-white align-middle">Stock Status</th>
+                                            <th class="text-white align-middle">Status</th>
+                                            <th class="text-white align-middle">Photo</th>
+                                            <th class="text-white align-middle">Action</th>
 
                                         </tr>
-                                    @endforeach
+                                    </thead>
+                                    <tbody>
+                                        @foreach ($product as $index => $item)
+                                            <tr>
+                                                <td>{{ $product->firstItem() + $index }}</td>
+                                                <td>{{ $item->name }}</td>
+                                                <td>{{ $item->brand_name }}</td>
+                                                <td>{{ $item->price }}</td>
+                                                <td>{{ $item->discount_price ?? '-----' }}</td>
+                                                <td class="{{ $item->stock_quantity < 5 ? 'text-danger' : 'text-dark' }}">
+                                                    {{ $item->stock_quantity }} Pis
+                                                </td>
+
+                                                <td>
+                                                    @if ($item->stock_quantity < 5)
+                                                        <span class="badge bg-danger">Low Stock</span>
+                                                    @elseif ($item->stock_quantity >= 5 && $item->stock_quantity <= 20)
+                                                        <span class="badge bg-warning">Medium Stock</span>
+                                                    @else
+                                                        <span class="badge bg-success">Stock</span>
+                                                    @endif
+                                                </td>
+
+                                                <td>
+                                                    <span
+                                                        class="{{ $item->status == 'Active' ? 'badge bg-primary' : 'badge bg-danger' }}">
+                                                        {{ $item->status }}
+                                                    </span>
+                                                </td>
+                                                <td>
+
+                                                    @if ($item->photo !== null)
+                                                        <img src="{{ asset('storage/' . $item->photo) }}"
+                                                            alt="Product Image" class="img-fluid" width="150">
+                                                    @endif
+                                                </td>
+                                                <td>
+                                                    <div class="d-flex ">
+                                                        <a href="{{ route('product.show', $item->id) }}"
+                                                            class="btn btn-primary btn-sm me-1">Details</a>
+                                                        <form action="" method="POST">
+                                                            <a href="{{ route('product.edit', ['product' => $item['id'], 'page' => request('page', 1)]) }}"
+                                                                class="btn btn-warning btn-sm me-1">Update</a>
+                                                        </form>
+                                                        <form action="{{ route('product.destroy', $item->id) }}"
+                                                            method="POST" class="d-inline">
+                                                            @csrf
+                                                            @method('DELETE')
+                                                            <button type="submit" class="btn btn-danger btn-sm"
+                                                                onclick="return confirm('Are you sure you want to delete this product?')">Delete</button>
+                                                        </form>
+                                                    </div>
+                                                </td>
+
+                                            </tr>
+                                        @endforeach
                                         <tr>
                                             <td colspan="11">
-                                                {{  $product->onEachSide(1)->links('vendor.pagination.bootstrap-5') }}
+                                                {{ $product->onEachSide(1)->links('vendor.pagination.bootstrap-5') }}
                                             </td>
 
                                         </tr>
-                                </tbody>
-                            </table>
+                                    </tbody>
+                                </table>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
 
 @endsection

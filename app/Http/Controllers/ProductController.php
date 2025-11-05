@@ -6,19 +6,15 @@ use Illuminate\Http\Request;
 use App\Models\Brand;
 use App\Models\Categories;
 use App\Models\Product;
+use Illuminate\Support\Facades\Hash;
+
+use Illuminate\Support\Facades\Storage;
+
+
 
 class ProductController extends Controller
 {
-
-    public function create(){
-          $brand = Brand::all(); 
-          $categories = Categories::all(); 
-
-        //   dd($brand, $categories);
-          return view('admin.pages.productManagement.product.create', compact('brand', "categories"));      
-    }
-
-    public function store(){
+     public function index(){
         $product = Product::from('products as p')
         ->select('p.*', 'b.name as brand_name', 'c.name as category_name')
         ->join('brand as b', 'p.brand_id', '=', 'b.id')
@@ -31,10 +27,123 @@ class ProductController extends Controller
 
     }
 
-    public function destory($id){
+    public function show($id){
+        $productId = Product::from('products as p')
+        ->select('p.*', 'b.name as brand_name', 'c.name as category_name')
+        ->join('brand as b', 'p.brand_id', '=', 'b.id')
+        ->join('categories as c', 'p.category_id', '=', 'c.id')
+        ->where("p.id", "=", $id)
+        ->first();
+
+        // dd($productId);
+        return view("admin.pages.productManagement.product.show", compact('productId'));
+    }
+
+
+    public function create(){
+          $brand = Brand::orderBy("name", 'asc')->get(); 
+          $categories = Categories::orderBy('name', 'asc')->get();
+
+
+        //   dd($brand, $categories);
+          return view('admin.pages.productManagement.product.create', compact('brand', "categories"));      
+    }
+
+    public function store(Request $request){
+        // dd($request->all());
+
+        if($request->hasFile("photo")){
+            $photo = $request->file('photo')->store("product", 'public');
+        }else{
+            $photo = null;
+        }
+        $price = str_replace(',', '', $request->price);
+        $discount_price = $request->discount_price ? str_replace(',', '', $request->discount_price) : null;
+
+        $request->validate([
+            'photo' => [ 'mimes:png,jpg,jpeg,webp','image', 'max:1000'],
+        ]);
+
+        $product = Product::create([
+            'name' => $request->name,
+            'category_id' => $request->category_id,
+            'brand_id' => $request->brand_id,
+            'description' => $request->description,
+            'price' => $price,
+            'discount_price' => $discount_price,
+            'stock_quantity' => $request->stock_quantity,
+            'status' => $request->status,
+            'photo' =>$photo,
+            
+        ]);
+        // dd($product);
+        return redirect()->route('product.index')->with('success', "Product Add Successfully!");
+
+    }
+   
+    public function edit($id){
+        
+        // $product = Product::from('products as p')
+        //         ->select('p.*', 'b.name as brand_name', 'c.name as category_name')
+        //         ->join('brand as b', 'p.brand_id', '=', 'b.id')
+        //         ->join('categories as c', 'p.category_id', '=', 'c.id')
+        //         ->where('p.id', $id)
+        //         ->first();
+
         $product = Product::find($id);
+        $brand = Brand::all();
+        $categories = Categories::all();
+        $page = request()->query("page", 1);
+
+        // dd($product, $brand, $categories);
+        return view('admin.pages.productManagement.product.edit', compact('product', 'brand', 'categories', 'page'));
+    }
+
+    public function update(Request $request, $id){
+
+        $product = Product::find($id);
+
+        $oldPhoto = $product->photo;
+
+        if ($request->hasFile('photo')) {
+            if ($oldPhoto && Storage::exists('public/' . $oldPhoto)) {
+                Storage::delete('public/' . $oldPhoto);
+            }
+            $photo = $request->file('photo')->store('product', 'public');
+        } else {
+            $photo = $oldPhoto;
+        }
+
+        $price = str_replace(',', '', $request->price);
+        $discount_price = $request->discount_price ? str_replace(',', '', $request->discount_price) : null;
+
+        $product -> update([
+            'name' => $request->name,
+            'category_id' => $request->category_id,
+            'brand_id' => $request->brand_id,
+            'description' => $request->description,
+            'price' => $price,
+            'discount_price' => $discount_price,
+            'stock_quantity' => $request->stock_quantity,
+            'status' => $request->status,
+            'photo' =>$photo,
+            
+        ]);
+
+        return redirect()->route('product.index')->with('success', "Product Update Successfully!");
+
+    }
+
+    public function destroy($id){
+        $product = Product::find($id);
+
+        $imagePath = public_path('product/' . $product->photo);
+
+        if (file_exists($imagePath)) {
+            unlink($imagePath); 
+        }
         $product->delete();
-        return redirect()->route("product")->with('success', "Product Delete Successfully!");
+        return redirect()->route("product.index")->with('success', "Product Delete Successfully!");
         // dd($product);
 
         // return

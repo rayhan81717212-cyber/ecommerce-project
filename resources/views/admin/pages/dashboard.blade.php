@@ -2,9 +2,9 @@
 @section('title', 'dashboard')
 @section('content')
 
-<div class="mx-md-4">
-        <div class="container-fluid p-md-5 flex-grow-1 container-p-y">
-        <div class="row">
+<div class="mx-4 ">
+        <div class="container-lg-fluid p-md-5 flex-grow-1 container-p-y">
+        <div class="row g-4">
             <div class="col-lg-12 mb-4 order-0">
                 <div class="card">
                     <div class="d-flex align-items-end row">
@@ -31,8 +31,8 @@
             </div>
 
             {{-- Count Today Orders --}}
-            <div class="col-md-3 col-12">
-                <div class="card text-center">
+            <div class="col-lg-3 col-sm-6 col-12">
+                <div class="card text-center h-100">
                     <div class="card-body">
                         <div class="card-title text-center">
                             <div class=" m-auto">
@@ -46,8 +46,8 @@
             </div>
 
             {{-- Count Yesterday Orders --}}
-            <div class="col-md-3 col-12">
-                <div class="card text-center">
+            <div class="col-lg-3 col-sm-6 col-12">
+                <div class="card text-center h-100">
                     <div class="card-body">
                         <div class="card-title text-center">
                             <div class=" m-auto">
@@ -60,8 +60,8 @@
                 </div>
             </div>
             {{-- Count This Month Orders --}}
-            <div class="col-md-3 col-12">
-                <div class="card text-center">
+            <div class="col-lg-3 col-sm-6 col-12">
+                <div class="card text-center h-100">
                     <div class="card-body">
                         <div class="card-title text-center">
                             <div class=" m-auto">
@@ -74,8 +74,8 @@
                 </div>
             </div>
             {{-- Count Last Month Orders --}}
-            <div class="col-md-3 col-12">
-                <div class="card text-center">
+            <div class="col-lg-3 col-sm-6 col-12">
+                <div class="card text-center h-100">
                     <div class="card-body">
                         <div class="card-title text-center">
                             <div class=" m-auto">
@@ -89,10 +89,10 @@
             </div>
         </div>
         {{-- Order Status --}}
-        <div class="row mt-4">
+        <div class="row g-4 mt-2">
              {{--  Orders --}}
-            <div class="col-md-3 col-12">
-                <div class="card text-center">
+            <div class="col-lg-3 col-sm-6 col-12">
+                <div class="card text-center h-100">
                     <div class="card-body">
                         <div class="card-title text-center">
                             <div class=" d-flex justify-content-center">
@@ -108,8 +108,8 @@
             </div>
 
             {{--  Orders Pending--}}
-            <div class="col-md-3 col-12">
-                <div class="card text-center">
+            <div class="col-lg-3 col-sm-6 col-12">
+                <div class="card text-center h-100">
                     <div class="card-body">
                         <div class="card-title text-center">
                             <div class=" d-flex justify-content-center">
@@ -125,8 +125,8 @@
                 </div>
             </div>
             {{-- Order Processing --}}
-            <div class="col-md-3 col-12">
-                <div class="card text-center">
+            <div class="col-lg-3 col-sm-6 col-12">
+                <div class="card text-center h-100">
                     <div class="card-body">
                         <div class="card-title text-center">
                             <div class=" d-flex justify-content-center">
@@ -142,8 +142,8 @@
                 </div>
             </div>
             {{-- Order Delivered --}}
-            <div class="col-md-3 col-12">
-                <div class="card text-center">
+            <div class="col-lg-3 col-sm-6 col-12">
+                <div class="card text-center h-100">
                     <div class="card-body">
                         <div class="card-title text-center">
                             <div class=" d-flex justify-content-center">

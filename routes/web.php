@@ -9,6 +9,7 @@ use App\Http\Controllers\BrandController;
 
 // product controller
 use App\Http\Controllers\ProductController;  
+use App\Http\Controllers\CategoriesController;  
 
 
 Route::get('/', function () {
@@ -19,17 +20,20 @@ Route::get("/role", [RoleController::class, 'index']);
 Route::get('/role-details/{id}', [RoleController::class, 'show'])->name('role-details');
 
 // product router
-Route::get('/product', [ProductController::class, 'store'])->name('product');
-Route::get('/product/create', [ProductController::class, 'create'])->name('product.create');
-Route::get('/product/{id}', [ProductController::class, 'destory'])->name('product.destory');
+// Route::get('/product', [ProductController::class, 'index'])->name('product');
+// Route::get('/product-details/{id}', [ProductController::class, 'show'])->name('product-show');
+// Route::get('/product/create', [ProductController::class, 'create'])->name('product.create');
+// Route::post('/product-store', [ProductController::class, 'store'])->name('product.store');
+// Route::get('/product/{id}', [ProductController::class, 'destory'])->name('product.destory');
+
+// Product Route
+Route::resource("product",(ProductController::class));
 
 // Categories router
-Route::get('/categories', function () {
-    return view('admin.pages.productManagement.categories.index');
-});
+Route::resource('categories', (CategoriesController::class));
 
 // Categories router
-Route::get('/brand',  [BrandController::class, 'index']);
+Route::resource('brand', (BrandController::class));
     
 
 // order Router
