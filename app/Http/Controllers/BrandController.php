@@ -54,7 +54,42 @@ class BrandController extends Controller
         return redirect()->route('brand.index')->with('success', "Brand Add Successfull!");
     }
 
-    
+    public function edit($id){
+        $brandItem = Brand::find($id);
+        // dd($brandItem);
+        return view("admin.pages.productManagement.brand.edit", compact('brandItem'));
+    }
+
+    public function update(Request $request, $id){
+        // dd($request->all());
+        $brandItem = Brand::find($id);
+
+      $request->validate([
+            'name' => 'required',
+            'description' => 'required',
+            'photo' => 'mimes:jpeg,png,jpg,webp'
+        ]);
+
+        $oldPhoto = $brandItem->photo;
+         if ($request->hasFile('photo')) {
+            if ($oldPhoto && Storage::exists('public/' . $oldPhoto)) {
+                Storage::delete('public/' . $oldPhoto);
+            }
+                $photo = $request->file('photo')->store('brand', 'public');
+            } else {
+                $photo = $oldPhoto;
+            }
+
+        $brandItem->update([
+            'name'=> $request->name,
+            "description"=> $request->description,
+            'photo'=> $photo
+        ]);
+
+        // dd($brandItem);
+
+        return redirect()->route("brand.index")->with("success", "Brand Update Successfully!"); 
+    }
 
     public function destroy($id){
         $brandId = Brand::find($id);

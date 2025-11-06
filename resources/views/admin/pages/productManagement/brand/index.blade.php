@@ -8,8 +8,12 @@
                     class="text-warning">Manage</span></h4>
             <a href="{{ route('brand.create') }}" class="btn btn-warning my-3">Add Brand</a>
             <div class="row">
-                @if (session('success'))
+                @if (session('success') == "Brand Delete Successfully!")
                     <div class="alert alert-danger">
+                        {{ session('success') }}
+                    </div>
+                @else
+                <div class="alert alert-primary">
                         {{ session('success') }}
                     </div>
                 @endif
@@ -48,7 +52,8 @@
                                                             <button type="submit"
                                                                 class="btn btn-sm btn-primary me-1">Details</button>
                                                         </form>
-                                                        <form action="{{ route('brand.edit', $item->id) }}" method="">
+                                                        <form action="{{ route('brand.edit', $item->id) }}" method="get">
+                                                            @csrf
                                                             <button type="submit"
                                                                 class="btn btn-sm btn-warning me-1">Update</button>
                                                         </form>
