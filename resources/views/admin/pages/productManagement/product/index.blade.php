@@ -10,6 +10,18 @@
             <div class="row">
                 <div class="col-lg-12 mb-4 order-0">
                     <div class="card p-4">
+                        <div class="row">
+                            <div class="col-8"></div>
+                            <div class="col-4">
+                                <form action="{{ route('product.search') }}" method="GET" class="mb-3 d-flex">
+                                <input type="text" name="search" class="form-control me-2" 
+                                    placeholder="Search product name or description..."
+                                    value="{{ request('search') }}">
+                                <button type="submit" class="btn btn-warning">Search</button>
+                        </form>
+                            </div>
+                        </div>
+
                         <h5 class="card-header">Product Table</h5>
                         @if (session('success') == 'Product Delete Successfully!')
                             <div class="alert alert-danger">

@@ -16,8 +16,8 @@ Route::get('/', function () {
     return view('admin.pages.dashboard');
 });
 
-Route::get("/role", [RoleController::class, 'index']);
-Route::get('/role-details/{id}', [RoleController::class, 'show'])->name('role-details');
+// Route::get("/role", [RoleController::class, 'index']);
+// Route::get('/role-details/{id}', [RoleController::class, 'show'])->name('role-details');
 
 // product router
 // Route::get('/product', [ProductController::class, 'index'])->name('product');
@@ -26,8 +26,14 @@ Route::get('/role-details/{id}', [RoleController::class, 'show'])->name('role-de
 // Route::post('/product-store', [ProductController::class, 'store'])->name('product.store');
 // Route::get('/product/{id}', [ProductController::class, 'destory'])->name('product.destory');
 
+// Role Route
+Route::resource('role', RoleController::class);
+
+
 // Product Route
 Route::resource("product",(ProductController::class));
+Route::get('search', [ProductController::class, 'search'])->name('product.search');
+
 
 // Categories router
 Route::resource('categories', (CategoriesController::class));

@@ -137,20 +137,28 @@
             <!-- User Manage -->
             <li class="menu-item {{ request()->is('user*') || request()->is('role*') ? 'active' : '' }}">
               <a href="javascript:void(0);" class="menu-link menu-toggle">
-                <i class="menu-icon tf-icons bx bx-user"></i>
-                <div>User Manage</div>
+                <div class="d-flex align-items-center gap-2">
+                    <h4 class="mb-0">👨‍💼</h4>
+                    <span class="fs-6">User Management</span>
+                  </div>
               </a>
 
               <ul class="menu-sub">
                 <li class="menu-item {{ request()->is('user') ? 'active' : '' }}">
                   <a href="{{ url('user') }}" class="menu-link">
-                    <div>User</div>
+                    <div class="d-flex align-items-center gap-2">
+                      <h4 class="mb-0">👤</h4>
+                      <span class="fs-6">User </span>
+                  </div>
                   </a>
                 </li>
 
                 <li class="menu-item {{ request()->is('role') ? 'active' : '' }}">
                   <a href="{{ url('role') }}" class="menu-link">
-                    <div>Role</div>
+                    <div class="d-flex align-items-center gap-2">
+                      <h4 class="mb-0">🔐</h4>
+                      <span class="fs-6">Role</span>
+                    </div>
                   </a>
                 </li>
               </ul>

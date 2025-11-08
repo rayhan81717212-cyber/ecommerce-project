@@ -148,4 +148,28 @@ class ProductController extends Controller
 
         // return
     }
+
+   public function search(Request $request){
+        $search = $request->input('search');
+
+        $product = Product::query()
+        ->join('brand as b', 'products.brand_id', '=', 'b.id')
+        ->join('categories as c', 'products.category_id', '=', 'c.id')
+        ->select('products.*', 'b.name as brand_name', 'c.name as category_name')
+        ->orderBy('products.name', 'asc')
+        ->when($search, function ($query, $search) {
+            $query->where('products.name', 'like', "%{$search}%")
+                ->orWhere('products.description', 'like', "%{$search}%")
+                ->orWhere('b.name', 'like', "%{$search}%")
+                ->orWhere('c.name', 'like', "%{$search}%");
+        })
+        ->paginate(10);
+
+
+        return view('admin.pages.productManagement.product.index', compact('product', 'search'));
+    }
+
+
+
+
 }

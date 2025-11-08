@@ -44,7 +44,7 @@
                           <td>{{ $brandId->name }}</td>
                         </tr>
                       <tr>
-                        <th>Brand</th>
+                        <th>Brand Description</th>
                         <td style="text-align: justify">{{ $brandId->description }}</td>
                       </tr>
                       <tr>

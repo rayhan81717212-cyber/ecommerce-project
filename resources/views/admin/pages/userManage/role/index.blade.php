@@ -7,6 +7,18 @@
         <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Role /</span> Manage</h4>
         <div class="row">
             <div class="col-lg-12 mb-4 order-0">
+                <a href="{{ route('role.create') }}" class="btn btn-warning mb-3"> Add Role</a>
+                <div class="mb-3">
+                    @if (session('success') == 'Role Delete Successfully!')
+                    <div class="alert alert-danger mb-0" role="alert">
+                        <h5 class="mb-0">{{session('success')}}</h5>
+                    </div>
+                    @elseif (session('success') == 'Role Add Successfully!' || session('success') == 'Role Update Successfully!' )
+                    <div class="alert alert-primary mb-0" role="alert">
+                            <h5 class="mb-0">{{session('success')}}</h5>
+                        </div>
+                    @endif
+                </div>
                 <div class="card">
                     <h5 class="card-header">Bordered Table</h5>
                     <div class="card-body">
@@ -20,15 +32,28 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach ($role as $item)
+                                    @foreach ($role as $index=>$item)
                                         <tr>
-                                            <td>{{ $item->id }} </td>
+                                            <td>{{ $index+1 }} </td>
                                             <td>{{$item->name }} </td>
                                             <td> 
-                                               <a href="{{ route('role-details', $item['id']) }}" class="btn btn-warning btn-sm">Details</a>
+                                                <div class="d-flex justify-content-center">
+                                                    <form action="{{ route('role.show', $item->id) }}" method="GET">
+                                                        @csrf
+                                                        <button class="btn btn-primary btn-sm me-2">Details</button>
+                                                    </form>
+                                                    <form action="{{ route('role.edit', $item->id) }}" method="GET">
+                                                        @csrf
+                                                        @method('PATCH')
+                                                        <button class="btn btn-warning btn-sm me-2">Upadate</button>
+                                                    </form>
+                                                    <form action="{{ route('role.destroy', $item->id) }}" method="POST">
+                                                        @csrf
+                                                        @method('DELETE')
+                                                        <button class="btn btn-danger btn-sm">Delete</button>
+                                                    </form>
 
-
-                                                <a href="" class="btn btn-danger btn-sm">Delete</a>
+                                                </div>
                                              </td>
                                         </tr>
                                     @endforeach
