@@ -6,6 +6,8 @@ use App\Models\Roles;
 use App\Http\Controllers\RoleController;  
 use App\Models\Brand;
 use App\Http\Controllers\BrandController;
+use App\Models\User;
+use App\Http\Controllers\UsersController;
 
 // product controller
 use App\Http\Controllers\ProductController;  
@@ -25,6 +27,9 @@ Route::get('/', function () {
 // Route::get('/product/create', [ProductController::class, 'create'])->name('product.create');
 // Route::post('/product-store', [ProductController::class, 'store'])->name('product.store');
 // Route::get('/product/{id}', [ProductController::class, 'destory'])->name('product.destory');
+
+// user Route
+Route::resource('user', UsersController::class);
 
 // Role Route
 Route::resource('role', RoleController::class);

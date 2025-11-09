@@ -27,10 +27,11 @@
                             <table class="table table-bordered text-center">
                                 <thead>
                                     <tr class="bg-warning ">
-                                        <th class="text-white align-middle">Id</th>
-                                        <th class="text-white align-middle">Category Name</th>
-                                        <th class="text-white align-middle">Status </th>
-                                        <th class="text-white align-middle">Action </th>
+                                        <th class="text-white align-middle"><i class="fas fa-hashtag me-1"></i>Id</th>
+                                        <th class="text-white align-middle"><i class="fas fa-list-alt me-1"></i>Category Name</th>
+                                        <th class="text-white align-middle"><i class="fas fa-circle me-1"></i>Status</th>
+                                        <th class="text-white align-middle"><i class="fas fa-cogs me-1"></i>Action</th>
+
                                     </tr>
                                 </thead>
                                 <tbody>

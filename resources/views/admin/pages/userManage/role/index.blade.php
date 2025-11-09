@@ -11,11 +11,11 @@
                 <div class="mb-3">
                     @if (session('success') == 'Role Delete Successfully!')
                     <div class="alert alert-danger mb-0" role="alert">
-                        <h5 class="mb-0">{{session('success')}}</h5>
+                        <h6 class="mb-0">{{session('success')}}</h6>
                     </div>
                     @elseif (session('success') == 'Role Add Successfully!' || session('success') == 'Role Update Successfully!' )
                     <div class="alert alert-primary mb-0" role="alert">
-                            <h5 class="mb-0">{{session('success')}}</h5>
+                            <h6 class="mb-0">{{session('success')}}</h6>
                         </div>
                     @endif
                 </div>
@@ -26,9 +26,9 @@
                             <table class="table table-bordered text-center">
                                 <thead>
                                     <tr>
-                                        <th>Id</th>
-                                        <th>Name</th>
-                                        <th>Actions</th>
+                                        <th class="bg-warning text-white"> <i class="fas fa-hashtag"></i> Id</th>
+                                        <th class="bg-warning text-white"> <i class="fas fa-user"></i> Name</th>
+                                        <th class="bg-warning text-white"> <i class="fas fa-cogs"></i> Actions</th>
                                     </tr>
                                 </thead>
                                 <tbody>

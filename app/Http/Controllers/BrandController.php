@@ -12,7 +12,7 @@ class BrandController extends Controller
     public function index(){
 
        $brand = Brand::select("id", 'name', 'logo', 'description')
-       ->orderBy('id', 'desc')
+       ->orderBy('name', 'asc')
         ->paginate(10);
         return view("admin.pages.productManagement.brand.index", compact('brand'));
     }
@@ -83,7 +83,7 @@ class BrandController extends Controller
         $brandItem->update([
             'name'=> $request->name,
             "description"=> $request->description,
-            'photo'=> $photo
+            'logo'=> $photo
         ]);
 
         // dd($brandItem);

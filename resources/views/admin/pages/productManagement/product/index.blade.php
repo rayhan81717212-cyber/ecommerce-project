@@ -37,16 +37,18 @@
                                 <table class="table table-bordered text-center">
                                     <thead>
                                         <tr class="bg-warning ">
-                                            <th class="text-white align-middle">Id</th>
-                                            <th class="text-white align-middle">Product Name</th>
-                                            <th class="text-white align-middle">Brand Name</th>
-                                            <th class="text-white align-middle">Price</th>
-                                            <th class="text-white align-middle">Discount Price</th>
-                                            <th class="text-white align-middle">Stock Quantity</th>
-                                            <th class="text-white align-middle">Stock Status</th>
-                                            <th class="text-white align-middle">Status</th>
-                                            <th class="text-white align-middle">Photo</th>
-                                            <th class="text-white align-middle">Action</th>
+                                            <th class="text-white align-middle"><i class="fas fa-hashtag me-1"></i>Id</th>
+                                            <th class="text-white align-middle"><i class="fas fa-box me-1"></i>Product Name</th>
+                                            <th class="text-white align-middle"><i class="fas fa-tags me-1"></i>Brand Name</th>
+                                            <th class="text-white align-middle"><i class="fas fa-dollar-sign me-1"></i>Price</th>
+                                            <th class="text-white align-middle"><i class="fas fa-percentage me-1"></i>Discount Price</th>
+                                            <th class="text-white align-middle"><i class="fas fa-layer-group me-1"></i>Stock Quantity</th>
+                                            <th class="text-white align-middle"><i class="fas fa-warehouse me-1"></i>Stock Status</th>
+                                            <th class="text-white align-middle"><i class="fas fa-circle me-1"></i>Status</th>
+                                            <th class="text-white align-middle"><i class="fas fa-image me-1"></i>Photo</th>
+                                            <th class="text-white align-middle"><i class="fas fa-cogs me-1"></i>Action</th>
+
+
 
                                         </tr>
                                     </thead>

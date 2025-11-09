@@ -15,16 +15,17 @@
                             <table class="table table-bordered text-center">
                                 <caption>Payment Records Table</caption>
                                 <thead>
-                                    <tr>
-                                        <th>payment_id</th>
-                                        <th>user_id</th>
-                                        <th>order_number</th>
-                                        <th>payment_method</th>
-                                        <th>amount</th>
-                                        <th>discount</th>
-                                        <th>final_amount</th>
-                                        <th>payment_status</th>
-                                        <th>payment_date</th>
+                                    <tr class="bg-warning">
+                                        <th class="text-white"><i class="fas fa-hashtag me-1"></i>Payment ID</th>
+                                        <th class="text-white"><i class="fas fa-user me-1"></i>User ID</th>
+                                        <th class="text-white"><i class="fas fa-receipt me-1"></i>Order Number</th>
+                                        <th class="text-white"><i class="fas fa-credit-card me-1"></i>Payment Method</th>
+                                        <th class="text-white"><i class="fas fa-dollar-sign me-1"></i>Amount</th>
+                                        <th class="text-white"><i class="fas fa-percentage me-1"></i>Discount</th>
+                                        <th class="text-white"><i class="fas fa-coins me-1"></i>Final Amount</th>
+                                        <th class="text-white"><i class="fas fa-circle me-1"></i>Payment Status</th>
+                                        <th class="text-white"><i class="fas fa-calendar-alt me-1"></i>Payment Date</th>
+
                                     </tr>
                                 </thead>
                                 <tbody>

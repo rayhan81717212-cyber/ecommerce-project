@@ -25,10 +25,11 @@
                                 <table class="table table-bordered text-center">
                                     <thead>
                                         <tr class="bg-warning ">
-                                            <th>Id</th>
-                                            <th>Brand Name</th>
-                                            <th>Photo </th>
-                                            <th>Action </th>
+                                            <th><i class="fas fa-hashtag me-1"></i>Id</th>
+                                            <th><i class="fas fa-tags me-1"></i>Brand Name</th>
+                                            <th><i class="fas fa-image me-1"></i>Photo</th>
+                                            <th><i class="fas fa-cogs me-1"></i>Action</th>
+
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -41,7 +42,7 @@
                                                 <td>{{ $item->name }}</td>
                                                 <td>
                                                     @if ($item->logo)
-                                                        <img src="{{ asset('storage/' . $item->logo)  }}" width="150" alt="{{ $item->name }}">
+                                                        <img src="{{ asset('storage/' . $item->logo)  }}" width="100" alt="{{ $item->name }}">
                                                      @else 
                                                         <img src="https://placehold.co/600x400" alt="">
                                                     @endif
