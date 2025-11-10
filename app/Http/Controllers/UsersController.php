@@ -6,6 +6,8 @@ use App\Models\User;
 use App\Models\Roles;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Storage;
+
 
 class UsersController extends Controller
 {
@@ -17,6 +19,7 @@ class UsersController extends Controller
         $user = User::from('users as u')
                 ->select('u.id','u.first_name', 'u.last_name', 'u.email', 'u.role_id', 'u.status', 'u.phone', 'u.photo', 'r.name as role')
                 ->join('roles as r', 'u.role_id', '=', "r.id")
+                ->orderByRaw("FIELD(role, 'Admin', 'Vendor', 'Editor', 'Customer')")
                 ->paginate(10);
 
         // dd($user);
@@ -66,7 +69,7 @@ class UsersController extends Controller
         ]);
 
         if ($request->hasFile('photo')) {
-            $photo = $request->file('photo')->store('users', 'public');
+            $photo = $request->file('photo')->store('user', 'public');
         }
 
         $user = User::create([
@@ -100,9 +103,31 @@ class UsersController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, users $users)
+    public function update(Request $request, $id)
     {
-        //
+        // dd($id);
+        $user = User::findOrFail($id);
+
+    $photo = $user->photo; 
+
+    if ($request->hasFile('photo')) {
+        if ($user->photo && Storage::disk('public')->exists($user->photo)) {
+            Storage::disk('public')->delete($user->photo);
+        }
+
+        $photo = $request->file('photo')->store('user', 'public');
+    }
+      $user->update([
+        'first_name' => $request->first_name,
+        'last_name'  => $request->last_name,
+        'email'      => $request->email,
+        'phone'      => $request->phone,
+        'role_id'    => $request->role_id,
+        'status'     => $request->status,
+        'photo'      => $photo ?? $user->photo, 
+        ]);
+    //   dd($user);
+        return redirect()->route('user.index')->with('success', "User Update Successfully!");
     }
 
     /**
@@ -111,12 +136,12 @@ class UsersController extends Controller
     public function destroy($id)
     {
        $user = User::find($id);
-       $imagePath = public_path('users/' . $user->photo);
-
-        if (file_exists($imagePath)) {
-            unlink($imagePath); 
+       if ($user->photo && Storage::disk('public')->exists($user->photo)) {
+        Storage::disk('public')->delete($user->photo);
         }
+
         $user->delete();
+        
         return redirect()->route("user.index")->with('success', "User Delete Successfully!");
     }
 }

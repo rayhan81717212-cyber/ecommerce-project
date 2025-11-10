@@ -29,7 +29,7 @@
 
         <form action="{{ route('user.update', $user->id) }}" method="POST" enctype="multipart/form-data" id="productForm">
             @csrf
-
+            @method('PATCH')
             <!-- Step 1: Basic Info -->
             <div id="step1" class="step-content">
                 

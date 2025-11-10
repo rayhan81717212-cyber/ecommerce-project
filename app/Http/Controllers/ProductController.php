@@ -103,15 +103,14 @@ class ProductController extends Controller
 
         $product = Product::find($id);
 
-        $oldPhoto = $product->photo;
+        $photo = $product->photo; 
 
         if ($request->hasFile('photo')) {
-            if ($oldPhoto && Storage::exists('public/' . $oldPhoto)) {
-                Storage::delete('public/' . $oldPhoto);
+            if ($product->photo && Storage::disk('public')->exists($product->photo)) {
+                Storage::disk('public')->delete($product->photo);
             }
+
             $photo = $request->file('photo')->store('product', 'public');
-        } else {
-            $photo = $oldPhoto;
         }
 
         $price = str_replace(',', '', $request->price);
@@ -137,11 +136,10 @@ class ProductController extends Controller
     public function destroy($id){
         $product = Product::find($id);
 
-        $imagePath = public_path('product/' . $product->photo);
-
-        if (file_exists($imagePath)) {
-            unlink($imagePath); 
+        if ($product->photo && Storage::disk('public')->exists($product->photo)) {
+        Storage::disk('public')->delete($product->photo);
         }
+
         $product->delete();
         return redirect()->route("product.index")->with('success', "Product Delete Successfully!");
         // dd($product);

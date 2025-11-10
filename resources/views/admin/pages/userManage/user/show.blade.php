@@ -16,7 +16,7 @@
           <div class="card-body">
             
             <div class="d-flex justify-content-between align-items-center mb-3">
-              <h3>Product Details</h3>
+              <h3>User Details</h3>
               <a href="{{ route('user.index') }}" class="btn btn-warning btn-sm">Back</a>
             </div>
 

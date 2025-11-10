@@ -62,7 +62,6 @@
 
                                                      <form action="{{ route('user.edit', $item->id) }}" method="GET">
                                                         @csrf
-                                                        @method('PATCH')
                                                         <button class="btn btn-warning me-2 btn-sm">Update</button>
                                                     </form>
                                                     <form action="{{ route('user.destroy', $item->id) }}" method="POST">

@@ -12,8 +12,8 @@
                     <div class="alert alert-danger">
                         {{ session('success') }}
                     </div>
-                @else
-                <div class="alert alert-primary">
+                @elseif (session('success') == 'Brand Update Successfully!' || session('success') == 'Brand Add Successfully!')
+                    <div class="alert alert-dark">
                         {{ session('success') }}
                     </div>
                 @endif

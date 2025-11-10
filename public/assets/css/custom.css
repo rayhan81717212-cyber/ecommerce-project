@@ -36,3 +36,55 @@
 .filepond--image-preview-wrapper {
     border-radius: 10px;
 }
+
+/* login CSS Start*/
+ .login-bg {
+      background: url("/assets/img/logo/login.jpg") no-repeat center center fixed !important;
+      background-size: cover;
+      font-family: 'Public Sans', sans-serif;
+    }
+
+    .authentication-wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      backdrop-filter: blur(4px);
+    }
+
+    .card-area {
+      background: rgba(255, 255, 255, 0.15); /* semi-transparent white */
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+    }
+
+    .card-area-body-login {
+      color: #fff;
+    }
+
+    .form-labelf,
+    .text-bodyf,
+    .form-check-labelf,
+    .text-center-login {
+      color: #fff !important;
+    }
+
+    input.form-control {
+      background-color: rgba(253, 6, 6, 0) ;
+    }
+
+    .btn-primary-login {
+        background: linear-gradient(rgba(253, 0, 0, 0.562)) !important;
+    }
+
+    .btn-primary:hover {
+        background: linear-gradient(to right, #ff4d4d, #ff0000);
+    }
+    .input-group-text{
+        background-color: transparent !important;
+    }
+/* login CSS end*/
+
+
