@@ -12,6 +12,7 @@ use App\Http\Controllers\UsersController;
 
 // product controller
 use App\Http\Controllers\ProductController;  
+use App\Http\Controllers\ProductGalleryController;
 use App\Http\Controllers\CategoriesController; 
 
 
@@ -42,7 +43,10 @@ Route::middleware('auth')->group(function () {
     // Product Route
     Route::resource("product",(ProductController::class));
     Route::get('search', [ProductController::class, 'search'])->name('product.search');
-
+    
+    // Product Gallery
+    Route::resource("productgallery",(ProductGalleryController::class));
+    Route::get('/get-products/{brand_id}', [ProductController::class, 'getProducts']);
 
     // Categories router
     Route::resource('categories', (CategoriesController::class));

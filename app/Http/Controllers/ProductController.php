@@ -14,6 +14,12 @@ use Illuminate\Support\Facades\Storage;
 
 class ProductController extends Controller
 {
+    public function getProducts($brand_id)
+    {
+        $products = product::where('brand_id', $brand_id)->get();
+        // dd($products);
+        return response()->json($products);
+    }
      public function index(){
         $product = Product::from('products as p')
         ->select('p.*', 'b.name as brand_name', 'c.name as category_name')

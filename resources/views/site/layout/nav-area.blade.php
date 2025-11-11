@@ -21,7 +21,7 @@
                         </div>
                         <div class="header__top__right__auth">
                             @if (Route::has('login'))
-                                <nav class="flex items-center justify-end gap-4">
+                                <nav class="d-flex items-center justify-end g-4">
                                     @auth
                                         <a href="{{ url('/dashboard') }}"
                                             class="inline-block px-5 py-1.5 dark:text-[#EDEDEC] border-[#19140035] hover:border-[#1915014a] border text-[#1b1b18] dark:border-[#3E3E3A] dark:hover:border-[#62605b] rounded-sm text-sm leading-normal">
@@ -29,13 +29,13 @@
                                         </a>
                                     @else
                                         <a href="{{ route('login') }}"
-                                            class="inline-block px-5 py-1.5 dark:text-[#EDEDEC] text-[#1b1b18] border border-transparent hover:border-[#19140035] dark:hover:border-[#3E3E3A] rounded-sm text-sm leading-normal">
+                                            class="inline-block px-4 py-1.5 dark:text-[#EDEDEC] text-[#1b1b18] border border-transparent hover:border-[#19140035] dark:hover:border-[#3E3E3A] rounded-sm text-sm leading-normal">
                                             Log in
                                         </a>
 
                                         @if (Route::has('register'))
                                             <a href="{{ route('register') }}"
-                                                class="inline-block px-5 py-1.5 dark:text-[#EDEDEC] border-[#19140035] hover:border-[#1915014a] border text-[#1b1b18] dark:border-[#3E3E3A] dark:hover:border-[#62605b] rounded-sm text-sm leading-normal">
+                                                class="inline-block px-4 py-1.5 dark:text-[#EDEDEC] border-[#19140035] hover:border-[#1915014a] border text-[#1b1b18] dark:border-[#3E3E3A] dark:hover:border-[#62605b] rounded-sm text-sm leading-normal">
                                                 Register
                                             </a>
                                         @endif
@@ -53,7 +53,7 @@
             <div class="row">
             <div class="col-lg-3">
                 <div class="header__logo">
-                    <a href="./index.html"><img src="site-asset/img/logo.png" alt=""></a>
+                    <a href="{{ url('/') }}"><img src="assets/img/logo/logo.jpg" alt="" width="100" height="60" class="rounded"></a>
                 </div>
             </div>
             <div class="col-lg-6 nav-area">

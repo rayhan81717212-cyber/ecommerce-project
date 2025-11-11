@@ -11,32 +11,33 @@
                 <span class="text-warning"> / Create</span>
             </h4>
             <div class="card p-4">
-    <div class="card-body">
-        <h3 class="mb-4 font-weight-bold text-warning">Create Categories</h3>
+                <div class="card-body">
+                    <h3 class="mb-4 font-weight-bold text-warning">Create Categories</h3>
 
 
-        <form action="{{ route('categories.store') }}" method="POST">
-            @csrf
+                    <form action="{{ route('categories.store') }}" method="POST">
+                        @csrf
 
-            
-                <div class="form-group mb-3">
-                    <label>Categories Name</label>
-                    <input type="text" name="name" class="form-control" value="{{ old('name') }}" autofocus required>
+
+                        <div class="form-group mb-3">
+                            <label>Categories Name</label>
+                            <input type="text" name="name" class="form-control" value="{{ old('name') }}" autofocus
+                                required>
+                        </div>
+                        <div class="form-group mb-3">
+                            <label>Status</label>
+                            <select name="status" class="form-control">
+                                <option value="">Select Status</option>
+                                <option value="Active">Active</option>
+                                <option value="Inactive">Inactive</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn btn-warning ">Save</button>
+
+
+                    </form>
                 </div>
-                <div class="form-group mb-3">
-                    <label>Status</label>
-                    <select name="status" class="form-control" >
-                            <option value="">Select Status</option>
-                            <option value="Active">Active</option>
-                            <option value="Inactive">Inactive</option>
-                        </select>
-                </div>
-                <button type="submit" class="btn btn-warning ">Save</button>
-           
-
-        </form>
-    </div>
-</div>
+            </div>
 
 
 
