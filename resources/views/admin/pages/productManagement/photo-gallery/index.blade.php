@@ -7,6 +7,7 @@
             <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Product Gallery /</span> <span
                     class="text-warning">Manage</span></h4>
             <a href="{{ route('productgallery.create') }}" class="btn btn-warning my-3">Add Product</a>
+            
             <div class="row">
                 <div class="col-lg-12 mb-4 order-0">
                     <div class="card p-4">
@@ -15,7 +16,7 @@
                             <div class="alert alert-danger">
                                 {{ session('success') }}
                             </div>
-                        @elseif (session('success') == 'Product Update Successfully!' || session('success') == 'Product Add Successfully!')
+                        @elseif (session('success') == 'Product Update Successfully!' || session('success') == 'Photo Save Successfully!')
                             <div class="alert alert-dark">
                                 {{ session('success') }}
                             </div>
@@ -27,13 +28,34 @@
                                         <tr class="bg-warning ">
                                             <th class="text-white align-middle"><i class="fas fa-hashtag me-1"></i>Id</th>
                                             <th class="text-white align-middle"><i class="fas fa-box me-1"></i>Product Name</th>
-                                            <th class="text-white align-middle"><i class="fas fa-tags me-1"></i>Brand Name</th>
-                                            <th class="text-white align-middle"><i class="fas fa-dollar-sign me-1"></i>photo</th>
+                                            <th class="text-white align-middle"><i class="fas fa-image me-1"></i>photo</th>
+                                            <th class="text-white align-middle"><i class="fas fa-cogs me-1"></i>Action</th>
                                         </tr>
                                     </thead>
                                     <tbody>
+                                        @foreach ($productGallery as $index => $item)
+                                            <tr>
+                                                <td class="m-0 p-0">{{$index + 1}}</td>
+                                                <td class="m-0 p-0">{{$item->product}}</td>
+                                                <td class="m-0 p-0">
+                                                    <a data-fancybox="gallery" href="{{ asset('storage/' . $item->photo) }}">
+                                                        <img src="{{ asset('storage/'.$item->photo) }}" alt="Product Messing" width="100">
+                                                    </a>
+                                                </td>
+                                                <td class="m-0 p-0">
+                                                    <button class="btn btn-sm btn-primary me-2">Update</button>
+                                                    <button class="btn btn-sm btn-danger">Delete</button>
                                         
+                                            </tr>
+                                        @endforeach
                                     </tbody>
+                                    <tfoot>
+                                        <tr>
+                                            <td colspan="4">
+                                                {{ $productGallery->onEachSide(1)->links('pagination::bootstrap-5') }}
+                                            </td>
+                                        </tr>
+                                    </tfoot>
                                 </table>
                             </div>
                         </div>

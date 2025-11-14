@@ -65,10 +65,12 @@
                                                 </td>
 
                                                 <td>
-                                                    @if ($item->stock_quantity < 5)
-                                                        <span class="badge bg-danger">Low Stock</span>
-                                                    @elseif ($item->stock_quantity >= 5 && $item->stock_quantity <= 20)
-                                                        <span class="badge bg-warning">Medium Stock</span>
+                                                    @if ($item->stock_quantity == 0)
+                                                        <span class="badge bg-danger"> Stock Out</span>
+                                                    @elseif ($item->stock_quantity <= 5)
+                                                        <span class="badge bg-warning">Low Stock</span>
+                                                    @elseif ($item->stock_quantity > 5 && $item->stock_quantity <= 20)
+                                                        <span class="badge bg-primary">Medium Stock</span>
                                                     @else
                                                         <span class="badge bg-success">Stock</span>
                                                     @endif
@@ -83,8 +85,10 @@
                                                 <td>
 
                                                     @if ($item->photo !== null)
-                                                        <img src="{{ asset('storage/' . $item->photo) }}"
-                                                            alt="Product Image" class="img-fluid" width="150">
+                                                        <a data-fancybox="gallery" href="{{ asset('storage/' . $item->photo) }}">
+                                                            <img src="{{ asset('storage/' . $item->photo) }}"
+                                                                alt="Product Image" class="img-fluid" width="150">
+                                                        </a>
                                                     @endif
                                                 </td>
                                                 <td>

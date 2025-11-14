@@ -67,6 +67,10 @@
             <!-- Step 2: Description -->
             <div id="step2" class="step-content d-none">
                 <div class="form-group mb-3">
+                    <label>Product Short Description</label>
+                    <textarea name="short_description" class="form-control" rows="3" required>{{ old('short_description') }}</textarea>
+                </div>
+                <div class="form-group mb-3">
                     <label>Product Description</label>
                     <textarea name="description" class="form-control" rows="10" required>{{ old('description') }}</textarea>
                 </div>

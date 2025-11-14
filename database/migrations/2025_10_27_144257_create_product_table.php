@@ -16,6 +16,7 @@ return new class extends Migration
             $table->integer('category_id');
             $table->integer('brand_id');
             $table->string('name');
+            $table->string('short_description');
             $table->string('description');
             $table->double('price', 8, 2);
             $table->double('discount_price', 8, 2);

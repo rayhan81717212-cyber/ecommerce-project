@@ -51,7 +51,7 @@
                 <div class="form-group mb-3">
                     <div class="mb-3">
                         <label for="photo" class="form-label">Product Photo</label>
-                        <input type="file" name="photo" id="photo" class="filepond" />
+                        <input type="file" name="photo" id="photo" class="filepond" required/>
                         @error('photo')
                            <span class="text-danger">{{$message}}</span> 
                         @enderror

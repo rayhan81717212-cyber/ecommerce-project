@@ -53,7 +53,7 @@
             <div class="row">
             <div class="col-lg-3">
                 <div class="header__logo">
-                    <a href="{{ url('/') }}"><img src="assets/img/logo/logo.jpg" alt="" width="100" height="60" class="rounded"></a>
+                    <a href="{{ url('/') }}"><img src="{{ asset('assets/img/logo/logo.jpg') }}" alt="" width="100" height="60" class="rounded"></a>
                 </div>
             </div>
             <div class="col-lg-6 nav-area">
@@ -76,9 +76,28 @@
                 <div class="header__cart">
                     <ul>
                         <li><a href="#"><i class="fa fa-heart"></i> <span>1</span></a></li>
-                        <li><a href="#"><i class="fa fa-shopping-bag"></i> <span>3</span></a></li>
+                        <li><a href="{{ url('cart') }}"><i class="fa fa-shopping-bag"></i> <span>{{ count(session('cart', [])) }}</span></a></li>
                     </ul>
-                    <div class="header__cart__price">item: <span>$150.00</span></div>
+                    <div class="header__cart__price">Total Amount: 
+                        <span>
+                            @php
+                                $cart = session('cart', []);
+                                @endphp
+
+                                @if (!empty($cart))
+                                    @php $total = 0; @endphp
+                                    @foreach ($cart as $item)
+                                        @php
+                                            $quantity = $item['quantity'] ?? 0; 
+                                            $subTotal = $item['price'] * $quantity;
+                                            $total += $subTotal;
+                                            $total = $total ?? null;
+                                        @endphp
+                                    @endforeach
+                                    {{ $total ?? 0 }}.00
+                                @endif
+                        </span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -93,7 +112,7 @@
 <section class="hero hero-normal" style="width: 100%">
         <div class="container-fluid">
             <div class="row">
-                <div class="col-lg-3 nav-area">
+                <div class="col-lg-3  nav-area">
                     <div class="hero__categories">
                         <div class="hero__categories__all">
                             <i class="fa fa-bars"></i>
@@ -115,9 +134,9 @@
                     </div>
                 </div>
                 <div class="col-lg-6">
-                    <nav class="header__menu text-center">
+                    <nav class="header__menu text-right">
                     <ul>
-                        <li class="active"><a href="./index.html">Home</a></li>
+                        <li class="active"><a href="{{ url('/') }}">Home</a></li>
                         <li><a href="./shop-grid.html">Shop</a></li>
                         <li><a href="#">Pages</a>
                             <ul class="header__menu__dropdown">
@@ -132,21 +151,23 @@
                     </ul>
                 </nav>
                 </div>
-                <div class="col-lg-2 nav-area">
-                    <div class="d-flex justify-content-end align-items-end">
-                            <!-- Phone Icon -->
-                            <div class="mr-2">
-                                <i class="fa fa-phone fa-lg"></i>
-                            </div>
-
-                            <!-- Phone Text -->
-                            <div class="text-right">
-                                <h5 class="mb-0">+01705675623</h5>
-                                <small class="text-muted">support 24/7 time</small>
-                            </div>
+                <div class="col-lg-2  nav-area ">
+                    <div class="d-flex justify-content-lg-end justify-content-center align-items-end pb-lg-0 pb-4">
+                        <!-- Phone Icon -->
+                        <div class="mr-2">
+                            <i class="fa fa-phone fa-lg"></i>
                         </div>
+
+                        <!-- Phone Text -->
+                        <div class="text-lg-right text-center">
+                            <h5 class="mb-0">+01705675623</h5>
+                            <small>support 24/7 time</small>
+                        </div>
+                    </div>
                 </div>
+
             </div>
         </div>
     </section>
 <!-- Hero Section End -->
+

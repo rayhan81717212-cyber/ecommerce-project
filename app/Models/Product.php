@@ -12,6 +12,7 @@ class Product extends Model
         'name',
         'category_id',
         'brand_id',
+        'short_description',
         'description',
         'price',
         'discount_price',
@@ -19,4 +20,10 @@ class Product extends Model
         'status',
         'photo',
     ];
+
+
+    public function gallery()
+    {
+        return $this->hasMany(ProductGallery::class, 'product_id', 'id');
+    }
 }

@@ -8,6 +8,12 @@ class ProductGallery extends Model
 {
 
     protected $table = 'productgalleries';
+
+    public function product()
+    {
+        return $this->belongsTo(Product::class, 'product_id', 'id');
+    }
+
     protected $fillable = [
         "product_id",
         'photo',

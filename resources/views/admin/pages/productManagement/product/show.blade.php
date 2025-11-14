@@ -50,6 +50,10 @@
                   <table class="table table-bordered">
                     <tbody>
                         <tr>
+                          <th>Product Short Description</th>
+                          <td>{{ $productId->short_description }}</td>
+                        </tr>
+                        <tr>
                           <th>Category</th>
                           <td>{{ $productId->category_name }}</td>
                         </tr>

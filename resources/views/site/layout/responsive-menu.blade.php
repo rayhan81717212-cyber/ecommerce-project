@@ -1,12 +1,12 @@
 <div class="humberger__menu__overlay"></div>
 <div class="humberger__menu__wrapper">
         <div class="humberger__menu__logo">
-            <a href="#"><img src="site-asset/img/logo.png" alt=""></a>
+            <a href="{{ url('/') }}"><img src="{{ asset('site-asset/img/logo.png') }}" alt=""></a>
         </div>
         <div class="humberger__menu__cart">
             <ul>
                 <li><a href="#"><i class="fa fa-heart"></i> <span>1</span></a></li>
-                <li><a href="#"><i class="fa fa-shopping-bag"></i> <span>3</span></a></li>
+                <li><a href="{{ url('cart') }}"><i class="fa fa-shopping-bag"></i> <span>{{ count(session('cart', [])) }}</span></a></li>
             </ul>
             <div class="header__cart__price">item: <span>$150.00</span></div>
         </div>
@@ -15,7 +15,7 @@
             <div class="header__top__right__auth">
                 <header class="w-full lg:max-w-4xl max-w-[335px] text-sm mb-6 not-has-[nav]:hidden">
                     @if (Route::has('login'))
-                        <nav class="flex items-center justify-end gap-4">
+                        <nav class="d-flex items-center justify-end gap-4">
                             @auth
                                 <a
                                     href="{{ url('/dashboard') }}"
@@ -34,7 +34,7 @@
                                 @if (Route::has('register'))
                                     <a
                                         href="{{ route('register') }}"
-                                        class="inline-block px-2 py-1.5 dark:text-[#EDEDEC] border-[#19140035] hover:border-[#1915014a] border text-[#1b1b18] dark:border-[#3E3E3A] dark:hover:border-[#62605b] rounded-sm text-sm leading-normal">
+                                        class="inline-block px-4 py-1.5 dark:text-[#EDEDEC] border-[#19140035] hover:border-[#1915014a] border text-[#1b1b18] dark:border-[#3E3E3A] dark:hover:border-[#62605b] rounded-sm text-sm leading-normal">
                                         Register
                                     </a>
                                 @endif
@@ -46,7 +46,7 @@
         </div>
         <nav class="humberger__menu__nav mobile-menu">
             <ul>
-                <li class="active"><a href="./index.html">Home</a></li>
+                <li class="active"><a href="{{ url('/') }}">Home</a></li>
                 <li><a href="./shop-grid.html">Shop</a></li>
                 <li><a href="#">Pages</a>
                     <ul class="header__menu__dropdown">

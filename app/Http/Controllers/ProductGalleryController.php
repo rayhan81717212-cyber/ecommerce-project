@@ -9,12 +9,26 @@ use Illuminate\Http\Request;
 
 class ProductGalleryController extends Controller
 {
+
+    
+    
+
+
+
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        return view('admin.pages.productManagement.photo-gallery.index');
+        $productGallery = ProductGallery::from('productgalleries as pg')
+                                        ->select('pg.*', 'p.name as product')
+                                        ->join('products as p', 'pg.product_id', '=', 'p.id')
+                                        ->orderBy('pg.id', "desc")
+                                        ->paginate(15);
+                                        
+
+           
+        return view('admin.pages.productManagement.photo-gallery.index', compact('productGallery'));
     }
 
     /**
@@ -22,7 +36,7 @@ class ProductGalleryController extends Controller
      */
     public function create()
     {
-        $brands = Brand::all();
+        $brands = Brand::orderBy('name', 'asc')->get();
         return view('admin.pages.productManagement.photo-gallery.create', compact('brands'));
     }
 
@@ -47,7 +61,7 @@ class ProductGalleryController extends Controller
         }
     
 
-    // return redirect()->route('productgallery.index')->with('success', "Photo Save Successfully!");
+    return redirect()->route('productgallery.index')->with('success', "Photo Save Successfully!");
 }
 
 

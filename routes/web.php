@@ -15,10 +15,12 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProductGalleryController;
 use App\Http\Controllers\CategoriesController; 
 
-
 Route::get('/', function () {
     return view('welcome');
 });
+
+include('font.web.php');
+
 
 Route::get('/dashboard', function () {
     return view('dashboard');

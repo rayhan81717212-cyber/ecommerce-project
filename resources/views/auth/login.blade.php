@@ -24,7 +24,7 @@
 
 <body>
     <div class="login-bg">
-        <div class="container-xxl">
+        <div class="container-fluid">
             <div class="authentication-wrapper authentication-basic container-p-y">
 
                 <div class="authentication-inner">
@@ -69,7 +69,7 @@
                                         <label for="password" class="form-label form-labelf">Password</label>
                                         @if (Route::has('password.request'))
                                             <a href="{{ route('password.request') }}">
-                                                <small>Forgot Password?</small>
+                                                <small class="text-warning">Forgot Password?</small>
                                             </a>
                                         @endif
                                     </div>
@@ -98,7 +98,7 @@
                             <p class="text-center ">
                                 <span>New on our platform?</span>
                                 <a class="text-center-login" href="{{ route('register') }}">
-                                    <span class="text-primary fw-bold">Create an account</span>
+                                    <span class="text-warning fw-bold">Create an account</span>
                                 </a>
                             </p>
                         </div>

@@ -6,9 +6,11 @@ use Illuminate\Http\Request;
 use App\Models\Brand;
 use App\Models\Categories;
 use App\Models\Product;
+use App\Models\ProductGallery;
 use Illuminate\Support\Facades\Hash;
 
 use Illuminate\Support\Facades\Storage;
+
 
 
 
@@ -32,7 +34,7 @@ class ProductController extends Controller
         return view('admin.pages.productManagement.product.index', compact('product'));
 
     }
-
+     
     public function show($id){
         $productId = Product::from('products as p')
         ->select('p.*', 'b.name as brand_name', 'c.name as category_name')
@@ -74,6 +76,7 @@ class ProductController extends Controller
             'name' => $request->name,
             'category_id' => $request->category_id,
             'brand_id' => $request->brand_id,
+            'short_description' => $request->short_description,
             'description' => $request->description,
             'price' => $price,
             'discount_price' => $discount_price,
@@ -126,6 +129,7 @@ class ProductController extends Controller
             'name' => $request->name,
             'category_id' => $request->category_id,
             'brand_id' => $request->brand_id,
+            'short_description' => $request->short_description,
             'description' => $request->description,
             'price' => $price,
             'discount_price' => $discount_price,
@@ -173,6 +177,38 @@ class ProductController extends Controller
         return view('admin.pages.productManagement.product.index', compact('product', 'search'));
     }
 
+
+    // Site Route 
+
+    public function getAllProduct() {
+        $products = Product::from('products as p')
+            ->select('p.*', 'b.name as brand_name', 'c.name as category_name')
+            ->join('brand as b', 'p.brand_id', '=', 'b.id')
+            ->join('categories as c', 'p.category_id', '=', 'c.id')
+            ->orderBy('p.id', 'desc')
+            ->paginate(12)       // Pagination object
+            ->onEachSide(1);     // Optional
+
+        return view('site.pages.index', compact('products'));
+    }
+
+    // site single data collect
+    
+    public function getProductById($id)
+    {
+         $product = Product::with('gallery') 
+        ->join('brand as b', 'products.brand_id', '=', 'b.id')
+        ->join('categories as c', 'products.category_id', '=', 'c.id')
+        ->select(
+            'products.*',
+            'b.name as brand_name',
+            'c.name as category_name'
+        )
+        ->where('products.id', $id)
+        ->first();
+        // dd($product);
+    return view('site.pages.product-details.show', compact('product'));
+    }
 
 
 

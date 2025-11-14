@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 08, 2025 at 06:44 PM
+-- Generation Time: Nov 14, 2025 at 06:33 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -41,25 +41,25 @@ CREATE TABLE `brand` (
 --
 
 INSERT INTO `brand` (`id`, `name`, `logo`, `description`, `created_at`, `updated_at`) VALUES
-(1, 'Apple', 'apple.png', 'Leading tech company known for iPhone, iPad and Mac.', '2025-10-28 14:42:18', '2025-10-28 14:42:18'),
-(2, 'Samsung', 'samsung.png', 'South Korean electronics giant producing phones and TVs.', '2025-10-28 14:42:18', '2025-10-28 14:42:18'),
-(3, 'Sony', 'sony.png', 'Japanese brand famous for PlayStation, TVs and audio devices.', '2025-10-28 14:42:18', '2025-10-28 14:42:18'),
-(4, 'Xiaomi', 'xiaomi.png', 'Chinese electronics company with affordable smartphones.', '2025-10-28 14:42:18', '2025-10-28 14:42:18'),
-(5, 'Oppo', 'oppo.png', 'Smartphone brand popular for camera phones.', '2025-10-28 14:42:18', '2025-10-28 14:42:18'),
-(6, 'Vivo', 'vivo.png', 'Smartphone maker known for music and camera quality.', '2025-10-28 14:42:18', '2025-10-28 14:42:18'),
-(7, 'OnePlus', 'oneplus.png', 'Premium Android smartphone brand.', '2025-10-28 14:42:18', '2025-10-28 14:42:18'),
-(8, 'Huawei', 'huawei.png', 'Global tech company offering phones and network gear.', '2025-10-28 14:42:18', '2025-10-28 14:42:18'),
-(9, 'Infinix', 'infinix.png', 'Affordable smartphone brand popular in Asia and Africa.', '2025-10-28 14:42:18', '2025-10-28 14:42:18'),
-(10, 'Realme', 'realme.png', 'Budget-friendly smartphone brand by BBK Electronics.', '2025-10-28 14:42:18', '2025-10-28 14:42:18'),
-(11, 'Dell', 'dell.png', 'Leading computer and laptop manufacturer.', '2025-10-28 14:42:18', '2025-10-28 14:42:18'),
-(12, 'HP', 'hp.png', 'Computer brand known for laptops, printers and monitors.', '2025-10-28 14:42:18', '2025-10-28 14:42:18'),
-(13, 'Lenovo', 'lenovo.png', 'Chinese multinational making PCs and tablets.', '2025-10-28 14:42:18', '2025-10-28 14:42:18'),
-(14, 'Asus', 'asus.png', 'Tech brand specializing in laptops and gaming gear.', '2025-10-28 14:42:18', '2025-10-28 14:42:18'),
-(15, 'Acer', 'acer.png', 'Taiwanese company producing laptops and accessories.', '2025-10-28 14:42:18', '2025-10-28 14:42:18'),
-(16, 'Canon', 'canon.png', 'Japanese company known for cameras and printers.', '2025-10-28 14:42:18', '2025-10-28 14:42:18'),
-(17, 'Nikon', 'nikon.png', 'Professional camera manufacturer from Japan.', '2025-10-28 14:42:18', '2025-10-28 14:42:18'),
-(18, 'LG', 'lg.png', 'South Korean brand offering electronics and home appliances.', '2025-10-28 14:42:18', '2025-10-28 14:42:18'),
-(101, 'Amazon', 'brands/eEEsEg9DESoFXGDRclOyvfv27rvH6cmNMh07PHYO.png', '🛒 General Amazon Brand Description\r\n\r\nAmazon is a globally recognized brand known for offering high-quality products at affordable prices. With a focus on innovation, reliability, and customer satisfaction, Amazon’s own brands deliver exceptional value across a wide range of categories including electronics, home essentials, fashion, and more.\r\n\r\n💻 Amazon Electronics\r\n\r\nAmazon electronics combine smart design with cutting-edge technology. From Alexa-enabled devices to high-performance accessories, each product is crafted to make everyday life easier, more connected, and more enjoyable.\r\n\r\n🏠 Amazon Home Essentials\r\n\r\nAmazon Home products are designed to bring comfort, quality, and modern style into every household. From kitchen tools to bedding and décor, these items blend functionality with sleek design at an affordable price.\r\n\r\n👕 Amazon Fashion\r\n\r\nAmazon Fashion offers a collection of modern, comfortable, and stylish apparel for everyday wear. Designed with premium fabrics and contemporary designs, the brand ensures a perfect balance of quality and value.\r\n\r\n🔋 Amazon Basics\r\n\r\nAmazon Basics provides everyday essentials that are reliable, affordable, and built to last. Whether it’s tech accessories, office supplies, or household products, Amazon Basics stands for simplicity and smart value.', '2025-11-05 11:02:25', '2025-11-05 11:02:25');
+(1, 'Samsung', 'brand/R2TJPdhkeYBQze2wFRj1R24VtPURbXVFOSdUXYXu.png', 'Leading electronics brand from South Korea', '2025-11-09 15:35:41', '2025-11-09 10:00:44'),
+(2, 'Apple', 'brand/gcls3s0HH9AIoULGTw5e00Sy8Fi4pCCLesQUBACR.png', 'Famous for iPhone, MacBook and other electronics', '2025-11-09 15:35:41', '2025-11-09 09:58:40'),
+(3, 'Sony', 'brand/VvJoulsQ6perXOoPkvND9e5sJRbNe0uualSsIsns.png', 'Global brand known for electronics and entertainment', '2025-11-09 15:35:41', '2025-11-09 10:01:14'),
+(4, 'LG', 'brand/sX5ZjwtyIcaEL1IhlI7fajwjsVtAinFNK2vDCmO4.png', 'Innovative home appliances and electronics', '2025-11-09 15:35:41', '2025-11-09 10:00:17'),
+(5, 'Dell', 'brand/B9JYrAcujCuRZWwcFx0v8JXl8NCphWOiMWnlbtGI.png', 'Trusted brand for laptops and computers', '2025-11-09 15:35:41', '2025-11-09 09:59:54'),
+(6, 'HP', 'brand/0FL9rS4MZWCftwwgNFyW5vQqajeg5J00I5wngl6Y.png', 'Renowned brand for computers, printers, and accessories', '2025-11-09 15:35:41', '2025-11-09 09:57:20'),
+(7, 'Lenovo', 'brand/xsd8TAhPy4AnoptFsoNYA8eUxrOujkSWydWVleO6.png', 'Popular for laptops, tablets and smart devices', '2025-11-09 15:35:41', '2025-11-09 09:56:56'),
+(8, 'Nike', 'brand/nfxhZ9c116kwMwWzPbscZolMe5SfNSg2T5GxhCs4.png', 'Leading brand in sportswear and shoes', '2025-11-09 15:35:41', '2025-11-09 09:56:28'),
+(9, 'Adidas', 'brand/tc8cTuqH1etpymxEDTT4EzoeEjjh4GxlVeRtX6nk.png', 'Famous for sportswear, shoes and accessories', '2025-11-09 15:35:41', '2025-11-09 09:55:58'),
+(11, 'Canon', 'brand/RukpqxBjJkjS5howr9T9e5WIhSdVR2JzyE9NGnyw.png', 'Leader in cameras, printers and imaging solutions', '2025-11-09 15:35:41', '2025-11-09 09:55:26'),
+(12, 'Microsoft', 'brand/t342Z9cbClKD24LrKFb4bcubjezvYck0EdbuqnZf.png', 'Famous for software, laptops, and electronics', '2025-11-09 15:35:41', '2025-11-09 09:55:02'),
+(13, 'Asus', 'brand/HxYMr6smdVbEb0NfdyhwqlMmlWmUPpnlaWLVirPb.png', 'Trusted brand for laptops, motherboards and gaming', '2025-11-09 15:35:41', '2025-11-09 09:54:32'),
+(14, 'Acer', 'brand/5pppUHDbKRdEB1hRKHM6zXrqFEdKrstP6Pm9PTVa.png', 'Acer is a leading global brand in computers and electronics, renowned for producing high-quality laptops, desktops, monitors, and accessories. With a focus on innovation, performance, and reliability, Acer caters to both professionals and consumers, offering devices that enhance productivity, gaming, and everyday computing experiences. The brand combines cutting-edge technology with sleek designs, making it a trusted choice worldwide', '2025-11-09 15:35:41', '2025-11-09 09:53:59'),
+(15, 'OnePlus', 'brand/TSmtNX8Pfd2PpWWbHA3ovSGrwozoq3HmqxMAx8ng.jpg', '“OnePlus is a premium technology brand known for designing and manufacturing high-performance smartphones and innovative smart devices. Focusing on cutting-edge technology, sleek design, and seamless user experience, OnePlus products deliver speed, reliability, and style. The brand has earned a global reputation for combining top-tier hardware with intuitive software, catering to tech enthusiasts who value both performance and aesthetics.”', '2025-11-09 15:35:41', '2025-11-09 09:53:07'),
+(16, 'Puma', 'brands/HvA7St5Mw8j3DX426wpWlbnSU4UrstWIpxDcPnqe.png', '“Puma is a globally renowned sportswear and lifestyle brand, celebrated for its innovative and high-quality athletic footwear, apparel, and accessories. With a perfect blend of performance, comfort, and style, Puma caters to athletes, fitness enthusiasts, and fashion-conscious individuals alike. The brand continually pushes the boundaries of sports technology while maintaining a strong presence in streetwear and lifestyle fashion, making it a favorite choice worldwide.”', '2025-11-09 09:49:03', '2025-11-09 09:49:03'),
+(17, 'Xiaomi', 'brands/Xv3I7iBeZ2JFzZiwgiJKHvFbl0X7AMONqCGHabTm.png', 'Xiaomi is a globally recognized technology brand, celebrated for offering innovative smartphones, smart devices, and consumer electronics at competitive prices. Combining cutting-edge technology, sleek design, and user-friendly features, Xiaomi products deliver high performance and reliability for everyday use. The brand continually expands its ecosystem with smart home devices, wearables, and IoT products, making it a favorite choice for tech enthusiasts worldwide', '2025-11-09 10:09:16', '2025-11-09 10:09:16'),
+(18, 'Realme', 'brands/Lx4Bg7Kp835TgXCM16OE0jisCjuY7KD0bCEgNDBN.png', 'Brand Overview\r\n\r\n• realme is a Chinese consumer electronics brand founded on May 4, 2018 in Shenzhen, Guangdong. \r\nWikipedia\r\n+2\r\nMoglix\r\n+2\r\n\r\n• It began as a sub‑brand of OPPO (which itself is part of the BBK Electronics group) and quickly moved to launch its own identity. \r\nWikipedia\r\n+1\r\n\r\n• The brand is known for delivering powerful performance and trendy design at budget‑friendly price points. \r\nMoglix\r\n+1\r\n\r\nMission & Vision\r\n\r\n• realme aims to provide young users around the world with tech experiences “beyond expectations” — combining advanced features, bold design and affordability. \r\nRealme\r\n+1\r\n\r\n• The official brand site states: “A tech brand that better understands young users” and emphasizes design, performance, and value. \r\nRealme\r\n\r\nWhat Sets realme Apart\r\n\r\nYouth‑centric branding — Stylish devices with colours, trendy finishes, and marketing aimed at Gen Z and young millennials.\r\n\r\nFeatures that punch above the price — High refresh‑rate displays, strong performance chips, large batteries and fast‑charging technology even in lower and mid‑price segments. \r\nMoglix\r\n+1\r\n\r\nGlobal expansion speed — From inception in 2018 to being among the fastest‑growing smartphone brands globally within a few years. \r\nWikipedia\r\n+1\r\n\r\nKey Facts\r\n\r\nFounded: May 4, 2018. \r\nWikipedia\r\n\r\nHeadquarters: Shenzhen, Guangdong, China. \r\nWikipedia\r\n\r\nCore products: Smartphones, smart devices (TVs, watches, earphones), AIoT ecosystem. \r\nMoglix\r\n\r\nSlogan/Tagline: “Dare to Leap” — reflecting the ambition to push boundaries. \r\nMoglix\r\n\r\nWhy Consider realme?\r\n\r\nFor users who want modern features (5G, high refresh rate, strong cameras) without spending premium prices.\r\n\r\nFor youth and trend‑aware consumers who value design and style alongside performance.\r\n\r\nFor growing global markets where value is a strong differentiator.', '2025-11-11 10:53:22', '2025-11-11 10:53:22'),
+(19, 'Tecno', 'brands/K6uCdyntoCAwREGLV4Dk7HSrJ8lftfE4TbmvO6aa.png', 'Tecno Brand Description:\r\nTecno Mobile is a global smartphone brand committed to providing innovative, high-quality mobile devices at affordable prices. Established in 2006, Tecno is a subsidiary of Transsion Holdings, headquartered in Shenzhen, China. The brand focuses on emerging markets, particularly in Africa, South Asia, and Southeast Asia, where it has built a strong reputation for delivering feature-rich smartphones that blend modern design, powerful performance, and excellent camera technology.\r\n\r\nTecno’s philosophy, “Stop at Nothing,” reflects its dedication to continuous innovation and empowering users through technology. From AI-powered cameras and long-lasting batteries to stylish designs and user-friendly interfaces, Tecno aims to make cutting-edge mobile technology accessible to everyone.', '2025-11-11 11:45:45', '2025-11-11 11:45:45'),
+(20, 'Infinix', 'brands/7uKuDc9QPjjEa4qmQ5T7AvOPbnRg1TFZZ0qZt1Gr.jpg', '📱 Infinix Smartphone Overview\r\n\r\nThe Infinix smartphone lineup combines style, performance, and innovation at an affordable price. Designed with modern users in mind, Infinix phones feature sleek aesthetics, powerful processors, and long-lasting batteries, making them ideal for both work and play.\r\n\r\nWith vibrant displays for immersive viewing, high-resolution AI cameras for stunning photography, and fast-charging technology, Infinix ensures you stay connected and productive all day long. Powered by Android OS with XOS interface, it delivers a smooth and customizable experience.\r\n\r\nWhether you choose the Infinix Hot series for budget-friendly performance, the Note series for multitasking and creativity, or the Zero series for flagship-level power — Infinix offers something for everyone.', '2025-11-12 00:45:58', '2025-11-12 00:45:58');
 
 -- --------------------------------------------------------
 
@@ -88,6 +88,18 @@ CREATE TABLE `cache_locks` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `carts`
+--
+
+CREATE TABLE `carts` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `categories`
 --
 
@@ -104,27 +116,28 @@ CREATE TABLE `categories` (
 --
 
 INSERT INTO `categories` (`id`, `name`, `status`, `created_at`, `updated_at`) VALUES
-(1, 'Electronics', 'Active', '2025-11-04 17:10:01', '2025-11-05 07:53:31'),
-(2, 'Mobile Phone', 'Active', '2025-11-04 17:10:01', '2025-11-05 07:54:12'),
-(3, 'Laptops', 'Active', '2025-11-04 17:10:01', '2025-11-05 07:54:01'),
-(4, 'Tablets', 'Active', '2025-11-04 17:10:01', '2025-11-05 08:03:35'),
-(5, 'Cameras', 'Inactive', '2025-11-04 17:10:01', '2025-11-05 07:52:47'),
-(6, 'Home Appliances', 'Active', '2025-11-04 17:10:01', '2025-11-05 07:53:51'),
-(7, 'Televisions', 'Active', '2025-11-04 17:10:01', '2025-11-05 08:03:46'),
-(8, 'Gaming Consoles', 'Active', '2025-11-04 17:10:01', '2025-11-05 07:53:46'),
-(9, 'Headphones', 'Active', '2025-11-04 17:10:01', '2025-11-05 07:53:56'),
-(10, 'Smart Watches', 'Active', '2025-11-04 17:10:01', '2025-11-05 08:03:21'),
-(11, 'Fashion', 'Active', '2025-11-04 17:10:01', '2025-11-05 07:53:36'),
-(12, 'Men’s Clothing', 'Active', '2025-11-04 17:10:01', '2025-11-05 07:54:07'),
-(13, 'Women’s Clothing', 'Active', '2025-11-04 17:10:01', '2025-11-05 08:03:53'),
-(14, 'Shoes', 'Active', '2025-11-04 17:10:01', '2025-11-05 07:54:17'),
-(15, 'Beauty & Health', 'Active', '2025-11-04 17:10:01', '2025-11-05 07:51:14'),
-(16, 'Furniture', 'Active', '2025-11-04 17:10:01', '2025-11-05 07:53:41'),
-(17, 'Sports & Fitness', 'Active', '2025-11-04 17:10:01', '2025-11-05 08:03:28'),
-(19, 'Toys & Baby Products', 'Active', '2025-11-04 17:10:01', '2025-11-04 17:10:01'),
-(20, 'Automotive Accessories', 'Active', '2025-11-04 17:10:01', '2025-11-04 17:10:01'),
-(21, 'Computer', 'Active', '2025-11-04 11:11:47', '2025-11-04 11:11:47'),
-(22, 'A4 Tech', 'Active', '2025-11-04 11:20:38', '2025-11-04 11:20:38');
+(1, 'Electronics', 'Active', '2025-11-09 15:33:26', '2025-11-09 15:33:26'),
+(2, 'Fashion', 'Active', '2025-11-09 15:33:26', '2025-11-09 15:33:26'),
+(3, 'Home & Kitchen', 'Active', '2025-11-09 15:33:26', '2025-11-09 15:33:26'),
+(4, 'Books', 'Inactive', '2025-11-09 15:33:26', '2025-11-09 09:33:49'),
+(5, 'Sports', 'Active', '2025-11-09 15:33:26', '2025-11-09 15:33:26'),
+(6, 'Toys & Games', 'Active', '2025-11-09 15:33:26', '2025-11-09 15:33:26'),
+(7, 'Health & Beauty', 'Active', '2025-11-09 15:33:26', '2025-11-09 15:33:26'),
+(8, 'Automotive', 'Active', '2025-11-09 15:33:26', '2025-11-09 15:33:26'),
+(9, 'Jewelry', 'Active', '2025-11-09 15:33:26', '2025-11-09 15:33:26'),
+(10, 'Music', 'Active', '2025-11-09 15:33:26', '2025-11-09 15:33:26'),
+(11, 'Office Supplies', 'Active', '2025-11-09 15:33:26', '2025-11-09 15:33:26'),
+(12, 'Pet Supplies', 'Active', '2025-11-09 15:33:26', '2025-11-09 15:33:26'),
+(13, 'Garden & Outdoors', 'Active', '2025-11-09 15:33:26', '2025-11-09 15:33:26'),
+(14, 'Baby Products', 'Active', '2025-11-09 15:33:26', '2025-11-09 15:33:26'),
+(15, 'Groceries', 'Active', '2025-11-09 15:33:26', '2025-11-09 15:33:26'),
+(16, 'Shoes', 'Active', '2025-11-09 15:33:26', '2025-11-09 15:33:26'),
+(17, 'Watches', 'Active', '2025-11-09 15:33:26', '2025-11-09 15:33:26'),
+(18, 'Handbags', 'Active', '2025-11-09 15:33:26', '2025-11-09 15:33:26'),
+(19, 'Beauty Tools', 'Active', '2025-11-09 15:33:26', '2025-11-09 15:33:26'),
+(20, 'Mobile Phone', 'Active', '2025-11-09 15:33:26', '2025-11-09 15:33:26'),
+(21, 'Laptops', 'Active', '2025-11-09 09:38:56', '2025-11-09 09:38:56'),
+(22, 'Tablets', 'Active', '2025-11-11 12:02:40', '2025-11-11 12:02:40');
 
 -- --------------------------------------------------------
 
@@ -141,22 +154,6 @@ CREATE TABLE `failed_jobs` (
   `exception` longtext NOT NULL,
   `failed_at` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `inventory`
---
-
-CREATE TABLE `inventory` (
-  `id` int(10) NOT NULL,
-  `product_id` int(10) NOT NULL,
-  `type` varchar(255) NOT NULL,
-  `quantity` int(255) NOT NULL,
-  `source_type` varchar(100) NOT NULL,
-  `note` text NOT NULL,
-  `create_at` date NOT NULL DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -213,44 +210,46 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (1, '0001_01_01_000000_create_users_table', 1),
 (2, '0001_01_01_000001_create_cache_table', 1),
 (3, '0001_01_01_000002_create_jobs_table', 1),
-(4, '2025_10_27_132201_create_brand_table', 2),
-(5, '2025_11_04_170438_create_categories_table', 3),
-(6, '2025_10_27_144257_create_product_table', 4),
-(7, '2025_11_08_163437_create_role_table', 5),
-(8, '2025_11_08_163437_create_roles_table', 6);
+(4, '2025_10_27_132201_create_brand_table', 1),
+(5, '2025_10_27_144257_create_product_table', 1),
+(6, '2025_11_04_170438_create_categories_table', 1),
+(7, '2025_11_08_163437_create_roles_table', 1),
+(8, '2025_11_11_043040_create_productgalleries_table', 2),
+(9, '2025_11_12_145101_create_carts_table', 3),
+(10, '2025_11_14_171842_create-order-table', 3);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `order`
+-- Table structure for table `orders`
 --
 
-CREATE TABLE `order` (
-  `id` int(10) NOT NULL,
-  `user_id` int(10) NOT NULL,
-  `order_number` varchar(50) NOT NULL,
-  `total_amount` int(20) NOT NULL,
-  `discount_amount` int(10) NOT NULL,
-  `payment_status` varchar(50) NOT NULL,
-  `order_status` varchar(20) NOT NULL,
-  `payment_method` int(11) NOT NULL,
-  `create_at` date NOT NULL DEFAULT current_timestamp(),
-  `update_at` date NOT NULL DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+CREATE TABLE `orders` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `order_number` varchar(255) DEFAULT NULL,
+  `amount` int(11) DEFAULT NULL,
+  `status` tinyint(4) NOT NULL DEFAULT 0,
+  `strpe_id` text DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `order_items`
+-- Table structure for table `order_item`
 --
 
-CREATE TABLE `order_items` (
-  `id` int(10) NOT NULL,
-  `order_id` int(10) NOT NULL,
-  `product_id` int(10) NOT NULL,
-  `quantity` int(10) NOT NULL,
-  `price` int(20) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+CREATE TABLE `order_item` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `order_id` int(11) NOT NULL,
+  `product_id` int(11) DEFAULT NULL,
+  `quantity` int(11) NOT NULL DEFAULT 0,
+  `price` int(11) DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -267,59 +266,85 @@ CREATE TABLE `password_reset_tokens` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `productgalleries`
+--
+
+CREATE TABLE `productgalleries` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `product_id` int(11) NOT NULL,
+  `photo` varchar(255) NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `productgalleries`
+--
+
+INSERT INTO `productgalleries` (`id`, `product_id`, `photo`, `created_at`, `updated_at`) VALUES
+(1, 4, 'gallery/SO3RLdbJyUTh1z2gQH6P1isHs61IGCv94QP4YQn6.webp', '2025-11-11 06:39:43', '2025-11-11 06:39:43'),
+(2, 4, 'gallery/Rsyp6z3HTHTENIuUlESDw1EgRbAjT9btVXEn2yVg.webp', '2025-11-11 06:39:43', '2025-11-11 06:39:43'),
+(3, 4, 'gallery/lOj20GTBddXZ8SaI1jXGmikhcT7eYnE9wVzuoBs2.webp', '2025-11-11 06:39:43', '2025-11-11 06:39:43'),
+(4, 6, 'gallery/VCQMPs66ctbcnx6F5wOLqskdcgls8Fx6cfal1Ks2.webp', '2025-11-11 10:49:33', '2025-11-11 10:49:33'),
+(5, 6, 'gallery/WHR2yVonBmHDu3GmhBugIBkoVGL0xOqCrTilqU0j.webp', '2025-11-11 10:49:33', '2025-11-11 10:49:33'),
+(6, 7, 'gallery/sxGCYrhUWfC6tprOI8auoYNDDCjLxEIzq29vkTbE.webp', '2025-11-11 10:54:49', '2025-11-11 10:54:49'),
+(7, 7, 'gallery/rgiJTpwaOQ21ojGfkyG1wSihIO7FLy7KOYlHXHWx.webp', '2025-11-11 10:54:49', '2025-11-11 10:54:49'),
+(8, 7, 'gallery/gmqJzxMHsxfDhq0d0mO73fQLvGD6BRGZ0K8b2H3J.webp', '2025-11-11 10:54:49', '2025-11-11 10:54:49'),
+(9, 7, 'gallery/JBI93Bz7n4yh7C1DHHgd6upbeH8FfLkcWhv9gKUY.webp', '2025-11-11 10:54:49', '2025-11-11 10:54:49'),
+(11, 8, 'gallery/g5oXlgFfzY67OvaRzeZRNNt8tGD7Pz2rr4sS2X4Y.webp', '2025-11-11 11:53:12', '2025-11-11 11:53:12'),
+(12, 8, 'gallery/1CbgtsvRCvXUvzszMdJZJAC3g5lzk0pGLsiNQq3U.webp', '2025-11-11 11:53:12', '2025-11-11 11:53:12'),
+(13, 8, 'gallery/Ezjr7Nk5yGonRsMJmuYRPh5YjqJM5fT5K3XHlFAp.webp', '2025-11-11 11:53:12', '2025-11-11 11:53:12'),
+(14, 8, 'gallery/rcMBjt2dEWYHIrnCMpbHIWXXunhaqTYqm3mbqxfG.webp', '2025-11-11 11:53:12', '2025-11-11 11:53:12'),
+(15, 10, 'gallery/2lypt4UU532zoHjAIinNDs4335FH7NIZPpjSlTwD.webp', '2025-11-11 12:04:53', '2025-11-11 12:04:53'),
+(16, 10, 'gallery/2wahUTOTIzKPHgGRwtvl1biJ90wYGszYr08igsAL.webp', '2025-11-11 12:04:53', '2025-11-11 12:04:53'),
+(17, 10, 'gallery/hf6cQTmsiUyy3drA0vNkp2kCaOCMSf01jAPBvXLx.webp', '2025-11-11 12:04:53', '2025-11-11 12:04:53'),
+(18, 9, 'gallery/5lIjdkTAEMrAK0eV1UIaXIAZ9IAhcokg8N1lzWMl.webp', '2025-11-11 23:53:08', '2025-11-11 23:53:08'),
+(19, 9, 'gallery/DcvSHmlLVBA6I7pjH8wkfAuPUXoW1jX1DIfPPbZl.webp', '2025-11-11 23:53:08', '2025-11-11 23:53:08'),
+(20, 9, 'gallery/FxKRVizUl9L0HZcDopQZ1070pak9Vr83XWvq8zw4.webp', '2025-11-11 23:53:08', '2025-11-11 23:53:08'),
+(21, 9, 'gallery/J2yMbfyxhC3sI6WjCRDxoJNzN9R2YJq2g3KgrAUH.webp', '2025-11-11 23:53:08', '2025-11-11 23:53:08'),
+(22, 11, 'gallery/8dTju5fVJcuhFMSDZW4mkA2HbbGRv6L5S1Hesem1.webp', '2025-11-12 00:58:06', '2025-11-12 00:58:06'),
+(23, 11, 'gallery/vQ7LELO0Gan4TWf2jjtNQeaWrTaynG9Djebujoss.webp', '2025-11-12 00:58:06', '2025-11-12 00:58:06'),
+(24, 11, 'gallery/5wGbT7UxPfgjhSfjHjViYRJvVML5wL9qy9mFyRhm.webp', '2025-11-12 00:58:06', '2025-11-12 00:58:06'),
+(25, 11, 'gallery/kK84NcnljMrLwcAWa7d7ISuiRQ35yWMzppiTabM5.webp', '2025-11-12 00:58:06', '2025-11-12 00:58:06');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `products`
 --
 
 CREATE TABLE `products` (
-  `id` int(10) NOT NULL,
+  `id` bigint(20) UNSIGNED NOT NULL,
   `name` varchar(255) NOT NULL,
-  `category_id` int(10) NOT NULL,
-  `brand_id` int(10) NOT NULL,
+  `category_id` int(11) NOT NULL,
+  `brand_id` int(11) NOT NULL,
+  `short_description` text NOT NULL,
   `description` text NOT NULL,
-  `price` int(20) NOT NULL,
-  `discount_price` int(10) DEFAULT NULL,
-  `stock_quantity` int(10) NOT NULL,
-  `status` varchar(20) DEFAULT NULL,
+  `price` double NOT NULL,
+  `discount_price` double DEFAULT NULL,
+  `stock_quantity` int(11) NOT NULL,
+  `status` varchar(255) NOT NULL DEFAULT 'active',
   `photo` varchar(255) NOT NULL,
-  `created_at` date NOT NULL DEFAULT current_timestamp(),
-  `updated_at` date NOT NULL DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `products`
 --
 
-INSERT INTO `products` (`id`, `name`, `category_id`, `brand_id`, `description`, `price`, `discount_price`, `stock_quantity`, `status`, `photo`, `created_at`, `updated_at`) VALUES
-(22, 'Oppo Find X9 Pro', 2, 5, 'Name	Oppo Find X9 Pro\r\nUnofficial Price	BDT. 112,000\r\nRelease Date	16-Oct-2025\r\nMarket Status	In Stock\r\nVariant	RAM: 12GB + ROM: 256GB', 112000, 2000, 20, 'Active', 'product/63i7mWYrMWLIyOxSD3Fa0VoHiJVXSLmcmJtvcTnO.webp', '2025-11-03', '2025-11-08'),
-(25, 'Apple iPhone 11 Pro', 2, 1, 'The Apple iPhone 11 Pro is one of the most popular and powerful smartphones in the market today. It was released in September 2019 as part of the iPhone 11 series, along with the iPhone 11 and the iPhone 11 Pro Max. The iPhone 11 Pro is designed to offer a premium and immersive experience for users who want the best of the best from their device. In this review, we will try to share full details on Apple iPhone 11 Pro.\r\n\r\nMost Highlighted Features of Apple iPhone 11 Pro\r\nTriple-Camera System: The iPhone 11 Pro boasts a triple-camera system that consists of a 12-megapixel wide-angle lens, a 12-megapixel telephoto lens, and a 12-megapixel ultra-wide-angle lens. \r\nSuper Retina XDR Display: This phone features a 5.8-inch OLED display that has a resolution of 2436 x 1125 pixels and a pixel density of 458 ppi.\r\nA13 Bionic Chip: It is powered by the A13 Bionic chip, which is the fastest and most advanced processor ever in a smartphone. \r\niOS 13: The iPhone 11 Pro runs on iOS 13, which is the latest and most refined version of Apple’s operating system. It offers a range of new and improved features, such as dark mode, swipe keyboard, Siri shortcuts, emoji stickers, and more.\r\nShort Overview of Apple iPhone 11 Pro\r\nThe iPhone 11 Pro is a smartphone that combines a sleek and durable design, a powerful and intelligent processor, a stunning and immersive display, and a versatile and impressive camera system. This phone is ideal for users who want a device that can handle any task, whether it is photography, gaming, productivity, or entertainment. \r\n\r\nIt also offers a long-lasting battery, a water-resistant body, and a wireless charging capability. The iPhone 11 Pro is available in four colors: space gray, silver, gold, and midnight green. The iPhone 11 Pro has a starting price of $999 for the 64GB model, $1149 for the 256GB model, and $1349 for the 512GB model.\r\n\r\nApple iPhone 11 Pro Price in Bangladesh\r\nThe Apple iPhone 11 Pro is a premium smartphone that offers a triple-camera system, a Super Retina XDR display, an A13 Bionic chip, and iOS 13. It is available in four colors and three storage options. The official price of the iPhone 11 Pro in Bangladesh is BDT 119,999 for the 64GB model, BDT 139,999 for the 256GB model, and BDT 159,999 for the 512GB model.\r\n\r\nFinal Thought\r\nThe iPhone 11 Pro is a smartphone that delivers on its promise of being a pro device. It has a premium and elegant design, a powerful and smart processor, a superb and dynamic display, and a remarkable and flexible camera system. The iPhone 11 Pro is a device that can satisfy the needs and wants of any user, as it offers a high-quality and seamless experience. Thank you all for reading this article.', 119999, 1000, 10, 'Active', 'product/bUgXdcLu1CYF1wgswA834m2subwQwR8eJqJQzUan.webp', '2025-11-03', '2025-11-06'),
-(26, 'Samsung Galaxy S23', 2, 2, 'Product Name: Samsung Galaxy S23\r\nUnofficial Price: BDT 85,000\r\nRelease Date: 01-Jan-2025\r\nMarket Status: In Stock\r\nVariant: RAM 8GB + ROM 128GB\r\nDisplay: 6.1-inch Dynamic AMOLED\r\nProcessor: Exynos 2200\r\nBattery: 3900 mAh\r\nCamera: Triple rear 50MP+10MP+12MP, Front 12MP\r\nOS: Android 13\r\nColor Options: Phantom Black, Green, Cream', 85000, 80000, 50, 'Active', 'product/uZ5RmHXjto0KOP7udsaK9mc9kpx5EIScoy9uZfpY.jpg', '2025-11-03', '2025-11-06'),
-(27, 'Samsung Galaxy S23+', 2, 2, 'Product Name: Samsung Galaxy S23+\r\nUnofficial Price: BDT 95,000\r\nRelease Date: 01-Jan-2025\r\nMarket Status: In Stock\r\nVariant: RAM 8GB + ROM 256GB\r\nDisplay: 6.6-inch Dynamic AMOLED\r\nProcessor: Exynos 2200\r\nBattery: 4500 mAh\r\nCamera: Triple rear 50MP+10MP+12MP, Front 12MP\r\nOS: Android 13\r\nColor Options: Phantom Black, Green, Cream', 95000, 90000, 40, 'Active', 'product/hJqA1mAsCNPNHllbzPn5oRELxirRtl2QaWqGII0Z.webp', '2025-11-03', '2025-11-06'),
-(28, 'Samsung Galaxy S23 Ultra', 2, 2, 'Product Name: Samsung Galaxy S23 Ultra\r\nUnofficial Price: BDT 1,20,000\r\nRelease Date: 01-Jan-2025\r\nMarket Status: In Stock\r\nVariant: RAM 12GB + ROM 512GB\r\nDisplay: 6.8-inch Dynamic AMOLED\r\nProcessor: Exynos 2200\r\nBattery: 5000 mAh\r\nCamera: Quad rear 200MP+10MP+10MP+12MP, Front 12MP\r\nOS: Android 13\r\nColor Options: Phantom Black, Green, Cream', 120000, 115000, 30, 'Active', 'product/raSzJQvXIsofFP7wzYm38EVM1jILSpVhEOU4g6fm.webp', '2025-11-03', '2025-11-06'),
-(29, 'Samsung Galaxy A54', 2, 2, 'Product Name: Samsung Galaxy A54\r\nUnofficial Price: BDT 45,000\r\nRelease Date: 01-Feb-2025\r\nMarket Status: In Stock\r\nVariant: RAM 6GB + ROM 128GB\r\nDisplay: 6.4-inch Super AMOLED\r\nProcessor: Exynos 1380\r\nBattery: 5000 mAh\r\nCamera: Triple rear 50MP+5MP+5MP, Front 32MP\r\nOS: Android 13\r\nColor Options: Prism Black, Prism Blue, Prism White', 45000, 43000, 60, 'Active', 'product/cGOuxOT39wovbKwOUD1k9XMrxL3FBFTEA2NLlPh7.jpg', '2025-11-03', '2025-11-06'),
-(30, 'Samsung Galaxy A34', 2, 2, 'Product Name: Samsung Galaxy A34\r\nUnofficial Price: BDT 35,000\r\nRelease Date: 01-Feb-2025\r\nMarket Status: In Stock\r\nVariant: RAM 4GB + ROM 64GB\r\nDisplay: 6.5-inch Super AMOLED\r\nProcessor: MediaTek Dimensity 1080\r\nBattery: 5000 mAh\r\nCamera: Triple rear 48MP+5MP+2MP, Front 13MP\r\nOS: Android 13\r\nColor Options: Awesome Black, Awesome Blue, Awesome Violet', 35000, 32000, 70, 'Active', 'product/yrqSBzlKJ4ML4A6LTJd8KhgBi6HLALyiceUn9gZs.webp', '2025-11-03', '2025-11-06'),
-(32, 'Apple iPhone 15 Pro', 2, 1, 'Product Name: Apple iPhone 15 Pro\r\nUnofficial Price: BDT 1,50,000\r\nRelease Date: 10-Mar-2025\r\nMarket Status: In Stock\r\nVariant: RAM 8GB + ROM 256GB\r\nDisplay: 6.1-inch Super Retina XDR\r\nProcessor: A17 Pro Bionic\r\nBattery: 3279 mAh\r\nCamera: Triple rear 48MP+12MP+12MP, Front 12MP\r\nOS: iOS 17\r\nColor Options: Natural Titanium, Blue Titanium, White Titanium, Black Titanium', 150000, 145000, 10, 'Active', 'product/p49ttiu5SKd07Lo8V19TYUmDZ1cqN7GKoEBrjVAN.webp', '2025-11-03', '2025-11-08'),
-(33, 'Apple iPhone 15 Pro Max', 2, 1, 'Product Name: Apple iPhone 15 Pro Max\r\nUnofficial Price: BDT 1,80,000\r\nRelease Date: 10-Mar-2025\r\nMarket Status: In Stock\r\nVariant: RAM 12GB + ROM 512GB\r\nDisplay: 6.7-inch Super Retina XDR\r\nProcessor: A17 Pro Bionic\r\nBattery: 4323 mAh\r\nCamera: Triple rear 48MP+12MP+12MP, Front 12MP\r\nOS: iOS 17\r\nColor Options: Natural Titanium, Blue Titanium, White Titanium, Black Titanium', 180000, 175000, 30, 'Active', 'product/SxBaZqUS9ZvFfSjua6N2jDYixkyTN7DLh0OScbGj.webp', '2025-11-03', '2025-11-06'),
-(34, 'Apple iPhone SE 2025', 2, 1, 'Product Name: Apple iPhone SE 2025\r\nUnofficial Price: BDT 45,000\r\nRelease Date: 01-Apr-2025\r\nMarket Status: In Stock\r\nVariant: RAM 4GB + ROM 64GB\r\nDisplay: 4.7-inch Retina HD\r\nProcessor: A16 Bionic\r\nBattery: 2018 mAh\r\nCamera: Single rear 12MP, Front 7MP\r\nOS: iOS 17\r\nColor Options: Midnight, Starlight, Red', 45000, 42000, 2, 'Active', 'product/V4wqkdZU6KWNMpBget7k0pL8gHONYSMcx33b471T.webp', '2025-11-03', '2025-11-08'),
-(35, 'Apple iPhone 14', 2, 1, 'Product Name: Apple iPhone 14\r\nUnofficial Price: BDT 95,000\r\nRelease Date: 01-Jan-2025\r\nMarket Status: In Stock\r\nVariant: RAM 6GB + ROM 128GB\r\nDisplay: 6.1-inch Super Retina XDR\r\nProcessor: A15 Bionic\r\nBattery: 3279 mAh\r\nCamera: Dual rear 12MP+12MP, Front 12MP\r\nOS: iOS 16\r\nColor Options: Midnight, Starlight, Blue, Purple, Red', 95000, 90000, 5, 'Active', 'product/SczHckuC22G90jIACwGlEHBz03O1AMy1MEYiPx7D.webp', '2025-11-03', '2025-11-06'),
-(36, 'Samsung Galaxy Book 3 Pro', 3, 2, 'Product Name: Samsung Galaxy Book 3 Pro\r\nUnofficial Price: BDT 150,000\r\nRelease Date: 15-Jan-2025\r\nMarket Status: In Stock\r\nVariant: RAM 16GB + ROM 512GB\r\nDisplay: 16-inch AMOLED\r\nProcessor: Intel Core i7 12th Gen\r\nBattery: 68Wh\r\nCamera: 1080p HD\r\nOS: Windows 11\r\nColor Options: Graphite, Silver', 150000, 145000, 20, 'Active', 'product/zHgjoc9zZmGCUqY3TbMIeUdRFOha2iKaiDXv7I1P.webp', '2025-11-03', '2025-11-06'),
-(37, 'Apple MacBook Air M2', 3, 1, 'Product Name: Apple MacBook Air M2\r\nUnofficial Price: BDT 120,000\r\nRelease Date: 01-Feb-2025\r\nMarket Status: In Stock\r\nVariant: RAM 8GB + ROM 256GB\r\nDisplay: 13.6-inch Retina\r\nProcessor: Apple M2\r\nBattery: 52.6Wh\r\nCamera: 1080p HD\r\nOS: macOS Ventura\r\nColor Options: Space Gray, Silver, Midnight, Starlight', 120000, 115000, 25, 'Active', 'product/7uaZszHQbuufjcGppKFW71thlVPqdqnvWSGC6fa0.webp', '2025-11-03', '2025-11-08'),
-(38, 'Apple MacBook Pro 14 M2', 3, 1, 'Product Name: Apple MacBook Pro 14 M2\r\nUnofficial Price: BDT 180,000\r\nRelease Date: 01-Mar-2025\r\nMarket Status: In Stock\r\nVariant: RAM 16GB + ROM 512GB\r\nDisplay: 14-inch Liquid Retina XDR\r\nProcessor: Apple M2 Pro\r\nBattery: 70Wh\r\nCamera: 1080p HD\r\nOS: macOS Ventura\r\nColor Options: Space Gray, Silver', 180000, 175000, 4, 'Inactive', 'product/r0ennAEKUbS9xLFry2bu4xe8r6sD8fcyQUiryySW.webp', '2025-11-03', '2025-11-06');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `pyment_methods`
---
-
-CREATE TABLE `pyment_methods` (
-  `id` int(10) NOT NULL,
-  `order_id` int(10) NOT NULL,
-  `payment_getway` varchar(50) NOT NULL,
-  `amount` int(50) NOT NULL,
-  `status` varchar(50) NOT NULL,
-  `create_at` date NOT NULL DEFAULT current_timestamp(),
-  `update_at` date NOT NULL DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+INSERT INTO `products` (`id`, `name`, `category_id`, `brand_id`, `short_description`, `description`, `price`, `discount_price`, `stock_quantity`, `status`, `photo`, `created_at`, `updated_at`) VALUES
+(1, 'OnePlus 15', 20, 15, '', 'OnePlus 15 Price in Bangladesh 2024 & Release Date\r\nName	OnePlus 15\r\nUnofficial Price	BDT. 89,900\r\nRelease Date	27-Oct-2025\r\nMarket Status	In Stock\r\nVariant	RAM: 12GB + ROM: 256GB', 89900, NULL, 10, 'Active', 'product/kBgM8PavGGOGpkXxHAEAbFXP8EG3PbdsNKLPK90D.webp', '2025-11-09 09:46:15', '2025-11-09 09:46:15'),
+(2, 'Apple iPhone 15 Pro Max', 20, 2, '', 'Apple iPhone 15 Pro Max Overview\r\nThe Apple iPhone 15 Pro Max is a powerhouse of performance and capacity. Here we will share the price of the Apple iPhone 15 Pro Max price in Bangladesh. Also share it all specs.\r\n\r\nThis smartphone was released on 22 September 2023 in Bangladesh. It runs on iOS 17 and is upgradable to iOS 17.4. The device is powered by Apple A17 Pro chipset and a hexa-core CPU. Its 6.7-inch LTPO Super Retina XDR OLED display with a resolution of 1290x2796 pixels, and supported by a 120Hz refresh rate.\r\n\r\nFor photography is a triple camera setup, 48MP main camera sensor, 12MP periscope telephoto sensor, and 12MP ultrawide sensor. The selfie camera offers a 12MP sensor with depth/biometrics capabilities. The Apple iPhone 15 Pro Max features a titanium frame and Ceramic Shield glass for both the front and back. It’s IP68 rated for dust and water resistance. It has 4441 mAh battery with  PD2.0 version 15W wireless (MagSafe) fast charging.\r\n\r\nApple iPhone 15 Pro Max price in Bangladesh\r\nThe Apple iPhone 15 Pro Max price in Bangladesh is BDT 179,999 with 8GB of RAM and 256GB of phone storage. It is officially available in Bangladesh. Also it has an unofficial variant; its price is BDT 1,42,000. This phone has another 2 different storage variants 512GB, and 1TB. This phone comes in 4 different colors: Black Titanium, White Titanium, Blue Titanium, Natural Titanium. You can buy this model from Apple official brand shops, Apple authorized shops, and online platforms.', 239999, 179999, 5, 'Active', 'product/fxY5aZuGHkgKJ9M6fWqQQ79OGJNCfy9Joxexnzdk.webp', '2025-11-09 10:04:11', '2025-11-09 10:04:11'),
+(3, 'Apple iPhone 14 Plus', 20, 2, '', 'Apple iPhone 14 Plus Overview\r\nApple iPhone 14 Plus emerges as a beacon of innovation in the smartphone market, offering a blend of style, performance, and cutting-edge technology. This model stands out as a testament to Apple’s commitment to pushing the boundaries of what’s possible in mobile technology. We will share the price here in Bangladesh and also share full details of iPhone 14 Plus.\r\n\r\nApple iPhone 14 Plus Price in Bangladesh\r\nIt comes in three storage options – 128GB, 256GB, or 512GB with 6GB of RAM each. The iPhone 14 Plus price in Bangladesh is 112,000 Taka in the Global variant.\r\n\r\nMost Highlighted Features of Apple iPhone 14 Plus\r\nDisplay: 6.7-inch 1200 nits (peak) brightness Super Retina XDR display offers 1284 x 2778 pixels.\r\nCamera System: Dual-camera setup with a 12MP main sensor boasts advanced features like Photonic Engine and sensor-shift optical image stabilization.\r\nPerformance: Powered by the A15  (2×3.23 GHz Avalanche + 4×1.82 GHz Blizzard) Bionic chipset and GPU 5-core graphics, the iPhone 14 Plus delivers exceptional performance and efficiency.\r\nSafety Features: Groundbreaking safety capabilities like Crash Detection and Emergency SOS via satellite set a new industry standard.\r\nBattery Life: Li-Ion 4323 mAh, non-removable battery. It boasts the best battery life ever in an iPhone, making it a reliable companion for all-day use.\r\nShort Overview of Apple iPhone 14 Plus \r\nThis phone is a remarkable blend of elegance and performance. Released on 7 October 2022, it boasts a 6.7-inch Super Retina XDR OLED display, offering vivid colors and sharp details. The device is powered by the Apple A15 Bionic chip, ensuring swift and efficient operation. It comes with a dual-camera system that includes a 12MP main camera with sensor-shift optical image stabilization and a 12MP ultra-wide camera, capable of capturing stunning photos and videos. \r\n\r\niPhone 14 Plus operates on iOS 16, upgradable to iOS 17.3.1, and is available in 128GB, 256GB, and 512GB storage options without a card slot. It supports 5G connectivity for rapid data transfer and internet browsing. The phone’s build quality is premium, with a Ceramic Shield glass front and back, and an aluminum frame. It also features an IP68 rating for dust and water resistance, ensuring durability.\r\n\r\nFinal Thought \r\nThe iPhone 14 Plus is more than just your average phone. It really makes a statement. It has top-notch features and a beautiful design that shows off luxury and tech know-how. If you want the full premium experience without sacrificing how it works or looks, the iPhone 14 Plus is the way to go. It’s one classy device.', 112000, NULL, 10, 'Active', 'product/91OjttWWu0fEioyolr1mJYPZk4uwlAZypZ0b0Jcy.webp', '2025-11-09 10:05:20', '2025-11-09 10:05:20'),
+(4, 'Samsung Galaxy S23 Ultra', 20, 1, '', 'Samsung Galaxy S23 Ultra Overview\r\nSamsung Galaxy S23 Ultra represents the pinnacle of Samsung’s smartphone innovation. As the latest addition to the Galaxy S series, it boasts cutting-edge technology and premium features that cater to both tech enthusiasts and everyday users seeking a high-performance device. Here we will share all important features and reviews of Samsung Galaxy S23 Ultra.\r\n\r\nMost Highlighted Features of Samsung Galaxy S23 Ultra\r\n200MP Camera captures stunningly detailed shots with the groundbreaking.\r\nEnhance productivity and creativity with the built-in S Pen.\r\n6.8-inch screen Dynamic AMOLED 2X Display with 120Hz refresh rate.\r\nSnapdragon 8 Gen 2 Chipset experiences lightning-fast performance.\r\n5000mAh Battery with 45W Fast Charging. \r\nReview of Samsung Galaxy S23 Ultra\r\nThe Samsung Galaxy S23 Ultra stands tall as the pinnacle of smartphone innovation, a symphony of cutting-edge features, powerful performance, and remarkable camera capabilities. Whether you’re a tech enthusiast, content creator, or a professional seeking the ultimate smartphone experience, the S23 Ultra delivers in spades.\r\n\r\nDisplay & Design\r\nThe S23 Ultra’s design is a harmonious blend of elegance and functionality. Its sleek form factor features Gorilla Glass Victus 2 on both the front and back, ensuring durability against accidental drops and scratches. The aluminum frame adds a touch of sophistication while providing structural integrity. But it’s the 6.8-inch Dynamic AMOLED 2X display that steals the show. \r\n\r\nWith a 120Hz refresh rate, it’s buttery smooth, whether you’re swiping through apps or scrolling through social media. The HDR10+ support ensures vibrant colors and deep blacks, making it a treat for multimedia consumption. And with a peak brightness of 1750 nits, outdoor visibility remains excellent even under direct sunlight. The S Pen integration, a hallmark of the Galaxy Note series, adds versatility, allowing you to jot down notes, sketch, and annotate with precision.\r\n\r\nPerformance & Software\r\nUnder the hood, the S23 Ultra houses the formidable Snapdragon 8 Gen 2 chipset. Its octa-core CPU and Adreno 740 GPU work in perfect harmony, delivering lightning-fast performance. Multitasking becomes a breeze, whether you’re switching between apps, editing photos, or running resource-intensive games. \r\n\r\nThe One UI 6 interface provides a seamless user experience, with thoughtful optimizations and a clean design. Samsung’s commitment to software updates ensures that you’ll receive four years of Android OS updates, keeping your device relevant and secure.\r\n\r\nCamera Quality\r\nCamera setup is amazing. It has a 200MP main sensor that takes incredibly detailed photos, even when pixel binning. There is a 10x optical zoom telephoto lens for clear wildlife or neighbor photos from far away, going up to 100x digital zoom. \r\n\r\nA 3x optical zoom telephoto lens is perfect for mid-range shots. The ultrawide lens has a 120 degree field of view for big landscapes and groups with straight lines. Low light photos are great too with Nightography combining exposures and video is very stable, even in tough situations.\r\n\r\nBattery & Charging\r\nThe 5000mAh battery keeps you going all day. Whether you’re binge-watching your favorite series, attending virtual meetings, or gaming, the S23 Ultra won’t leave you hanging. And when it’s time to recharge, the 45W fast charging gets you from zero to hero swiftly. No more waiting around for hours.\r\n\r\nSamsung Galaxy S23 Ultra Price in Bangladesh\r\nSamsung Galaxy S23 Ultra price in Bangladesh is BDT 2,24,999 for 12GB RAM 256GB ROM and BDT 2,30,999 for 12GB RAM 512GB ROM. It is a high-end flagship device with a premium price tag Like previous flagship models, the S23 Ultra is priced at the high end of the market. For those looking for cutting-edge features and top-of-the-line specifications offered by the S23 Ultra, it will be an investment worth considering.', 224999, NULL, 15, 'Active', 'product/SQzcoCzKSfk4MeinCM2iaLMhoKYOwPxv20JalPsF.webp', '2025-11-09 10:06:26', '2025-11-09 10:06:26'),
+(5, 'Xiaomi Redmi Note 13 4G', 20, 17, '', 'Xiaomi Redmi Note 13 4G Overview\r\nXiaomi Redmi Note 13 4G is a mid-range smartphone that offers a flagship-level experience. It was released in January 2024 and has a large 6.67-inch AMOLED display, a 108MP triple camera, a powerful Snapdragon 685 processor, and a 5000mAh battery with 33W fast charging. In this article, we’re  going to share Xiaomi Redmi Note 13 4G full details. So, keep reading this article.\r\n\r\nMost Highlighted Features of Xiaomi Redmi Note 13 4G\r\nSuper-Clear 108MP Triple Camera: The main camera of the Redmi Note 13 4G has a 108MP sensor that can capture stunning photos with high resolution and detail. It also has an 8MP ultra-wide camera and a 2MP macro camera for different scenarios.\r\n120Hz AMOLED Display: The Redmi Note 13 4G features a 6.67-inch AMOLED display with a 120Hz refresh rate and peak brightness of 1800 nits.\r\nPowerful Snapdragon 685 Processor: It is powered by the Snapdragon 685 chipset, which is a 6nm octa-core processor with 4 x 2.8 GHz Cortex-A73 and 4×1.9 GHz Cortex-A53 cores.\r\n5000mAh Battery with 33W Fast Charging: The Redmi Note 13 4G has a large 5000mAh battery that can last for a whole day of heavy use. It also supports 33W fast charging that can charge the phone from 0% to 50% in 29 minutes and 100% in 70 minutes.\r\nShort Overview of Xiaomi Redmi Note 13 4G\r\nThe Redmi Note 13 4G is a stylish and affordable smartphone that offers a lot of features for its price. It has a sleek design with a flat frame and a deco-less back. It comes in four colors: Midnight Black, Mint Green, Ice Blue, and Ocean Sunset. The phone has a 6.67-inch AMOLED display with a 120Hz refresh rate and a 108MP triple camera. It runs on Android 13 with MIUI 14 and has a Snapdragon 685 processor and a 5000mAh battery. The phone also has a fingerprint sensor under the display, a 16MP selfie camera, and a hybrid dual SIM slot.\r\n\r\nXiaomi Redmi Note 13 Price in Bangladesh\r\nXiaomi Redmi Note 13 4G is a mid-range smartphone with a 108MP triple camera, a 120Hz AMOLED display, a Snapdragon 685 processor, and a 5000mAh battery. It was launched in January 2024 and is available in four colors: Midnight Black, Mint Green, Ice Blue, and Ocean Sunset. The official price of the Xiaomi Redmi Note 13 in Bangladesh is BDT 20,999 for the 6GB/128GB variant and BDT 22,999 for the 8GB/256GB variant.\r\n\r\nFinal Thought\r\nThe Xiaomi Redmi Note 13 4G is a great choice for anyone looking for a mid-range smartphone that can deliver a flagship-level experience. It has a superb camera, a smooth display, a powerful processor, and a large battery. It also has a stylish design and a reasonable price. Thank you all for reading this article.', 22999, 20999, 10, 'Active', 'product/PNv8aT9RXy4gjol8CDtE6n73s2DVY2RFZkiYusqj.webp', '2025-11-09 10:10:04', '2025-11-09 10:10:04'),
+(6, 'Apple iPhone 13', 20, 2, '', 'Apple iPhone 13 Overview\r\nApple iPhone 13 is the latest generation of the world’s best smartphone, launched in September 2021. It features a sleek and durable design, an advanced dual-camera system, a powerhouse chip, and an impressive leap in battery life. It also supports 5G, wireless charging, Face ID, and water resistance. It comes in five beautiful colors: pink, blue, midnight, starlight, and (PRODUCT)RED. In this article, we will try to share full details on Apple iPhone 13.\r\n\r\nMost Highlighted Features of Apple iPhone 13\r\n6.1-inch OLED screen:  The iPhone 13 has a 6.1-inch OLED screen with a resolution of 1170 x 2532 pixels and a pixel density of 460 ppi.\r\n12MP Camera: It has a dual-camera system at the back, consisting of a 12-megapixel wide-angle lens and a 12-megapixel ultra-wide-angle lens.\r\n3240 mAh non-removable battery: The iPhone 13 has a 3240 mAh non-removable battery that can provide up to 19 hours of talk time, 15 hours of internet use, 17 hours of video playback, or 75 hours of audio playback.\r\n64-bit hexa-core processor: It is powered by the A15 Bionic chip, which is a 64-bit hexa-core processor with two high-performance cores and four high-efficiency cores.\r\nShort Overview of Apple iPhone 13\r\nApple iPhone 13 is a powerful and versatile smartphone that offers a stunning display, a dual-camera system, a long-lasting battery, and a fast chip. It is ideal for users who want a high-quality and user-friendly device. It also has a sleek design, a sturdy build, and a water-resistant body. This device runs on iOS 15, which is the latest version of Apple’s operating system. It has a range of features and apps that enhance the user experience, such as Siri, Apple Pay, iCloud, iMessage, FaceTime, and more. It also has a high level of security and privacy, thanks to the Face ID and the encryption of the data.\r\n\r\nApple iPhone 13 Price in Bangladesh\r\nApple iPhone 13 is the latest generation of the world’s best smartphone, launched in September 2021. It features a sleek and durable design, an advanced dual-camera system, a powerhouse chip, and an impressive leap in battery life. It comes in five beautiful colors: pink, blue, midnight, starlight, and (PRODUCT)RED. The price of the iPhone 13 in Bangladesh is BDT 87,000.\r\n\r\nFinal Thought\r\nApple iPhone 13 is a remarkable smartphone that offers a lot of value and quality. It is a great choice for users who want a beautiful and durable display, a versatile and powerful camera, a reliable and long-lasting battery, and fast and smooth performance. It is also a secure and user-friendly device that runs on iOS 15, which is one of the most advanced and popular operating systems in the world.', 124999, 87000, 20, 'Active', 'product/LIS1p2ISWCS5gARGmpzM2xVPAViJKK5goOHWP8a2.webp', '2025-11-11 10:49:10', '2025-11-11 10:49:10'),
+(7, 'Realme 12 Pro', 20, 18, '', 'Realme 12 Pro Overview\r\nThe Realme 12 Pro, with its 8GB+256GB variant, stands out as a powerful contender in the smartphone market. This model boasts a robust Qualcomm Snapdragon 6 Gen 1 processor, ensuring smooth performance across applications and gaming. The 8GB of RAM is complemented by a Dynamic RAM feature that can add up to 8GB of virtual RAM, effectively doubling the available memory when needed. The device’s 6.7-inch AMOLED display, with a 120Hz refresh rate and full-HD+ resolution, promises vibrant visuals and fluid scrolling, making it a delight for media consumption and daily tasks alike.\r\n\r\nPhotography enthusiasts will appreciate the triple rear camera setup, featuring a 50MP main sensor, a 32MP telephoto lens with 2x optical zoom, and an 8MP ultrawide lens, catering to a variety of shooting scenarios. Also 16MP front camera ensures high-quality selfies and video calls. With a 5000mAh battery and 67W fast charging, users can expect extended usage and quick recharge times. The Realme 12 Pro runs on Android 14, offering the latest software features and security updates.\r\n\r\nRealme 12 Pro Price in Bangladesh\r\nRealme 12 Pro unofficial price in Bangladesh is BDT. 37,499. The Phone is also available in 3 different unofficial variants (8GB+128GB), (12GB+256GB), and (12GB+512GB). Realme 12 Pro available in 2 different colors: Submarine Blue, and Navigator Beige. This phone has not officially arrived in Bangladesh yet. So if you want to buy it then you can buy from an unofficial shop and online platform.', 36500, NULL, 5, 'Active', 'product/8hyu2HKmFSjuLVHc5Q7ulc1741RQs5cDEAgNecCL.webp', '2025-11-11 10:54:22', '2025-11-11 10:54:22'),
+(8, 'Tecno Spark 20 Pro', 20, 19, '', 'The Tecno Spark 20 Pro emerges as a noteworthy contender in the smartphone market, blending advanced features with affordability. Launched on December 15, 2023. It’s designed for tech-savvy users seeking performance without the premium price in Bangladesh.\r\n\r\nTecno Spark 20 Pro Price in Bangladesh\r\nTecno Spark 20 Pro 8GB RAM and 256GB ROM price in Bangladesh is BDT 19,999, striking a balance between cost and capabilities for budget-conscious consumers.\r\n\r\n5 Most Highlighted Features of Tecno Spark 20 Pro\r\nCamera: Boasting a 108MP main camera, the Tecno Spark 20 Pro captures stunningly detailed photos.\r\nDisplay:  6.78\" FHD+ IPS LCD with a 120Hz refresh rate offers a smooth visual experience.\r\nPerformance: Powered by the Mediatek Helio G99 chipset and 8GB RAM, it handles multitasking with ease.\r\nBattery: 5000mAh battery coupled with 33W fast charging ensures extended usage.\r\nDesign: IP53 dust and splash resistance, along with a sleek design available in multiple colors, adds to its appeal.\r\nShort Overview of Tecno Spark 20 Pro \r\nTecno Spark 20 Pro is a feature-packed smartphone that offers a blend of performance and style. It has a 6.78-inch with 120Hz refresh rate screen with really smooth scrolling. The screen looks sharp with 1080x2460 pixels. Under the hood, it’s powered by the Mediatek Helio G99 chipset, paired with 8GB of RAM and 256GB of internal storage. \r\n\r\nPhotography enthusiasts will appreciate the 108MP main camera, while selfies are handled by a 32 MP front camera. The device runs on Android 13 and is equipped with a 5000mAh battery supporting 33W fast charging. Additional features include IP53 dust and splash resistance, dual SIM capabilities, NFC, and a side-mounted fingerprint sensor for security.\r\n\r\nFinal Thought\r\n\r\nTecno Spark 20 Pro stands out in the mid-range segment, offering a compelling mix of features that are sure to attract those who want a high-quality smartphone experience without the high cost. Its combination of a high-resolution camera, smooth display, and durable battery makes it a smart choice for consumers in Bangladesh.', 21999, 19999, 10, 'Active', 'product/cv9OlqcasOGT0wzwt5NTzns99wESMt3U2MkMA3aT.webp', '2025-11-11 11:47:17', '2025-11-11 11:47:17'),
+(9, 'OnePlus 11R', 20, 15, '', 'OnePlus 11R Overview\r\nOnePlus 11R is a flagship smartphone from OnePlus that was released in February 2023. It is powered by the Snapdragon 8+ Gen 1 chipset, which offers impressive performance and power efficiency. The OnePlus 11R also features a 6.74-inch Fluid AMOLED display with 120Hz refresh rate, a 50MP triple camera system, and a 5000mAh battery with 100W SUPERVOOC fast charging. Keep reading this article to know more details on this device.\r\n\r\nMost Highlighted Features of OnePlus 11R\r\n120 Hz Super Fluid Display: This phone has a stunning 6.74-inch Fluid AMOLED display with 1B colors, HDR10+, and 1450 nits peak brightness.\r\nSnapdragon 8+ Gen 1: The OnePlus 11R is one of the first smartphones to use the Snapdragon 8+ Gen 1 chipset, which is based on a 4nm process and has an octa-core CPU, an Adreno 730 GPU, and a Hexagon 8 AI engine.\r\n50 MP IMX890 Triple Camera System: It has a versatile camera system that consists of a 50MP main camera, an 8MP ultra-wide camera, and a 2MP macro camera.\r\n100W SUPERVOOC Fast Charging: The OnePlus 11R has a large 5000mAh battery that can last for a day of heavy use. But what makes it even more impressive is the 100W SUPERVOOC fast charging technology, which can charge the battery from 0 to 100% in just 20 minutes.\r\nShort Overview of OnePlus 11R\r\nThe OnePlus 11R is a premium smartphone that offers a lot of value for its price. It has a sleek and elegant design, with a glass front and back, and a plastic frame. It has a 6.74-inch Fluid AMOLED display with 1240 x 2772 pixels resolution, 20:9 aspect ratio, and 451 ppi density. It runs on Android 13, with OxygenOS 13 as the custom skin. It has three storage options: 128GB with 8GB RAM, 256GB with 16GB RAM, and 512GB with 18GB RAM. \r\n\r\nIt has a triple camera system on the back, with a 50MP main camera, an 8MP ultra-wide camera, and a 2MP macro camera. It has a 16MP selfie camera on the front. This phone has a 5000mAh battery with 100W SUPERVOOC fast charging. It has a fingerprint sensor under the display, and other sensors such as accelerometer, gyro, proximity, compass, and color spectrum. It has a dual SIM slot, NFC, infrared port, and USB Type-C 2.0 port. It comes in three colors: Galactic Silver, Sonic Black, and Solar Red.\r\n\r\nOnePlus 11R Price in Bangladesh\r\nOnePlus 11R is a flagship smartphone that offers a lot of features and performance for a reasonable price. It has a 6.74-inch Fluid AMOLED display, a Snapdragon 8+ Gen 1 chipset, a 50MP triple camera system, and a 5000mAh battery with 100W fast charging. It runs on Android 13 with OxygenOS 13 as the custom skin. The OnePlus 11R price in Bangladesh starts from BDT 43,000 for the 8GB/128GB variant, and goes up to BDT 50,000 for the 16GB/256GB variant.\r\n\r\nFinal Thought\r\nThe OnePlus 11R is a great smartphone that offers a lot of features and performance for a reasonable price. It is a worthy competitor to other flagship phones in the market, and it can satisfy the needs of most users. Whether you are looking for a fast and smooth display, a powerful and efficient chipset, a versatile and high-quality camera system, or a super fast and intelligent charging technology, the OnePlus 11R has it all. It is a phone that you can rely on for your daily tasks, entertainment, and gaming. The OnePlus 11R is a phone that you can be proud of owning.', 43000, NULL, 0, 'Active', 'product/bB2zuZieAdl0yViGYBZWZqEeKWFysyUNGHqATzUp.webp', '2025-11-11 11:57:06', '2025-11-12 00:13:58'),
+(10, 'Samsung Galaxy Tab A9', 22, 1, 'Samsung Galaxy Tab A9 offers a sleek design, vibrant display, and powerful performance for everyday use. Powered by an octa-core processor with up to 8GB RAM, it ensures smooth multitasking and entertainment. With Dolby Atmos speakers, long battery life, and Android 13, it’s perfect for work, study, and play.', 'The Samsung Galaxy Tab A9, was released on October 5, 2023. It offers a compelling blend of entertainment and productivity. Available in two sizes, this Android 13 tablet caters to diverse needs. \r\n\r\nThis tab comes in two flavors: the 8.7-inch Wi-Fi model (SM-X110) and the 8.7-inch LTE version (SM-X115). Both variants share a sleek design, measuring 211 x 124.7 x 8 mm and weighing around 332 grams. The tablet’s slim profile ensures portability without compromising on functionality.\r\n\r\nThe 8.7-inch TFT LCD Display boasts a resolution of 800 x 1340 pixels, offering a comfortable viewing experience. Under the hood, the Mediatek Helio G99 chipset powers the device, featuring an octa-core CPU (2x2.2 GHz Cortex-A76 & 6x2.0 GHz Cortex-A55) and a Mali-G57 MC2 GPU. With 4GB or 8GB RAM options and 64GB or 128GB internal storage, the Galaxy Tab A9 handles multitasking and storage needs efficiently.\r\n\r\nIts 8 MP rear camera captures decent photos and videos at 1080p@30fps, while the 2 MP front camera serves for selfies and video calls. The 5100 mAh non-removable battery ensures extended usage, and the 15W wired charging keeps you powered up.\r\n\r\nWhether streaming videos, playing games, or reading e-books, the Galaxy Tab A9’s display and stereo speakers enhance your multimedia experience. With the One UI 5.1 interface, you can seamlessly switch between apps, manage tasks, and stay organized. With its budget-friendly price tag, it can surely be a good option for you.\r\n\r\nSamsung Galaxy Tab A9 Price in Bangladesh\r\nThe Samsung Galaxy Tab A9 Price in Bangladesh is BDT 33,499 (Official) for its 4GB RAM and 64GB storage variant. It comes in three different colors which are Graphite, Silver, and Navy. You can purchase this tablet from Samsung\'s official showroom, authorized shop, and online marketplace.', 34999, 33499, 10, 'Active', 'product/TRvotGypKtDl371ujNUpgRWjlrGOVb1RUo0fHtab.webp', '2025-11-11 12:04:27', '2025-11-12 00:55:51'),
+(11, 'Infinix Smart 8', 20, 20, 'Infinix Smart 8 Price in Bangladesh 2024 & Release Date\r\nName	Infinix Smart 8\r\nOfficial Price	BDT. 10,499\r\nRelease Date	11-Nov-2023\r\nMarket Status	In Stock\r\nVariant	RAM: 4GB + ROM: 64GB', 'The Infinix Smart 8, with its 4GB+64GB variant, is a noteworthy entrant in the budget smartphone segment. Released in November 2023, it offers a blend of performance and features that cater to the needs of cost-conscious consumers. The device runs on Android 13 and is powered by the Unisoc T606 chipset, ensuring a smooth user experience.\r\n\r\nIt boasts a 6.6-inch IPS LCD display with a 90Hz refresh rate, providing a responsive and immersive visual experience. The camera setup includes a 13MP main sensor complemented by an auxiliary lens, capable of capturing decent photographs. A 5000mAh battery backs the hardware, offering a reliable day-long usage.\r\n\r\nOne of the reasons to consider the Infinix Smart 8 is its value proposition. It provides a side-mounted fingerprint sensor, dual-band Wi-Fi, and a dedicated microSD slot for storage expansion, features often found in higher-priced models.\r\n\r\nInfinix Smart 8 price in Bangladesh\r\nThe Infinix Smart 8 official price in Bangladesh is BDT 10,499 for the 4GB+64GB variant. Also has another official variant 4GB+128GB. The phone\'s design is modern, available in colors like Timber Black, Shiny Gold, Crystal Green, and Galaxy White, appealing to a range of personal tastes. It\'s available for purchase in Infinix brand shops, authoraid, and online marketplace.', 10499, NULL, 5, 'Active', 'product/9zmlyjQ6TUOA0Gy0fDUWNHEso0FDKhnOYGCvEeUH.webp', '2025-11-12 00:47:19', '2025-11-12 00:47:19');
 
 -- --------------------------------------------------------
 
@@ -339,10 +364,10 @@ CREATE TABLE `roles` (
 --
 
 INSERT INTO `roles` (`id`, `name`, `created_at`, `updated_at`) VALUES
-(1, 'Admin', '2025-11-08 10:51:56', '2025-11-08 11:43:11'),
-(3, 'Vendor', '2025-11-08 10:56:40', '2025-11-08 10:56:40'),
-(4, 'Editor', '2025-11-08 11:43:27', '2025-11-08 11:43:27'),
-(5, 'Customer', '2025-11-08 11:43:39', '2025-11-08 11:43:39');
+(1, 'Admin', '2025-11-09 08:35:07', '2025-11-09 08:35:07'),
+(2, 'Vendor', '2025-11-09 08:35:14', '2025-11-09 08:35:14'),
+(3, 'Editor', '2025-11-09 08:35:20', '2025-11-09 08:35:20'),
+(4, 'Customer', '2025-11-09 08:35:26', '2025-11-09 08:35:26');
 
 -- --------------------------------------------------------
 
@@ -364,7 +389,8 @@ CREATE TABLE `sessions` (
 --
 
 INSERT INTO `sessions` (`id`, `user_id`, `ip_address`, `user_agent`, `payload`, `last_activity`) VALUES
-('3Drl5gkYVRZuR6dWm5RCcRSKL7F6Qp0GMYHMzy5F', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiSUd4NmNVRFNaSXYwcXVyYnh3RTBTdUtxQ3lpQnQ4THdrOGE2dmNMVCI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MjY6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9yb2xlIjt9czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319fQ==', 1762623819);
+('qi1Swp29lf8nFm0NanCCDWol2Cxojopdu17ioScM', 4, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36', 'YTo1OntzOjY6Il90b2tlbiI7czo0MDoiNkZ6Q29nZk56SmFuSFR3U3lSZENXc0N2YTdMdTRteENOeDQ5SGwwWiI7czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6Mzk6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9wcm9kdWN0LWRldGFpbHMvMSI7fXM6NTA6ImxvZ2luX3dlYl81OWJhMzZhZGRjMmIyZjk0MDE1ODBmMDE0YzdmNThlYTRlMzA5ODlkIjtpOjQ7czoyMjoiUEhQREVCVUdCQVJfU1RBQ0tfREFUQSI7YTowOnt9fQ==', 1762933941),
+('v7z61yiMmkYyUUMbyDsUtZiXRehczpBybMv1Hskz', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36', 'YTo1OntzOjY6Il90b2tlbiI7czo0MDoidUkxdFVjTllnSjU1cDdyTE9JRUJHTms5Y0k3M2NNUXNncThSSE5WVSI7czoyMjoiUEhQREVCVUdCQVJfU1RBQ0tfREFUQSI7YTowOnt9czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6NDA6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9wcm9kdWN0LWRldGFpbHMvMTAiO31zOjY6Il9mbGFzaCI7YToyOntzOjM6Im9sZCI7YTowOnt9czozOiJuZXciO2E6MDp7fX1zOjQ6ImNhcnQiO2E6MTp7aToxMDthOjQ6e3M6NDoibmFtZSI7czoyMToiU2Ftc3VuZyBHYWxheHkgVGFiIEE5IjtzOjU6InByaWNlIjtkOjEzMzk5NjtzOjg6InF1YW50aXR5IjtzOjE6IjQiO3M6NToicGhvdG8iO3M6NTM6InByb2R1Y3QvVFJ2b3RHeXBLdERsMzcxdWpOVXBnUldqbHJHT1ZiMVJVbzBmSHRhYi53ZWJwIjt9fX0=', 1762961616);
 
 -- --------------------------------------------------------
 
@@ -374,16 +400,29 @@ INSERT INTO `sessions` (`id`, `user_id`, `ip_address`, `user_agent`, `payload`, 
 
 CREATE TABLE `users` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `name` varchar(255) NOT NULL,
+  `first_name` varchar(255) DEFAULT NULL,
+  `last_name` varchar(255) DEFAULT NULL,
   `email` varchar(255) NOT NULL,
-  `phone` varchar(20) NOT NULL,
-  `role_id` int(10) NOT NULL,
   `email_verified_at` timestamp NULL DEFAULT NULL,
   `password` varchar(255) NOT NULL,
   `remember_token` varchar(100) DEFAULT NULL,
-  `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL
+  `phone` varchar(15) DEFAULT NULL,
+  `role_id` bigint(20) UNSIGNED DEFAULT NULL,
+  `status` varchar(20) NOT NULL DEFAULT 'active',
+  `photo` varchar(255) DEFAULT NULL,
+  `created_at` date DEFAULT NULL,
+  `updated_at` date DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`id`, `first_name`, `last_name`, `email`, `email_verified_at`, `password`, `remember_token`, `phone`, `role_id`, `status`, `photo`, `created_at`, `updated_at`) VALUES
+(4, 'Md', 'Rayhan', 'rayhan8171@gmail.com', NULL, '$2y$12$rejRYZPtsg6RsXwp1y.0Y.SfXXouQyZ2yWZ1kit/TqGBh/0DEtTiO', NULL, '01705675623', 1, 'Active', 'user/Pd3H72ijTPZ2Hdupiy4lKTSDxcN1dBmAHIIHOR3s.png', '2025-11-09', '2025-11-10'),
+(6, 'Sumaiya', 'Akter', 'sumaiya@hospital.com', NULL, '$2y$12$EC/nevdPXL1SDIu30yLpYu.JAIA5qV9ke4Bh2EaWjdSC0H/iueko2', NULL, '01710000010', 2, 'Active', 'user/0YfGo7k5Gjzezby4lCvaK4cxJ750voHIr4ZgSfIU.png', '2025-11-09', '2025-11-10'),
+(7, 'Rahman', 'Mia', 'rahman@gmail.com', NULL, '$2y$12$IjAwMnZpmWlyTA4meYp4ren3EGX6HYhJF8Nsmd/YBAqwOeRmBKNa6', NULL, '01710000010', 4, 'Active', 'user/DLoBfzxj9gWW2TSkBWWkU5lVBW3tHgROvjuF77U6.jpg', '2025-11-09', '2025-11-10'),
+(8, 'Rakib', 'Rayhan', 'rakib@mail.com', NULL, '$2y$12$M1La.EzB44BJateQRLjoju15Tx4TBxQnOgbmu.8xs953uumDw9Nj2', NULL, '01710000005', 3, 'Active', 'user/WNHsyTHoJBI2gEEWHkre00BgQveN9YA6kvKN8yZV.jpg', '2025-11-10', '2025-11-10');
 
 --
 -- Indexes for dumped tables
@@ -408,6 +447,12 @@ ALTER TABLE `cache_locks`
   ADD PRIMARY KEY (`key`);
 
 --
+-- Indexes for table `carts`
+--
+ALTER TABLE `carts`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `categories`
 --
 ALTER TABLE `categories`
@@ -419,12 +464,6 @@ ALTER TABLE `categories`
 ALTER TABLE `failed_jobs`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `failed_jobs_uuid_unique` (`uuid`);
-
---
--- Indexes for table `inventory`
---
-ALTER TABLE `inventory`
-  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `jobs`
@@ -446,15 +485,15 @@ ALTER TABLE `migrations`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `order`
+-- Indexes for table `orders`
 --
-ALTER TABLE `order`
+ALTER TABLE `orders`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `order_items`
+-- Indexes for table `order_item`
 --
-ALTER TABLE `order_items`
+ALTER TABLE `order_item`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -464,15 +503,15 @@ ALTER TABLE `password_reset_tokens`
   ADD PRIMARY KEY (`email`);
 
 --
--- Indexes for table `products`
+-- Indexes for table `productgalleries`
 --
-ALTER TABLE `products`
+ALTER TABLE `productgalleries`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `pyment_methods`
+-- Indexes for table `products`
 --
-ALTER TABLE `pyment_methods`
+ALTER TABLE `products`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -504,7 +543,13 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `brand`
 --
 ALTER TABLE `brand`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=102;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+
+--
+-- AUTO_INCREMENT for table `carts`
+--
+ALTER TABLE `carts`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `categories`
@@ -519,12 +564,6 @@ ALTER TABLE `failed_jobs`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `inventory`
---
-ALTER TABLE `inventory`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT;
-
---
 -- AUTO_INCREMENT for table `jobs`
 --
 ALTER TABLE `jobs`
@@ -534,43 +573,43 @@ ALTER TABLE `jobs`
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
--- AUTO_INCREMENT for table `order`
+-- AUTO_INCREMENT for table `orders`
 --
-ALTER TABLE `order`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `orders`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `order_items`
+-- AUTO_INCREMENT for table `order_item`
 --
-ALTER TABLE `order_items`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `order_item`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `productgalleries`
+--
+ALTER TABLE `productgalleries`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
-
---
--- AUTO_INCREMENT for table `pyment_methods`
---
-ALTER TABLE `pyment_methods`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `roles`
 --
 ALTER TABLE `roles`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
