@@ -105,12 +105,18 @@
                             @csrf
                             <div class="product__details__quantity">
                                 <div class="quantity">
-                                    <div class="pro-qty">
+                                    <div class="pro-qty-button">
                                         <input type="number" name="quantity" value="1" min="1">
                                     </div>
                                 </div>
                             </div>
-                            <button type="submit" class="btn primary-btn">ADD TO CART</button>
+                            @if ($product->stock_quantity == 0)
+                                <button type="submit" class="btn primary-btn">Pre Oreder</button>
+                                @else
+                                <button type="submit" class="btn primary-btn">ADD TO CART</button>
+
+                            @endif
+                            
                         </form>
                     </div>
                 </div>

@@ -16,7 +16,14 @@ class CartController extends Controller
     public function index()
     {
         $cart = session('cart', []);
-        return view('site.layout.nav-area', compact('cart'));
+        $total = 0;
+        foreach ($cart as $item) {
+            $quantity = $item['quantity'] ?? 0;
+            $total += $item['price'] * $quantity;
+        }
+
+
+        return view('site.layout.nav-area', compact('cart', 'total'));
     }
     public function addToCart($id, Request $request)
     {
@@ -51,8 +58,13 @@ class CartController extends Controller
     public function cartPage()
     {
         $cart = session('cart', []);
+        $total = 0;
+        foreach ($cart as $item) {
+            $quantity = $item['quantity'] ?? 0;
+            $total += $item['price'] * $quantity;
+        }
 
-        return view('site.pages.product-details.cartPage.cart', compact('cart'));
+        return view('site.pages.product-details.cartPage.cart', compact('cart', 'total'));
     }
 
      /**
@@ -68,17 +80,26 @@ class CartController extends Controller
             unset($cart[$request->product_id]);
         }
 
+         $total = 0;
+            foreach ($cart as $item) {
+                $quantity = $item['quantity'] ?? 0;
+                $total += $item['price'] * $quantity;
+            }
+        
         session()->put('cart', $cart);
 
         $view = view('site.pages.product-details.cartPage.cartProduct', ['cart' => $cart])->render();
 
-        return response()->json(['success' => true, 'html' => $view]);
+        return response()->json([
+                                'success' => true,
+                                'html' => $view,
+                                'total' => $total
+                            ]);
     }
 
 
-    public function orderProduct(){
-        dd('hi');
-    }
+  
+
 
 
 

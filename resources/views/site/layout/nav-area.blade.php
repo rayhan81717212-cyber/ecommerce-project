@@ -76,7 +76,7 @@
                 <div class="header__cart">
                     <ul>
                         <li><a href="#"><i class="fa fa-heart"></i> <span>1</span></a></li>
-                        <li><a href="{{ url('cart') }}"><i class="fa fa-shopping-bag"></i> <span>{{ count(session('cart', [])) }}</span></a></li>
+                        <li><a href="{{ url('cart') }}"><i class="fa fa-shopping-bag"></i> <span class="fs-6">{{ count(session('cart', [])) }}</span></a></li>
                     </ul>
                     <div class="header__cart__price">Total Amount: 
                         <span>
@@ -94,7 +94,7 @@
                                             $total = $total ?? null;
                                         @endphp
                                     @endforeach
-                                    {{ $total ?? 0 }}.00
+                                    <span class="navbar-cart-total">{{ $total }}.00</span>
                                 @endif
                         </span>
                     </div>

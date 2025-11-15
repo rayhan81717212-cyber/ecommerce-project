@@ -14,8 +14,6 @@
 <!-- Product Details Section Begin -->
 <!-- Shoping Cart Section Begin -->
 <section class="shoping-cart spad">
-    <form action="{{ route('order.post') }}" method="post">
-        @csrf
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
@@ -28,36 +26,20 @@
             </div>
             <div class="row">
                 <div class="col-lg-6">
-                    <div class="shoping__continue">
-                        <div class="shoping__discount">
-                            <h5>Discount Codes</h5>
-                            <form action="#">
-                                <input type="text" placeholder="Enter your coupon code">
-                                <button type="submit" class="site-btn-border">APPLY COUPON</button>
-                            </form>
-                        </div>
-                    </div>
+                  
                 </div>
                 <div class="col-lg-6">
                     <div class="shoping__checkout">
-                        @php
-                            $total = 0;
-                            foreach ($cart as $item) {
-                                $quantity = $item['quantity'] ?? 0;
-                                $total += $item['price'] * $quantity;
-                            }
-                        @endphp
                         <h5>Cart Total</h5>
                         <ul>
-                            <li>Subtotal <span>{{ $total }}.00</span></li>
-                            <li>Total <span>{{ $total }}.00</span></li>
+                            <li>Subtotal <span class="subtotal-amount">{{ $total }}.00</span></li>
+                            <li>Total <span class="total-amount">{{ $total }}.00</span></li>
                         </ul>
-                        <button class=" btn primary-btn w-100">PROCEED TO CHECKOUT</button>
+                        <a  href="{{ route('checkout.page') }}" class=" btn primary-btn w-100">PROCEED TO CHECKOUT</a>
                     </div>
                 </div>
             </div>
         </div>
-    </form>
 </section>
 <!-- Shoping Cart Section End -->
 <!-- Product Details Section End -->
@@ -67,26 +49,41 @@
         $(document).ready(function() {
 
             // Quantity Update
-            $('body').on('click', '.qtybtn', function() {
-                var row = $(this).closest('tr');
-                var productId = row.data('id');
-                var quantity = row.find('.cart-lavel').val();
+           $('body').on('click', '.qtybtn', function() {
+            var row = $(this).closest('tr');
+            var productId = row.data('id');
+            var btn = $(this);
 
-                $.ajax({
-                    url: "{{ route('cart.update') }}",
-                    method: "POST",
-                    data: {
-                        _token: "{{ csrf_token() }}",
-                        product_id: productId,
-                        quantity: quantity,
-                        type: 'update'
-                    },
-                    success: function(response) {
-                        $('#cart-product').html(response.html);
-                    },
+            var oldValue = parseInt(btn.parent().find('input').val()) || 0;
 
-                });
+            if (btn.hasClass('inc')) {
+                var newVal = oldValue + 1;
+            } else {
+                var newVal = Math.max(1, oldValue - 1); 
+            }
+
+            btn.parent().find('input').val(newVal);
+
+            var quantity = row.find('.cart-lavel').val();
+
+            $.ajax({
+                url: "{{ route('cart.update') }}",
+                method: "POST",
+                data: {
+                    _token: "{{ csrf_token() }}",
+                    product_id: productId,
+                    quantity: quantity,
+                    type: 'update'
+                },
+                success: function(response) {
+                    $('#cart-product').html(response.html);
+                    $('.subtotal-amount').text(response.total + ".00");
+                    $('.total-amount').text(response.total + ".00");
+                    $('.navbar-cart-total').text(response.total + ".00");
+                }
             });
+        });
+
 
             // Remove Product
             $('body').on('click', '.remove-product', function() {

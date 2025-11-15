@@ -8,7 +8,26 @@
                 <li><a href="#"><i class="fa fa-heart"></i> <span>1</span></a></li>
                 <li><a href="{{ url('cart') }}"><i class="fa fa-shopping-bag"></i> <span>{{ count(session('cart', [])) }}</span></a></li>
             </ul>
-            <div class="header__cart__price">item: <span>$150.00</span></div>
+            <div class="header__cart__price">Total Amount: 
+                        <span>
+                            @php
+                                $cart = session('cart', []);
+                                @endphp
+
+                                @if (!empty($cart))
+                                    @php $total = 0; @endphp
+                                    @foreach ($cart as $item)
+                                        @php
+                                            $quantity = $item['quantity'] ?? 0; 
+                                            $subTotal = $item['price'] * $quantity;
+                                            $total += $subTotal;
+                                            $total = $total ?? null;
+                                        @endphp
+                                    @endforeach
+                                    <span class="navbar-cart-total">{{ $total }}.00</span>
+                                @endif
+                        </span>
+                </div>
         </div>
         <div class="humberger__menu__widget">
             
