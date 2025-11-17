@@ -14,6 +14,9 @@ use App\Http\Controllers\UsersController;
 use App\Http\Controllers\ProductController;  
 use App\Http\Controllers\ProductGalleryController;
 use App\Http\Controllers\CategoriesController; 
+use App\Http\Controllers\OrderController; 
+use App\Http\Controllers\PaymentController; 
+use App\Http\Controllers\BannerController; 
 
 Route::get('/', function () {
     return view('welcome');
@@ -55,26 +58,22 @@ Route::middleware('auth')->group(function () {
 
     // Categories router
     Route::resource('brand', (BrandController::class));
+
+    // Categories router
+    Route::resource('banner', (BannerController::class));
         
 
     // order Router
-    Route::get('/order', function () {
-        return view('admin.pages.orderManagement.allOrder');
-    });
-    Route::get('/pending-order', function () {
-        return view('admin.pages.orderManagement.pendingOrder');
-    });
-    Route::get('/deliverd-order', function () {
-        return view('admin.pages.orderManagement.deliveredOrder');
-    });
-    Route::get('/cancle-order', function () {
-        return view('admin.pages.orderManagement.cancleOrder');
-    });
+    Route::get('/order', [OrderController::class, 'index'])->name('order');
+    Route::get('/cancle-order', [OrderController::class, 'cancleOrder'])->name('cancle-order');
+    Route::get('/pending-order', [OrderController::class, 'pendingOrder'])->name('pending-order');
+    Route::get('/deliverd-order', [OrderController::class, 'deliveredOrder'])->name('deliverd-order');
+
 
     // Payment Router
-    Route::get('/payment', function () {
-        return view('admin.pages.paymentMethod.index');
-    });
+    Route::get('/payment', [PaymentController::class, 'index'])->name('payment');
+    Route::get('/payment/{id}', [PaymentController::class, 'printInvoice'])->name('invoice');
+
 
     // Reviews Router
     Route::get('/review', function () {

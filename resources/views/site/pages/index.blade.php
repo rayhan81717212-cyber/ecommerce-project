@@ -14,14 +14,17 @@
     <div class="container-fluid">
         <div class="row  p-0">
             <div class="col-12 p-0">
-                <div class="hero__item set-bg" style="width: 100%" data-setbg="site-asset/img/hero/banner.jpg">
-                    <div class="hero__text">
-                        <span>FRUIT FRESH</span>
-                        <h2>Vegetable <br />100% Organic</h2>
-                        <p>Free Pickup and Delivery Available</p>
-                        <a href="#" class="primary-btn">SHOP NOW</a>
+                @foreach ($banner as $item)
+                    <div class="hero__item set-bg" style="width: 100%" data-setbg="{{ asset('storage/'.$item->photo) }}">
+                        <div class="hero__text">
+                            <span>Phone 16 Pro</span>
+                            <h2>6.3 inch OLED Screen  |  Super Retina XDR display <br>
+                                Dynamic Island  |  1000 nits max brightness</h2>
+                            <p>Upcomming</p>
+                            <a href="#" class="primary-btn">SHOP NOW</a>
+                        </div>
                     </div>
-                </div>
+                @endforeach
 
             </div>
 
@@ -34,31 +37,14 @@
     <div class="container">
         <div class="row">
             <div class="categories__slider owl-carousel">
-                <div class="col-lg-3">
-                    <div class="categories__item set-bg" data-setbg="site-asset/img/categories/cat-1.jpg">
-                        <h5><a href="#">Fresh Fruit</a></h5>
+                @foreach ($brand as $item)
+                    <div class="col-lg-3 d-flex justify-content-center">
+                        <div class="categories__item" style="width:200px; height:200px; display:flex; flex-direction:column; align-items:center; justify-content:center;">
+                            <img src="{{ asset('storage/'.$item->logo) }}" style="width:50%; height:auto; object-fit: contain;">
+                            <h5 style="text-align:center; margin-top:10px;"><a href="#">{{$item->name}}</a></h5>
+                        </div>
                     </div>
-                </div>
-                <div class="col-lg-3">
-                    <div class="categories__item set-bg" data-setbg="site-asset/img/categories/cat-2.jpg">
-                        <h5><a href="#">Dried Fruit</a></h5>
-                    </div>
-                </div>
-                <div class="col-lg-3">
-                    <div class="categories__item set-bg" data-setbg="site-asset/img/categories/cat-3.jpg">
-                        <h5><a href="#">Vegetables</a></h5>
-                    </div>
-                </div>
-                <div class="col-lg-3">
-                    <div class="categories__item set-bg" data-setbg="site-asset/img/categories/cat-4.jpg">
-                        <h5><a href="#">drink fruits</a></h5>
-                    </div>
-                </div>
-                <div class="col-lg-3">
-                    <div class="categories__item set-bg" data-setbg="site-asset/img/categories/cat-5.jpg">
-                        <h5><a href="#">drink fruits</a></h5>
-                    </div>
-                </div>
+                  @endforeach
             </div>
         </div>
     </div>
@@ -93,23 +79,20 @@
                                         @if ($product->discount_price)
                                             <div class="d-flex justify-content-center align-items-center">
                                                 <h6 class="text-danger mx-1 fs-4" style="font-weight: 700;">
-                                                    <del><i class="fa-solid fa-bangladeshi-taka-sign fs-4"></i>
+                                                    <del>৳
                                                         {{ $product->price }}</del>
                                                 </h6>
                                                 <h5 class="mx-1" style="font-weight: 700;">
-                                                    <i
-                                                        class="fa-solid fa-bangladeshi-taka-sign fs-4"></i>{{ $product->discount_price }}
+                                                    ৳ {{ $product->discount_price }}
                                                 </h5>
                                             </div>
                                         @else
                                             <h5 class="text-center" style="font-weight: 700;">
-                                                <i class="fa-solid fa-bangladeshi-taka-sign fs-4"></i> {{ $product->price }}
+                                                ৳ {{ $product->price }}
                                             </h5>
                                         @endif
                                         <h6 class="mt-1">{{ $product->brand_name }}</h6>
                                     </div>
-
-
 
                                     <a href="{{ route('product-show', $product->id) }}" class="btn btn-color mt-auto">View
                                         Details</a>
@@ -120,9 +103,9 @@
             @endforeach
         </div>
 
-        <div class="mt-4">
+        {{-- <div class="mt-4">
             {{ $products->links('pagination::bootstrap-5') }}
-        </div>
+        </div> --}}
     </div>
 </section>
 <!-- Featured Section End -->
@@ -350,66 +333,7 @@
 </section>
 <!-- Latest Product Section End -->
 
-<!-- Blog Section Begin -->
-<section class="from-blog spad">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="section-title from-blog__title">
-                    <h2>From The Blog</h2>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-lg-4 col-md-4 col-sm-6">
-                <div class="blog__item">
-                    <div class="blog__item__pic">
-                        <img src="site-asset/img/blog/blog-1.jpg" alt="">
-                    </div>
-                    <div class="blog__item__text">
-                        <ul>
-                            <li><i class="fa fa-calendar-o"></i> May 4,2019</li>
-                            <li><i class="fa fa-comment-o"></i> 5</li>
-                        </ul>
-                        <h5><a href="#">Cooking tips make cooking simple</a></h5>
-                        <p>Sed quia non numquam modi tempora indunt ut labore et dolore magnam aliquam quaerat </p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-4 col-sm-6">
-                <div class="blog__item">
-                    <div class="blog__item__pic">
-                        <img src="site-asset/img/blog/blog-2.jpg" alt="">
-                    </div>
-                    <div class="blog__item__text">
-                        <ul>
-                            <li><i class="fa fa-calendar-o"></i> May 4,2019</li>
-                            <li><i class="fa fa-comment-o"></i> 5</li>
-                        </ul>
-                        <h5><a href="#">6 ways to prepare breakfast for 30</a></h5>
-                        <p>Sed quia non numquam modi tempora indunt ut labore et dolore magnam aliquam quaerat </p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-4 col-sm-6">
-                <div class="blog__item">
-                    <div class="blog__item__pic">
-                        <img src="site-asset/img/blog/blog-3.jpg" alt="">
-                    </div>
-                    <div class="blog__item__text">
-                        <ul>
-                            <li><i class="fa fa-calendar-o"></i> May 4,2019</li>
-                            <li><i class="fa fa-comment-o"></i> 5</li>
-                        </ul>
-                        <h5><a href="#">Visit the clean farm in the US</a></h5>
-                        <p>Sed quia non numquam modi tempora indunt ut labore et dolore magnam aliquam quaerat </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<!-- Blog Section End -->
+
 
 <!-- Footer Section Begin -->
 @include('site.layout.footer')

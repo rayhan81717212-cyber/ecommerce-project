@@ -8,15 +8,16 @@ class Order extends Model
 {
    protected $table = "orders";
    protected  $fillable = [
-        "user_id",
-        "order_number",
-        "amount",
-        "status",
-        "strpe_id",
+         'user_id',
+         'order_number',
+         'amount',
+         'shipping_fee',
+         'grand_total',
+         'payment_method',
+         'payment_status',
+         'status'
    ];
 
-   public function products(){
-      return $this->hasMany(OrderItem::class);
-   }
+   
 
 }

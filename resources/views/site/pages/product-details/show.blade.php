@@ -17,21 +17,25 @@
             <div class="row">
                 <div class="col-lg-6 col-md-5">
                     <div class="product__details__pic">
-                        <div class="product__details__pic__item">
-                            
+                        <div class="product__details__pic__item easyzoom easyzoom--overlay">
+
                             @if ($product->photo !== null)
-                                <a data-fancybox="gallery" href="{{ asset('storage/' . $product->photo) }}">
-                                    <img class="product__details__pic__item--large" 
-                                    src="{{ asset('storage/' . $product->photo) }}" 
-                                    alt="{{ $product->name }}" style="width: 70%; height: 80%">
+
+                                <a id="mainZoomLink" href="{{ asset('storage/' . $product->photo) }}">
+                                    <img 
+                                        id="mainZoomImg"
+                                        class="product__details__pic__item--large"
+                                        src="{{ asset('storage/' . $product->photo) }}"
+                                        alt="{{ $product->name }}"
+                                        style="width: 70%; height: 80%; object-fit:contain;"
+                                    >
                                 </a>
+
                             @else
                                 <div>
-                                    <h1>Photo Messing</h1>
+                                    <h1>No Photo Available</h1>
                                 </div>
                             @endif
-                                
-                           
 
                         </div>
                          <div class="product__details__pic__slider owl-carousel">
@@ -53,15 +57,15 @@
                             @if ($product->discount_price)
                                 <div class="d-flex justify-content-start align-items-center">
                                     <h6 class="text-danger mx-1 fs-4" style="font-weight: 700;">
-                                        <del><i class="fa-solid fa-bangladeshi-taka-sign fs-4"></i> {{$product->price }}</del>
+                                        <del>৳ {{$product->price }}</del>
                                     </h6>
                                     <h5 class="mx-1" style="font-weight: 700;">
-                                        <i class="fa-solid fa-bangladeshi-taka-sign fs-4"></i>{{$product->discount_price }}
+                                        ৳{{$product->discount_price }}
                                     </h5>
                                 </div>
                             @else
                                 <h5  style="font-weight: 700;">
-                                    <i class="fa-solid fa-bangladeshi-taka-sign fs-4"></i> {{ $product->price }}
+                                    ৳ {{ $product->price }}
                                 </h5>
                             @endif
                         </div>
@@ -166,6 +170,19 @@
 <!-- Footer Section Begin -->
 @include('site.layout.footer')
 <!-- Footer Section End -->
-
 <!-- Js Plugins -->
 @include('site.layout.footerlink')
+
+@section('scripts')
+<script>
+    // Initialize EasyZoom
+    var $easyzoom = $('.easyzoom').easyZoom();
+
+    // Thumbnail click
+    $('.product__details__pic__slider img').on('click', function () {
+        var big = $(this).data('imgbigurl');
+        $('#mainZoomLink').attr('href', big);
+        $('#mainZoomImg').attr('src', big);
+    });
+</script>
+@endsection

@@ -18,7 +18,7 @@
                             <h5>{{ $item['name'] }}</h5>
                         </td>
                         <td class="shoping__cart__price">
-                        <i class="fa-solid fa-bangladeshi-taka-sign fs-4"></i> {{ $item['price'] }}
+                        ৳ {{ $item['price'] }}
                         </td>
                         <td class="shoping__cart__quantity">
                             <div class="quantity">
@@ -33,7 +33,7 @@
                             @php
                                 $quantity = $item['quantity'] ?? 0;
                             @endphp
-                         <i class="fa-solid fa-bangladeshi-taka-sign fs-4"></i> {{ $item['price'] *  $quantity }}.00
+                         ৳ {{ $item['price'] *  $quantity }}.00
                         </td>
                         <td class="shoping__cart__item__close">
                             <button type="button" class="btn btn-danger btn-sm remove-product"><i class="fa-solid fa-x"></i></button>

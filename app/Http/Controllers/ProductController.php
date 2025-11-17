@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Brand;
+use App\Models\Banner;
 use App\Models\Categories;
 use App\Models\Product;
 use App\Models\ProductGallery;
@@ -179,21 +180,23 @@ class ProductController extends Controller
 
 
     // Site Route 
-
     public function getAllProduct() {
         $products = Product::from('products as p')
             ->select('p.*', 'b.name as brand_name', 'c.name as category_name')
             ->join('brand as b', 'p.brand_id', '=', 'b.id')
             ->join('categories as c', 'p.category_id', '=', 'c.id')
             ->orderBy('p.id', 'desc')
-            ->paginate(12)       // Pagination object
-            ->onEachSide(1);     // Optional
+            ->paginate(12)       
+            ->onEachSide(1);     
 
-        return view('site.pages.index', compact('products'));
+        $banner = Banner::all();
+        $brand = Brand::all();
+        return view('site.pages.index', compact('products', "banner", 'brand'));
     }
 
-    // site single data collect
     
+
+    // site single data collect    
     public function getProductById($id)
     {
          $product = Product::with('gallery') 

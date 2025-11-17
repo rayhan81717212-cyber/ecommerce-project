@@ -36,7 +36,7 @@
                                         @foreach ($productGallery as $index => $item)
                                             <tr>
                                                 <td class="m-0 p-0">{{$index + 1}}</td>
-                                                <td class="m-0 p-0">{{$item->product}}</td>
+                                                <td class="m-0 p-0 text-wrap w-50">{{$item->product}}</td>
                                                 <td class="m-0 p-0">
                                                     <a data-fancybox="gallery" href="{{ asset('storage/' . $item->photo) }}">
                                                         <img src="{{ asset('storage/'.$item->photo) }}" alt="Product Messing" width="100">

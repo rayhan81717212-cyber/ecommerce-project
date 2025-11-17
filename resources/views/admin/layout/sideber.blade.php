@@ -28,7 +28,7 @@
             </li>
 
             <!-- 📦 Product Management Manage -->
-            <li class="menu-item {{ request()->is('product*') || request()->is('categories*') || request()->is('brand*') || request()->is('productgallery*')  ? 'active' : '' }}">
+            <li class="menu-item {{ request()->is('product*') || request()->is('categories*') || request()->is('brand*') || request()->is('productgallery*') || request()->is('banner*') ? 'active' : '' }}">
               <a href="javascript:void(0);" class="menu-link menu-toggle">
                 {{-- <i class="menu-icon tf-icons bx bx-cart"></i> --}}
                 <div class="d-flex align-items-center gap-2">
@@ -68,6 +68,14 @@
                     <div class="d-flex align-items-center gap-2">
                       <h5 class="mb-0">🖼️</h5>
                       <span class="fs-6">Product Gallery</span>
+                    </div>
+                  </a>
+                </li>
+                <li class="menu-item {{ request()->is('banner') ? 'active' : '' }}">
+                  <a href="{{ url('banner') }}" class="menu-link">
+                    <div class="d-flex align-items-center gap-2">
+                      <h5 class="mb-0">🖼️</h5>
+                      <span class="fs-6">Banner</span>
                     </div>
                   </a>
                 </li>

@@ -17,130 +17,57 @@
                                 <thead>
                                     <tr class="bg-warning">
                                         <th class="text-white"><i class="fas fa-hashtag me-1"></i>Payment ID</th>
-                                        <th class="text-white"><i class="fas fa-user me-1"></i>User ID</th>
+                                        <th class="text-white"><i class="fas fa-user me-1"></i>Customer Name</th>
                                         <th class="text-white"><i class="fas fa-receipt me-1"></i>Order Number</th>
                                         <th class="text-white"><i class="fas fa-credit-card me-1"></i>Payment Method</th>
-                                        <th class="text-white"><i class="fas fa-dollar-sign me-1"></i>Amount</th>
-                                        <th class="text-white"><i class="fas fa-percentage me-1"></i>Discount</th>
-                                        <th class="text-white"><i class="fas fa-coins me-1"></i>Final Amount</th>
+                                        <th class="text-white"><i class="fas fa-coins me-1"></i> Amount</th>
                                         <th class="text-white"><i class="fas fa-circle me-1"></i>Payment Status</th>
                                         <th class="text-white"><i class="fas fa-calendar-alt me-1"></i>Payment Date</th>
+                                        <th class="text-white"><i class="fas fa-calendar-alt me-1"></i>Action</th>
+                                        <th class="text-white"><i class="fas fa-calendar-alt me-1"></i>Invoice</th>
 
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <td>1</td>
-                                        <td>101</td>
-                                        <td>ORD-1001</td>
-                                        <td>Credit Card</td>
-                                        <td>2500</td>
-                                        <td>200</td>
-                                        <td>2300</td>
-                                        <td class="paid">Paid</td>
-                                        <td>2025-10-01</td>
+                                    @foreach ($payment as $index => $item)
+                                        <tr>
+                                        <td>{{ $payment->firstItem() + $index }}</td>
+                                        <td>{{$item->first_name}} {{$item->last_name}}</td>
+                                        <td>{{$item->order_number}}</td>
+                                        <td>
+                                            @if ($item->payment_method == 'cod')
+                                                Cash On Delivery
+                                            @endif
+                                        </td>
+                                        <td>{{$item->grand_total }}</td>
+                                        <td class="paid">
+                                            @if ($item->status == "pending")
+                                                <span class="badge bg-primary">Pending</span>
+                                            @elseif ($item->status == "paid")
+                                                <span class="badge bg-warning">Paid</span>
+                                            @else
+                                                <span class="badge bg-dark">Cancelled</span>
+                                            @endif
+                                        </td>
+                                        <td>{{ $item->updated_at->format('d M, Y') }}</td>
+                                        <td>
+                                            <form action="" method="POST">
+                                                 <button class="btn btn-sm btn-warning">Update</button>
+                                            </form>
+                                        </td>
+                                        <td>
+                                            <a href="{{ route('invoice', $item->id) }}" class="btn btn-sm btn-dark">Invoice</a>
+                                        </td>
                                     </tr>
+                                    @endforeach
+                                </tbody>
+                                <tfoot>
                                     <tr>
-                                        <td>2</td>
-                                        <td>102</td>
-                                        <td>ORD-1002</td>
-                                        <td>bKash</td>
-                                        <td>1800</td>
-                                        <td>0</td>
-                                        <td>1800</td>
-                                        <td class="pending">Pending</td>
-                                        <td>2025-10-02</td>
+                                        <td colspan="9">
+                                            {{ $payment->onEachSide(1)->links("vendor.pagination.bootstrap-5") }}
+                                        </td>
                                     </tr>
-                                    <tr>
-                                        <td>3</td>
-                                        <td>103</td>
-                                        <td>ORD-1003</td>
-                                        <td>Cash on Delivery</td>
-                                        <td>3200</td>
-                                        <td>300</td>
-                                        <td>2900</td>
-                                        <td class="paid">Paid</td>
-                                        <td>2025-10-03</td>
-                                    </tr>
-                                    <tr>
-                                        <td>4</td>
-                                        <td>104</td>
-                                        <td>ORD-1004</td>
-                                        <td>Nagad</td>
-                                        <td>4500</td>
-                                        <td>500</td>
-                                        <td>4000</td>
-                                        <td class="failed">Failed</td>
-                                        <td>2025-10-04</td>
-                                    </tr>
-                                    <tr>
-                                        <td>5</td>
-                                        <td>105</td>
-                                        <td>ORD-1005</td>
-                                        <td>Rocket</td>
-                                        <td>1200</td>
-                                        <td>100</td>
-                                        <td>1100</td>
-                                        <td class="paid">Paid</td>
-                                        <td>2025-10-05</td>
-                                    </tr>
-                                    <tr>
-                                        <td>6</td>
-                                        <td>106</td>
-                                        <td>ORD-1006</td>
-                                        <td>Debit Card</td>
-                                        <td>2400</td>
-                                        <td>200</td>
-                                        <td>2200</td>
-                                        <td class="pending">Pending</td>
-                                        <td>2025-10-06</td>
-                                    </tr>
-                                    <tr>
-                                        <td>7</td>
-                                        <td>107</td>
-                                        <td>ORD-1007</td>
-                                        <td>PayPal</td>
-                                        <td>5000</td>
-                                        <td>500</td>
-                                        <td>4500</td>
-                                        <td class="paid">Paid</td>
-                                        <td>2025-10-07</td>
-                                    </tr>
-                                    <tr>
-                                        <td>8</td>
-                                        <td>108</td>
-                                        <td>ORD-1008</td>
-                                        <td>bKash</td>
-                                        <td>1900</td>
-                                        <td>0</td>
-                                        <td>1900</td>
-                                        <td class="failed">Failed</td>
-                                        <td>2025-10-08</td>
-                                    </tr>
-                                    <tr>
-                                        <td>9</td>
-                                        <td>109</td>
-                                        <td>ORD-1009</td>
-                                        <td>Upay</td>
-                                        <td>2100</td>
-                                        <td>100</td>
-                                        <td>2000</td>
-                                        <td class="paid">Paid</td>
-                                        <td>2025-10-09</td>
-                                    </tr>
-                                    <tr>
-                                        <td>10</td>
-                                        <td>110</td>
-                                        <td>ORD-1010</td>
-                                        <td>Nagad</td>
-                                        <td>2750</td>
-                                        <td>250</td>
-                                        <td>2500</td>
-                                        <td class="pending">Pending</td>
-                                        <td>2025-10-10</td>
-                                    </tr>
-
-                            </table>
+                                </tfoot>
                             </table>
                         </div>
                     </div>

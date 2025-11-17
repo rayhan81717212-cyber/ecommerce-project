@@ -4,8 +4,7 @@
 
 <div class="mx-md-4">
     <div class="container-fluid p-md-5 flex-grow-1 container-p-y">
-        <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Product /</span> Manage</h4>
-        <a href="" class="btn btn-warning my-3">Add Product</a>
+        <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Delevered Order /</span> Manage</h4>
         <div class="row">
             <div class="col-lg-12 mb-4 order-0">
                 <div class="card">
@@ -14,105 +13,49 @@
                         <div class="table-responsive text-nowrap">
                             <table class="table table-bordered text-center">
                                     <caption>Orders Table</caption>
-                                    <thead>
-                                        <tr>
-                                            <th>id</th>
-                                            <th>user_id</th>
-                                            <th>order_number</th>
-                                            <th>total_amount</th>
-                                            <th>discount_amount</th>
-                                            <th>payment_status</th>
-                                            <th>order_status</th>
-                                            <th>payment_method</th>
-                                            <th>Action</th>
+                                        <thead>
+                                        <tr class="bg-warning">
+                                            <th class="text-white text-align-center"><i class="fa-solid fa-hashtag"></i> ID</th>
+                                            <th class="text-white text-align-center"><i class="fa-solid fa-user"></i>Customer Name</th>
+                                            <th class="text-white text-align-center"><i class="fa-solid fa-receipt"></i> Order Number</th>
+                                            <th class="text-white text-align-center"><i class="fa-solid fa-dollar-sign"></i> Amount</th>
+                                            <th class="text-white text-align-center"><i class="fa-solid fa-truck-fast"></i> Shipping Fee</th>
+                                            <th class="text-white text-align-center"><i class="fa-solid fa-calculator"></i> Total</th>
+                                            <th class="text-white text-align-center"><i class="fa-solid fa-wallet"></i> Payment Status</th>
+                                            <th class="text-white text-align-center"><i class="fa-solid fa-money-bill-wave"></i> Payment Method</th>
+                                            <th class="text-white text-align-center"><i class="fa-solid fa-clipboard-check"></i> Order Status</th>
+                                            <th class="text-white text-align-center"><i class="fa-solid fa-gear"></i> Action</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
-                                            <td>1</td>
-                                            <td>101</td>
-                                            <td>ORD-1001</td>
-                                            <td>2500.00</td>
-                                            <td>200.00</td>
-                                            <td>Paid</td>
-                                            <td>Delivered </td>
-                                            <td>Credit Card</td>
+                                       @foreach ($order as $index => $item)
+                                        <tr >
+                                            <td>{{ $order->firstItem() + $index }}</td>
+                                            <td>{{ $item->first_name }} {{ $item->last_name }}</td>
+                                            <td>{{ $item->order_number }}</td>
+                                            <td>{{ $item->amount }}</td>
+                                            <td>{{ $item->shipping_fee }}</td>
+                                            <td>{{ $item->grand_total }}</td>
+                                            <td>{{ $item->payment_status }}</td>
+                                            <td>{{ $item->payment_method == 'cod' ? "Cash on Delivery" : "" }}</td>
                                             <td>
-                                                <button class="btn btn-sm btn-primary">Edit</button>
+                                                {{ $item->status }}
+                                            </td>
+                                            <td>
+                                                <button class="btn btn-sm btn-warning">Update</button>
+                                                <button class="btn btn-sm btn-primary">View</button>
                                                 <button class="btn btn-sm btn-danger">Delete</button>
                                             </td>
                                         </tr>
-                                        <tr>
-                                            <td>2</td>
-                                            <td>102</td>
-                                            <td>ORD-1002</td>
-                                            <td>1800.00</td>
-                                            <td>0.00</td>
-                                            <td>Pending</td>
-                                            <td>Delivered</td>
-                                            <td>bKash</td>
-                                            <td>
-                                                <button class="btn btn-sm btn-primary">Edit</button>
-                                                <button class="btn btn-sm btn-danger">Delete</button>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>3</td>
-                                            <td>103</td>
-                                            <td>ORD-1003</td>
-                                            <td>3200.00</td>
-                                            <td>300.00</td>
-                                            <td>Paid</td>
-                                            <td>Delivered</td>
-                                            <td>Cash on Delivery</td>
-                                            <td>
-                                                <button class="btn btn-sm btn-primary">Edit</button>
-                                                <button class="btn btn-sm btn-danger">Delete</button>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>4</td>
-                                            <td>104</td>
-                                            <td>ORD-1004</td>
-                                            <td>4500.00</td>
-                                            <td>500.00</td>
-                                            <td>Paid</td>
-                                            <td>Delivered</td>
-                                            <td>Nagad</td>
-                                            <td>
-                                                <button class="btn btn-sm btn-primary">Edit</button>
-                                                <button class="btn btn-sm btn-danger">Delete</button>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>6</td>
-                                            <td>105</td>
-                                            <td>ORD-1005</td>
-                                            <td>1200.00</td>
-                                            <td>100.00</td>
-                                            <td>Paid</td>
-                                            <td>Delivered</td>
-                                            <td>Rocket</td>
-                                            <td>
-                                                <button class="btn btn-sm btn-primary">Edit</button>
-                                                <button class="btn btn-sm btn-danger">Delete</button>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>5</td>
-                                            <td>105</td>
-                                            <td>ORD-1005</td>
-                                            <td>1200.00</td>
-                                            <td>100.00</td>
-                                            <td>Paid</td>
-                                            <td>Delivered</td>
-                                            <td>Rocket</td>
-                                            <td>
-                                                <button class="btn btn-sm btn-primary">Edit</button>
-                                                <button class="btn btn-sm btn-danger">Delete</button>
-                                            </td>
-                                        </tr>
+                                        @endforeach
                                     </tbody>
+                                    <tfoot>
+                                        <tr>
+                                            <td colspan="10">
+                                               {{ $order->onEachSide(1)->links('pagination::bootstrap-5') }}
+                                            </td>
+                                        </tr>
+                                    </tfoot>
                                 </table>
                         </div>
                     </div>

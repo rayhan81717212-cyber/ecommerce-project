@@ -17,46 +17,68 @@
         <div class="container">
             <div class="checkout__form">
                 <h4>Billing Details</h4>
-                <form action="#">
+                <form action="{{ route('order.place') }}" method="post">
+                    @csrf
                     <div class="row">
                         <div class="col-lg-7 col-md-6 col-12">
                             <div class="row">
-                                <div class="col-lg-6">
+                                <div class="col-lg-5">
                                     <div class="checkout__input">
                                         <p>Fist Name<span>*</span></p>
-                                        <input type="text">
+                                        <input type="text" name="first_name" value="{{ old('first_name') }}">
+                                        @error('first_name')
+                                            <span class="text-danger">{{ $message }}</span>
+                                        @enderror
                                     </div>
                                 </div>
-                                <div class="col-lg-6">
+                                <div class="col-lg-7">
                                     <div class="checkout__input">
                                         <p>Last Name<span>*</span></p>
-                                        <input type="text">
+                                        <input type="text" name="last_name" value="{{ old('last_name') }}">
+                                        @error('last_name')
+                                            <span class="text-danger">{{ $message }}</span>
+                                        @enderror
                                     </div>
                                 </div>
                             </div>
                             <div class="checkout__input">
                                 <p>Town/City<span>*</span></p>
-                                <input type="text">
+                                <input type="text" name="city" value="{{ old('city') }}" id="city">
+                                @error('city')
+                                    <span class="text-danger">{{ $message }}</span>
+                                @enderror
                             </div>
                             <div class="checkout__input">
                                 <p>Country/State<span>*</span></p>
-                                <input type="text">
+                                <input type="text" name="country" value="{{ old('country') }}">
+                                @error('country')
+                                    <span class="text-danger">{{ $message }}</span>
+                                @enderror
                             </div>
                             <div class="checkout__input">
                                 <p>Address<span>*</span></p>
-                                <textarea name="address" class="form-control" rows="3"></textarea>
+                                <textarea name="address" class="form-control" rows="3">{{old('address')}}</textarea>
+                                @error('address')
+                                    <span class="text-danger">{{ $message }}</span>
+                                @enderror
                             </div>
                             <div class="row">
-                                <div class="col-lg-6">
+                                <div class="col-lg-5">
                                     <div class="checkout__input">
                                         <p>Phone<span>*</span></p>
-                                        <input type="text" name="phone">
+                                        <input type="text" name="phone" value="{{ old('phone') }}">
+                                        @error('phone')
+                                            <span class="text-danger">{{ $message }}</span>
+                                        @enderror
                                     </div>
                                 </div>
-                                <div class="col-lg-6">
+                                <div class="col-lg-7">
                                     <div class="checkout__input">
                                         <p>Email<span>*</span></p>
-                                        <input type="text" name="email">
+                                        <input type="text" name="email" value="{{ old('email') }}">
+                                        @error('email')
+                                            <span class="text-danger">{{ $message }}</span>
+                                        @enderror
                                     </div>
                                 </div>
                             </div>
@@ -77,18 +99,30 @@
                                                 <span>{{ $item['name'] }}</span>
                                             </div>
                                             <span class="fw-bold">
-                                                <i class="fa-solid fa-bangladeshi-taka-sign"></i> {{ $item['price'] }}.00
+                                                ৳ {{ $item['price'] }}.00
                                             </span>
                                         </li>
                                     @endforeach
                                 </ul>
-                                <div class="checkout__order__subtotal">Subtotal <span><i class="fa-solid fa-bangladeshi-taka-sign"></i>{{$total}}</span></div>
-                                <div class="checkout__order__total">Total <span><i class="fa-solid fa-bangladeshi-taka-sign"></i>{{$total}}</span></div>
+                                <div class="checkout__order__subtotal">Subtotal: <span id="subtotal">
+                                    ৳ {{ $total }}</span>
+                                </div>
+                                <div class="checkout__order__shipping">Shipping: 
+                                    <span id="shipping_amount">
+                                        ৳ 0
+                                    </span>
+                                    <input type="hidden" id="shipping_fee" name="shipping_fee" value="0">
+                                </div>
+                                <div class="checkout__order__total">Total: 
+                                    <span id="grand_total"> 
+                                        ৳ {{ $total }}
+                                    </span>
+                                </div>
                                 
                                 <div class="checkout__input__checkbox">
-                                    <label for="payment">
-                                        Check Payment
-                                        <input type="checkbox" id="payment">
+                                    <label for="cod">
+                                        Cash On Delivery
+                                        <input type="radio" id="cod" name="payment_method" value="cod" checked>
                                         <span class="checkmark"></span>
                                     </label>
                                 </div>
@@ -104,75 +138,46 @@
     <!-- Checkout Section End -->
 <!-- Product Details Section End -->
 
-@section('scripts')
-    <script>
-        $(document).ready(function() {
-
-            // Quantity Update
-           $('body').on('click', '.qtybtn', function() {
-            var row = $(this).closest('tr');
-            var productId = row.data('id');
-            var btn = $(this);
-
-            var oldValue = parseInt(btn.parent().find('input').val()) || 0;
-
-            if (btn.hasClass('inc')) {
-                var newVal = oldValue + 1;
-            } else {
-                var newVal = Math.max(1, oldValue - 1); 
-            }
-
-            btn.parent().find('input').val(newVal);
-
-            var quantity = row.find('.cart-lavel').val();
-
-            $.ajax({
-                url: "{{ route('cart.update') }}",
-                method: "POST",
-                data: {
-                    _token: "{{ csrf_token() }}",
-                    product_id: productId,
-                    quantity: quantity,
-                    type: 'update'
-                },
-                success: function(response) {
-                    $('#cart-product').html(response.html);
-                    $('.subtotal-amount').text(response.total + ".00");
-                    $('.total-amount').text(response.total + ".00");
-                    $('.navbar-cart-total').text(response.total + ".00");
-                }
-            });
-        });
-
-
-            // Remove Product
-            $('body').on('click', '.remove-product', function() {
-                var row = $(this).closest('tr');
-                var productId = row.data('id');
-
-                $.ajax({
-                    url: "{{ route('cart.update') }}",
-                    method: "POST",
-                    data: {
-                        _token: "{{ csrf_token() }}",
-                        product_id: productId,
-                        type: 'delete'
-                    },
-                    success: function(response) {
-                        $('#cart-product').html(response.html);
-                    },
-
-                });
-            });
-
-        });
-    </script>
-@endsection
 
 
 <!-- Footer Section Begin -->
 @include('site.layout.footer')
 <!-- Footer Section End -->
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    let subtotal = parseFloat("{{ $total }}"); 
+    const shippingAmountField = document.getElementById('shipping_amount'); 
+    const grandTotalField = document.getElementById('grand_total');
+    const cityInput = document.getElementById('city');
+    const shippingInput = document.getElementById('shipping_fee'); 
+
+    function updateShipping() {
+        let city = cityInput.value.toLowerCase().trim();
+        let shipping = 0;
+
+        if(city === 'narayanganj') {
+            shipping = 100;
+        } else if(city === 'dhaka') {
+            shipping = 200;
+        } else if(city === '') {
+            shipping = 0;
+        } else {
+            shipping = 500;
+        }
+
+        shippingAmountField.innerText = shipping; 
+        shippingInput.value = shipping;           
+        grandTotalField.innerText = subtotal + shipping;
+    }
+
+    updateShipping();
+    cityInput.addEventListener('input', updateShipping);
+});
+
+
+</script>
+
 
 <!-- Js Plugins -->
 @include('site.layout.footerlink')

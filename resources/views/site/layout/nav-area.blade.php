@@ -119,35 +119,37 @@
                             <span>All departments</span>
                         </div>
                         <ul>
-                            <li><a href="#">Fresh Meat</a></li>
-                            <li><a href="#">Vegetables</a></li>
-                            <li><a href="#">Fruit &amp; Nut Gifts</a></li>
-                            <li><a href="#">Fresh Berries</a></li>
-                            <li><a href="#">Ocean Foods</a></li>
-                            <li><a href="#">Butter &amp; Eggs</a></li>
-                            <li><a href="#">Fastfood</a></li>
-                            <li><a href="#">Fresh Onion</a></li>
-                            <li><a href="#">Papayaya &amp; Crisps</a></li>
-                            <li><a href="#">Oatmeal</a></li>
-                            <li><a href="#">Fresh Bananas</a></li>
+                            @foreach ($categories as $item)
+                                <li class="{{ isset($currentCategory) && $currentCategory->id == $item->id ? 'active' : '' }}">
+                                    <a href="{{ route('shop.category', $item->id) }}">{{ $item->name }}</a>
+                                </li>
+                            @endforeach
                         </ul>
                     </div>
                 </div>
                 <div class="col-lg-6">
                     <nav class="header__menu text-right">
                     <ul>
-                        <li class="active"><a href="{{ url('/') }}">Home</a></li>
-                        <li><a href="./shop-grid.html">Shop</a></li>
-                        <li><a href="#">Pages</a>
-                            <ul class="header__menu__dropdown">
-                                <li><a href="./shop-details.html">Shop Details</a></li>
-                                <li><a href="./shoping-cart.html">Shoping Cart</a></li>
-                                <li><a href="./checkout.html">Check Out</a></li>
-                                <li><a href="./blog-details.html">Blog Details</a></li>
-                            </ul>
+                        <li class="{{ Request::is('/') ? 'active' : '' }}">
+                            <a href="{{ url('/') }}">Home</a>
                         </li>
-                        <li><a href="./blog.html">Blog</a></li>
-                        <li><a href="./contact.html">Contact</a></li>
+
+                        <li class="{{ Request::is('shop-page') ? 'active' : '' }}">
+                            <a href="{{ url('/shop-page') }}">Shop</a>
+                        </li>
+
+                        <li class="{{ Request::is('pages') ? 'active' : '' }}">
+                            <a href="#">Pages</a>
+                        </li>
+
+                        <li class="{{ Request::is('blog') ? 'active' : '' }}">
+                            <a href="{{ url('/blog') }}">Blog</a>
+                        </li>
+
+                        <li class="{{ Request::is('contact') ? 'active' : '' }}">
+                            <a href="{{ url('/contact') }}">Contact</a>
+                        </li>
+
                     </ul>
                 </nav>
                 </div>

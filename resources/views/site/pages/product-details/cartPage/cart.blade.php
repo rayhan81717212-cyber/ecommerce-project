@@ -32,8 +32,8 @@
                     <div class="shoping__checkout">
                         <h5>Cart Total</h5>
                         <ul>
-                            <li>Subtotal <span class="subtotal-amount">{{ $total }}.00</span></li>
-                            <li>Total <span class="total-amount">{{ $total }}.00</span></li>
+                            <li>Subtotal <span class="subtotal-amount">৳ {{ $total }}.00</span></li>
+                            <li>Total <span class="total-amount">৳ {{ $total }}.00</span></li>
                         </ul>
                         <a  href="{{ route('checkout.page') }}" class=" btn primary-btn w-100">PROCEED TO CHECKOUT</a>
                     </div>

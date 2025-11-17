@@ -13,6 +13,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;600;900&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" rel="stylesheet">
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/easyzoom/2.5.0/easyzoom.css" integrity="sha512-xvMn2e/POh4lCXRvSZtUrZRC3Jp2rt1qVEy5xn6JBOAGYyFhXeSH7hFXckpPKHW1YlFiAouqN6z1pgafhC2E4w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
     <!-- Css Styles -->
     <link rel="stylesheet" href="{{ asset('site-asset/css/bootstrap.min.css') }}" type="text/css">
     <link rel="stylesheet" href="{{ asset('site-asset/css/font-awesome.min.css') }}" type="text/css">
@@ -23,6 +26,9 @@
     <link rel="stylesheet" href="{{ asset('site-asset/css/slicknav.min.css') }}" type="text/css">
     <link rel="stylesheet" href="{{ asset('site-asset/css/style.css') }}" type="text/css">
     <link rel="stylesheet" href="{{ asset('assets/css/custom.css') }}" type="text/css">
+
+    
+
     @yield('scripts')
 </head>
 

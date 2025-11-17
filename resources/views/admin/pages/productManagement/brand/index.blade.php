@@ -39,7 +39,7 @@
                                                     $sl = $brand->firstItem() + $index;
                                                 @endphp
                                                 <td>{{ $sl }}</td>
-                                                <td>{{ $item->name }}</td>
+                                                <td >{{ $item->name }}</td>
                                                 <td>
                                                     @if ($item->logo)
                                                         <img src="{{ asset('storage/' . $item->logo)  }}" width="100" alt="{{ $item->name }}">
