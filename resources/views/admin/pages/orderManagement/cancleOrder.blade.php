@@ -1,10 +1,9 @@
 @extends('admin.layout.master')
-@section('title', 'Cancle Orders')
+@section('title', 'Cancel Orders')
 @section('content')
-
 <div class="mx-md-4">
     <div class="container-fluid p-md-5 flex-grow-1 container-p-y">
-        <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Cancle Order /</span> Manage</h4>
+        <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Cancle Orders /</span> Manage</h4>
         <div class="row">
             <div class="col-lg-12 mb-4 order-0">
                 <div class="card">
@@ -12,9 +11,9 @@
                     <div class="card-body">
                         <div class="table-responsive text-nowrap">
                             <table class="table table-bordered text-center">
-                                    <caption>Orders Table</caption>
-                                        <thead>
-                                        <tr class="bg-warning">
+                                    <caption>Cancle Orders Table</caption>
+                                    <thead>
+                                        <tr class="bg-dark">
                                             <th class="text-white text-align-center"><i class="fa-solid fa-hashtag"></i> ID</th>
                                             <th class="text-white text-align-center"><i class="fa-solid fa-user"></i>Customer Name</th>
                                             <th class="text-white text-align-center"><i class="fa-solid fa-receipt"></i> Order Number</th>
@@ -28,31 +27,65 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                       @foreach ($order as $index => $item)
-                                        <tr >
-                                            <td>{{ $order->firstItem() + $index }}</td>
-                                            <td>{{ $item->first_name }} {{ $item->last_name }}</td>
-                                            <td>{{ $item->order_number }}</td>
-                                            <td>{{ $item->amount }}</td>
-                                            <td>{{ $item->shipping_fee }}</td>
-                                            <td>{{ $item->grand_total }}</td>
-                                            <td>{{ $item->payment_status }}</td>
-                                            <td>{{ $item->payment_method == 'cod' ? "Cash on Delivery" : "" }}</td>
-                                            <td>
-                                                {{ $item->status }}
-                                            </td>
-                                            <td>
-                                                <button class="btn btn-sm btn-warning">Update</button>
-                                                <button class="btn btn-sm btn-primary">View</button>
-                                                <button class="btn btn-sm btn-danger">Delete</button>
-                                            </td>
-                                        </tr>
-                                        @endforeach
+                                       @foreach ($orders as $index => $item)
+                                    <tr>
+                                        <td>{{ $orders->firstItem() + $index }}</td>
+
+                                        <td>{{ $item->firstName ?? '' }} {{ $item->lastName ?? '' }}</td>
+
+                                        <td>{{ $item->order_number ?? 'N/A' }}</td>
+
+                                        <td>{{ number_format($item->price, 2) }}</td>
+
+                                        <td>{{ number_format($item->shipping_fee, 2) }}</td>
+
+                                        <td>{{ number_format($item->price + $item->shipping_fee, 2) }}</td>
+
+                                        <td>
+                                            @if($item->payment_status == 'paid')
+                                                <span class="badge bg-success">Paid</span>
+                                            @else
+                                                <span class="badge bg-warning text-dark">Pending</span>
+                                            @endif
+                                        </td>
+
+                                        <td>
+                                            {{ $item->payment_method == 'cod' ? 'Cash on Delivery' : strtoupper($item->payment_method) }}
+                                        </td>
+
+                                        <td>
+                                            @if($item->status == 'pending')
+                                                <span class="badge bg-warning text-dark">Pending</span>
+
+                                            @elseif($item->status == 'confirmed')
+                                                <span class="badge bg-primary">Confirmed</span>
+
+                                            @elseif($item->status == 'processing')
+                                                <span class="badge bg-info">Processing</span>
+
+                                            @elseif($item->status == 'delivered')
+                                                <span class="badge bg-success">Delivered</span>
+
+                                            @elseif($item->status == 'cancelled')
+                                                <span class="badge bg-danger">Cancelled</span>
+
+                                            @else
+                                                <span class="badge bg-secondary">{{ ucfirst($item->status) }}</span>
+                                            @endif
+                                        </td>
+
+                                        <td>
+                                            <button class="btn btn-sm btn-primary"><i class="fa fa-eye"></i></button>
+                                            <button class="btn btn-sm btn-dark"><i class="fa fa-pen"></i></button>
+                                            <button class="btn btn-sm btn-danger"><i class="fa fa-trash"></i></button>
+                                        </td>
+                                    </tr>
+                                    @endforeach
                                     </tbody>
                                     <tfoot>
                                         <tr>
                                             <td colspan="10">
-                                               {{ $order->onEachSide(1)->links('pagination::bootstrap-5') }}
+                                               {{ $orders->onEachSide(1)->links('pagination::bootstrap-5') }}
                                             </td>
                                         </tr>
                                     </tfoot>

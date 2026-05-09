@@ -16,14 +16,26 @@ class UsersController extends Controller
      */
     public function index()
     {
+        
         $user = User::from('users as u')
                 ->select('u.id','u.first_name', 'u.last_name', 'u.email', 'u.role_id', 'u.status', 'u.phone', 'u.photo', 'r.name as role')
                 ->join('roles as r', 'u.role_id', '=', "r.id")
-                ->orderByRaw("FIELD(role, 'Admin', 'Vendor', 'Editor', 'Customer')")
+                ->whereIn('u.role_id', [1, 2])
+                ->orderByRaw("FIELD(role, 'Admin', 'Vendor')")
                 ->paginate(10);
 
-        // dd($user);
         return view('admin.pages.userManage.user.index', compact('user'));
+    }
+    public function customerDataGet()
+    {
+        
+        $user = User::from('users as u')
+                ->select('u.id','u.first_name', 'u.last_name', 'u.email', 'u.role_id', 'u.status', 'u.phone', 'u.photo', 'r.name as role')
+                ->join('roles as r', 'u.role_id', '=', "r.id")
+                ->whereIn('u.role_id', [4])
+                ->paginate(10);
+
+        return view('admin.pages.userManage.user.customers', compact('user'));
     }
 
      /**
